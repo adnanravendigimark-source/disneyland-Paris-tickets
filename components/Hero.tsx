@@ -60,9 +60,9 @@ export default async function Hero() {
             {/* Checklist with pink badges (NO 'Official Tickets') */}
             <div className="mt-5 space-y-2.5">
               {[
+                "Official Tickets",
                 "Best Price Guarantee",
                 "Instant Confirmation",
-                "Direct Gate Access",
               ].map((item) => (
                 <div key={item} className="flex items-center gap-2.5">
                   <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#E94B83] text-white text-[11px] font-bold shadow-sm">
@@ -157,8 +157,8 @@ export default async function Hero() {
                 </svg>
               </div>
               <div>
-                <p className="font-display text-sm font-bold text-[#102A5C]">Guaranteed Entry</p>
-                <p className="text-xs text-stone-600">Direct gate access &amp; trusted partner</p>
+                <p className="font-display text-sm font-bold text-[#102A5C]">Official Tickets</p>
+                <p className="text-xs text-stone-600">100% official and trusted partner</p>
               </div>
             </div>
 

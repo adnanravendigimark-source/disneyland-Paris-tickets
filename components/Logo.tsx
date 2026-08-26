@@ -4,11 +4,11 @@ import Image from "next/image";
 export default function Logo({
   className = "",
   variant = "compact",
-  theme = "dark",
+  theme = "light",
   src = "",
-  alt = "Barcelona Flamenco Shows",
-  line1 = "BARCELONA",
-  line2 = "FLAMENCO SHOWS",
+  alt = "Disneyland Paris Tickets",
+  line1 = "DISNEYLAND",
+  line2 = "PARIS",
 }: {
   className?: string;
   variant?: "compact" | "stacked";
@@ -20,89 +20,122 @@ export default function Logo({
 }) {
   const customSrc = src?.trim();
 
-  // Vector Flamenco Dancer Silhouette in rich Spanish red
-  const flamencoSilhouette = (sizeClass: string) => (
+  // Exact Golden Castle Silhouette with Circular Ring & Base Arc matching mockup
+  const goldCastleLogo = (sizeClass: string) => (
     <div className={`relative flex items-center justify-center shrink-0 ${sizeClass}`}>
       <svg
-        viewBox="0 0 40 48"
+        viewBox="0 0 60 52"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="h-full w-full drop-shadow-[0_2px_8px_rgba(201,24,43,0.4)]"
+        className="h-full w-full drop-shadow-sm"
       >
-        <path
-          d="M21 4C21 5.65685 19.6569 7 18 7C16.3431 7 15 5.65685 15 4C15 2.34315 16.3431 1 18 1C19.6569 1 21 2.34315 21 4Z"
-          fill="#c92828"
+        {/* Outer Circular Halo Ring */}
+        <circle
+          cx="30"
+          cy="26"
+          r="23"
+          stroke="#D6A84F"
+          strokeWidth="1.2"
+          strokeDasharray="1 0"
+          opacity="0.85"
         />
-        {/* Flower / Comb in hair */}
-        <circle cx="21.5" cy="3.5" r="1.5" fill="#f87171" />
-        {/* Upraised Arm */}
+
+        {/* Base Arc Swoosh in Midnight Blue */}
         <path
-          d="M17 6C15 4 13 2 12 4C11 6 13 8.5 15 9.5L16 12"
-          stroke="#c92828"
-          strokeWidth="2.2"
+          d="M4 46C18 41.5 42 41.5 56 46"
+          stroke="#102A5C"
+          strokeWidth="2.8"
           strokeLinecap="round"
         />
-        <path
-          d="M19 6C22 5 24 3 25 4C26 5.5 24 8 22 10L20 12"
-          stroke="#c92828"
-          strokeWidth="2.2"
-          strokeLinecap="round"
-        />
-        {/* Torso */}
-        <path
-          d="M16 12C15.5 15 15 18 16 20C17 22 19 23 20 25C19 28 17 31 12 34C10 35.2 7 38 6 42C9 42.5 13 41 16 39C19 37 21 35 22 33C24 36 28 39 32 41C34 42 37 43 38 41.5C36 38 33 34 30 30C27 26 24 23 23 20C22 17 21 14 20 12H16Z"
-          fill="#c92828"
-        />
-        {/* Ruffles details */}
-        <path
-          d="M12 34C15 32 20 33 22 30C24 27 26 31 29 32C32 33 35 34 37 38C34 39.5 30 39 27 37C24 35 22 36 19 38C16 40 13 41 10 41L12 34Z"
-          fill="#ad1d1d"
-        />
-        <path
-          d="M8 43C14 44 22 45 28 43C32 42 35 43 38 44C33 46 25 46.5 17 45.5C13 45 9 44.5 8 43Z"
-          fill="#8e1515"
-        />
+
+        {/* Golden Castle Spires & Silhouette */}
+        <g fill="#D6A84F">
+          {/* Main Central Tower */}
+          <path d="M28 27V12L30 5L32 12V27H28Z" />
+          <polygon points="26,13 30,3 34,13" fill="#D6A84F" />
+          <circle cx="30" cy="3" r="1" fill="#D6A84F" />
+
+          {/* Left Turrets */}
+          <path d="M19 32V19L22 11L25 19V32H19Z" />
+          <polygon points="18,19 22,10 26,19" fill="#D6A84F" />
+
+          <path d="M11 36V24L14 17L17 24V36H11Z" />
+          <polygon points="10,24 14,16 18,24" fill="#D6A84F" />
+
+          {/* Right Turrets */}
+          <path d="M35 32V19L38 11L41 19V32H35Z" />
+          <polygon points="34,19 38,10 42,19" fill="#D6A84F" />
+
+          <path d="M43 36V24L46 17L49 24V36H43Z" />
+          <polygon points="42,24 46,16 50,24" fill="#D6A84F" />
+
+          {/* Castle Wall Base */}
+          <path d="M9 43V34H51V43C42 40 18 40 9 43Z" />
+
+          {/* Castle Center Archway */}
+          <path
+            d="M25 43V34C25 31.2 27.2 29 30 29C32.8 29 35 31.2 35 34V43H25Z"
+            fill={theme === "dark" ? "#102A5C" : "#FCF8F1"}
+          />
+        </g>
       </svg>
     </div>
   );
 
+  const isDark = theme === "dark";
+  const mainTextColor = isDark ? "text-white" : "text-[#102A5C]";
+  const goldColor = "text-[#D6A84F]";
+  const pinkColor = "text-[#E94B83]";
+
   if (variant === "stacked") {
     return (
-      <Link href="/" className={`inline-flex flex-col items-center gap-3 ${className}`}>
+      <Link href="/" className={`inline-flex flex-col items-center gap-2 ${className}`}>
         {customSrc ? (
           <span className="relative block h-20 w-[240px] sm:h-24 sm:w-[280px]">
             <Image src={customSrc} alt={alt} fill sizes="280px" className="object-contain" priority />
           </span>
         ) : (
-          flamencoSilhouette("h-14 w-12 sm:h-16 sm:w-14")
+          goldCastleLogo("h-14 w-16 sm:h-16 sm:w-20")
         )}
-        <div className="text-center leading-tight">
-          <span className="block font-display text-2xl font-black tracking-[0.08em] uppercase text-white">
-            {line1 || "BARCELONA"}
+        <div className="text-center leading-tight flex flex-col items-center">
+          <span className={`block font-display text-2xl font-black tracking-[0.06em] uppercase ${mainTextColor}`}>
+            {line1 || "DISNEYLAND"}
           </span>
-          <span className="block font-display text-[11px] font-bold uppercase tracking-[0.25em] text-red-500 mt-0.5">
-            — {line2 || "FLAMENCO SHOWS"} —
-          </span>
+          <div className="flex items-center gap-1.5 mt-0.5">
+            <span className={`font-display text-sm font-bold uppercase tracking-[0.2em] ${pinkColor}`}>
+              {line2 || "PARIS"}
+            </span>
+          </div>
+          <div className="flex items-center gap-1 mt-0.5">
+            <span className="h-[1px] w-3 bg-[#D6A84F]/60" />
+            <span className={`font-display text-[10px] font-semibold uppercase tracking-[0.28em] ${goldColor}`}>
+              TICKETS
+            </span>
+            <span className="h-[1px] w-3 bg-[#D6A84F]/60" />
+          </div>
         </div>
       </Link>
     );
   }
 
   return (
-    <Link href="/" className={`group inline-flex items-center gap-3 ${className}`}>
+    <Link href="/" className={`group inline-flex items-center gap-2.5 sm:gap-3.5 ${className}`}>
       {customSrc ? (
-        <span className="relative block h-9 w-[120px] shrink-0 overflow-hidden sm:h-10 sm:w-[130px]">
-          <Image src={customSrc} alt={alt} fill priority sizes="130px" className="object-contain" />
+        <span className="relative block h-11 w-[140px] shrink-0 overflow-hidden sm:h-12 sm:w-[155px]">
+          <Image src={customSrc} alt={alt} fill priority sizes="155px" className="object-contain" />
         </span>
       ) : (
-        flamencoSilhouette("h-10 w-8 sm:h-11 sm:w-9")
+        goldCastleLogo("h-11 w-13 sm:h-12 sm:w-14")
       )}
-      <div className="flex flex-col leading-[1.08]">
-        <span className="font-display text-[1.15rem] sm:text-[1.25rem] font-bold tracking-[0.06em] uppercase text-white transition-colors group-hover:text-red-400">
-          {line1 || "BARCELONA"}
+      <div className="flex flex-col leading-none">
+        <span className={`font-display text-[1.2rem] sm:text-[1.35rem] font-black tracking-[0.05em] uppercase leading-none ${mainTextColor} transition-colors group-hover:text-[#E94B83]`}>
+          {line1 || "DISNEYLAND"}
         </span>
-        <span className="font-display text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.22em] text-red-500 mt-0.5">
-          — {line2 || "FLAMENCO SHOWS"} —
+        <span className={`font-display text-[13px] sm:text-sm font-bold uppercase tracking-[0.15em] leading-tight ${pinkColor}`}>
+          {line2 || "PARIS"}
+        </span>
+        <span className={`font-display text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.26em] leading-tight ${goldColor}`}>
+          TICKETS
         </span>
       </div>
     </Link>
