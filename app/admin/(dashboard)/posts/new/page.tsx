@@ -26,7 +26,7 @@ export default async function NewPostPage() {
     recommendedTourAfterBlock: 0,
     content: "",
     ctaHeading: "Ready to book?",
-    ctaBody: "Compare flamenco show prices and tickets on the homepage.",
+    ctaBody: "Compare Disneyland Paris ticket prices and options on the homepage.",
     ctaButtonText: "See Price Comparison",
     ctaButtonHref: "/#prices",
     focusKeyword: "",

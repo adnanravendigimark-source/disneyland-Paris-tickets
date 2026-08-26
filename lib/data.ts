@@ -9,7 +9,7 @@ function gygLink(path: string, extra = "") {
   if (/^https?:\/\//i.test(trimmed)) {
     return `${trimmed}${extra || ""}`;
   }
-  return `https://www.getyourguide.com/${trimmed}?partner_id=${PARTNER_ID}&utm_medium=online_publisher&cmp=barcelona${extra}`;
+  return `https://www.getyourguide.com/${trimmed}?partner_id=${PARTNER_ID}&utm_medium=online_publisher&cmp=disneyland-paris${extra}`;
 }
 
 export type TourType = "guided" | "self-guided" | "combo";
@@ -39,7 +39,7 @@ export interface TourRecord {
   priceTableColumn1?: string;
   // Shown in the homepage price-comparison table's second feature column
   // (see components/PriceComparison.tsx and the Price section's
-  // column2Label in lib/homepage.ts) — e.g. "Tapas & Sangria". Blank
+  // column2Label in lib/homepage.ts) — e.g. "Lunch at a Park Restaurant". Blank
   // renders as "No" in that column.
   priceTableFeature?: string;
 }

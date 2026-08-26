@@ -16,7 +16,7 @@ export default async function AdminToursPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="font-display text-2xl font-bold text-stone-900">Tours & Tickets</h1>
-          <p className="mt-1 text-sm text-stone-600">The bookable flamenco shows shown on the homepage.</p>
+          <p className="mt-1 text-sm text-stone-600">The bookable Disneyland Paris tickets shown on the homepage.</p>
         </div>
         <Link
           href="/admin/tours/new"

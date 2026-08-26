@@ -59,26 +59,12 @@ export default function AdminShell({
           {/* Sidebar is narrower than the public header, so this is a
               purpose-sized brand mark rather than the full <Logo /> — that
               component's wordmark needs more width than 256px leaves room
-              for. Same flamenco dancer glyph as Logo.tsx's icon and
-              app/icon.tsx's favicon, on the same red gradient badge, so all
-              three brand marks (public header, admin sidebar, browser tab)
-              match. */}
+              for. Same castle glyph as app/icon.tsx's favicon, on the same
+              Disney navy/pink gradient badge, so all three brand marks
+              (public header, admin sidebar, browser tab) match. */}
           <div className="flex items-center gap-2.5 border-b border-white/10 px-5 py-5">
-            <span className="relative flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-red-600 to-red-900 shadow-md">
-              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-6 w-6">
-                <circle cx="24" cy="14" r="3.2" fill="#fde047" />
-                <path
-                  d="M16 11C18 7.5 21.5 6 24 6C26.5 6 30 7.5 32 11"
-                  stroke="#fde047"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  fill="none"
-                />
-                <path
-                  d="M22 17.5C22 17.5 21 21 21.5 25C22 29 20 32 14 38C20 37 25 36 28 39C32 43 37 42 41 40C36 36 34 33 31 29C28.5 25.5 27 21 26 17.5H22Z"
-                  fill="#fde047"
-                />
-              </svg>
+            <span className="relative flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-[#102A5C] to-[#172F6B] shadow-md text-lg">
+              🏰
             </span>
             <div className="min-w-0">
               <p className="truncate font-display text-sm font-semibold italic text-white">{brandName}</p>

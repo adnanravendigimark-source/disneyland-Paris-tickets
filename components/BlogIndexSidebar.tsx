@@ -18,8 +18,8 @@ export default function BlogIndexSidebar({
   onSelectCategory,
   searchQuery,
   onSearchChange,
-  ctaHeading = "Book Your Barcelona Flamenco Show",
-  ctaBody = "Best prices, authentic tablaos, and instant confirmation.",
+  ctaHeading = "Book Your Disneyland Paris Tickets",
+  ctaBody = "Best prices, official tickets, and instant confirmation.",
   ctaButtonText = "Compare Shows →",
 }: {
   posts: Post[];
@@ -119,7 +119,7 @@ export default function BlogIndexSidebar({
         </div>
       )}
 
-      {/* Book Your Barcelona Flamenco Show Promo Card */}
+      {/* Book Your Disneyland Paris Tickets Promo Card */}
       <div className="relative overflow-hidden rounded-2xl border border-amber-400/30 bg-gradient-to-br from-red-50/70 via-white to-amber-50/40 p-6 text-center shadow-sm">
         <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-xl bg-red-50 text-red-600 border border-red-100">
           <TicketIcon className="h-5 w-5" />

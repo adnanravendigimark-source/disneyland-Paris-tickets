@@ -3,7 +3,7 @@
 // What it does:
 //   1. Creates every table the app needs, if they don't already exist.
 //   2. If a table is empty, seeds it from the matching file in /data (the
-//      real Barcelona Flamenco starter content) so the site has
+//      real Disneyland Paris starter content) so the site has
 //      real tours/posts/FAQs/homepage copy from the first run.
 //
 // How to run it:
@@ -475,9 +475,9 @@ async function seedSiteSettings() {
     console.log("site_settings: already configured — skipping seed.");
     return;
   }
-  const blogTitle = "Barcelona Flamenco Show Guides & Tips | Barcelona Flamenco Show";
+  const blogTitle = "Disneyland Paris Ticket Guides & Planning Tips | Disneyland Paris Tickets";
   const blogDescription =
-    "Practical guides for Barcelona flamenco shows — top tablaos, dinner & tapas packages, best times to book, traditions, and tips.";
+    "Practical guides for Disneyland Paris tickets — 1-Day, Multi-Day passes, Hopper deals, best times to book, traditions, and tips.";
   await sql`
     INSERT INTO site_settings (id, blog_meta_title, blog_meta_description)
     VALUES (1, ${blogTitle}, ${blogDescription})
@@ -493,43 +493,36 @@ async function seedAboutPage() {
     return;
   }
   const reasons = [
-    { icon: "ShieldCheckIcon", title: "Master Flamenco Artists", body: "Every venue we list features established national artists, master guitarists, and raw improvisational flamenco." },
-    { icon: "StarIcon", title: "Verified Traveler Reviews", body: "We only feature tablaos with thousands of verified guest reviews and top ratings." },
-    { icon: "LockIcon", title: "Transparent Pricing", body: "The price you see is the full price — clear options for drinks, tapas, or full Spanish dinner." },
-    { icon: "HeadsetIcon", title: "Acoustic & Stage Purity", body: "We tell you exactly what each venue offers — from no-microphone cave acoustics to 19th-century theater halls." },
+    { icon: "ShieldCheckIcon", title: "Official Ticket Access", body: "Direct gate entry e-tickets with instant mobile barcode scanning." },
+    { icon: "StarIcon", title: "Verified Visitor Reviews", body: "We compare options backed by 92,000+ verified customer reviews." },
+    { icon: "LockIcon", title: "Best Price Guarantee", body: "The price shown is guaranteed with clear options for 1-Park and 2-Park Hopper tickets." },
+    { icon: "HeadsetIcon", title: "Complete Trip Guidance", body: "Clear details on train transfers, ride line skips, and fireworks schedules." },
   ];
   const a = {
     heroEyebrow: "About Us",
-    heroHeading: "Your Independent Guide to Barcelona Flamenco Shows & Tickets",
+    heroHeading: "Your Independent Guide to Disneyland Paris Tickets & Passes",
     heroSubheading:
-      "We help travelers discover authentic Barcelona flamenco shows, historic tablaos, and dinner packages — curated from Spain's finest venues and explained in plain language.",
-    heroImage: "/images/hero-flamenco.jpg",
-    heroImageAlt: "Authentic live flamenco performance in Barcelona with passionate dancer and Spanish guitar",
-    introHeading: "Why We Built a Barcelona Flamenco Guide",
+      "We help travelers compare official Disneyland Paris tickets, 2-Park Hopper passes, and Paris shuttle combos with clear advice and instant mobile delivery.",
+    heroImage: "/images/disneyland-paris-castle.jpg",
+    heroImageAlt: "Sleeping Beauty Castle at Disneyland Paris under bright blue sky",
+    introHeading: "Why We Built a Disneyland Paris Ticket Guide",
     introParagraph1:
-      "Attending an authentic live flamenco performance is one of the most intense, unforgettable cultural moments in Spain — but only if you choose the right venue. Finding genuine masters among dozens of tourist brochures shouldn't be confusing.",
+      "Visiting Disneyland Paris is one of the most magical experiences in Europe — but choosing between 1-Day dated passes, multi-day hopper tickets, and shuttle combos can be confusing.",
     introParagraph2:
-      "We are an independent Barcelona flamenco guide. We compare world-renowned institutions like Tablao Cordobes, historic theater performances at Teatro City Hall, intimate Gothic Quarter tablaos like Los Tarantos, and full dinner experiences like Tablao de Carmen.",
-    introImage: "/images/spanish-guitar.jpg",
-    introImageAlt: "Spanish guitar and live flamenco performance on stage in Barcelona",
-    reasonsHeading: "How We Select Our Featured Flamenco Shows",
-    reasonsSubheading: "Every tablao listed on this site is screened against four strict criteria before it earns a spot.",
+      "We built this portal to provide transparent price comparisons, park itineraries, and crowd calendars so you can book official e-tickets with confidence.",
+    introImage: "/images/disneyland-paris-park.jpg",
+    introImageAlt: "Main Street theme park entrance at Disneyland Park",
+    reasonsHeading: "How We Select Our Featured Ticket Passes",
+    reasonsSubheading: "Every ticket option featured on this site is screened against strict standards before it earns a spot.",
     disclosureHeading: "A Note on How We Earn",
     disclosureBody:
-      "When you book a Barcelona flamenco show through a link on this site, we may earn a small affiliate commission from the ticketing partner at no extra cost to you. This is how we keep the site free and independently maintained without banner ads.",
-    ctaText: "Ready to reserve your Barcelona flamenco tickets?",
-    ctaButtonLabel: "Compare Barcelona Flamenco Shows",
-    metaTitle: "About Us | Barcelona Flamenco Show Guide & Tickets",
+      "When you purchase Disneyland Paris tickets through referral links on our site, we may receive an affiliate commission from our booking partner at no extra cost to you. This supports our ongoing operation.",
+    ctaText: "Ready to reserve your Disneyland Paris tickets?",
+    ctaButtonLabel: "Compare Disneyland Paris Tickets",
+    metaTitle: "About Us | Disneyland Paris Tickets Guide",
     metaDescription:
-      "Who curates our Barcelona flamenco show recommendations, how we select authentic tablaos, and why booking ahead guarantees prime seating.",
+      "Learn about our independent Disneyland Paris ticket guide, how we compare official park passes, and tips for booking.",
   };
-  // The live About page (app/about/page.tsx, via lib/about.ts's getAboutPage)
-  // only reads a single `content` HTML column now — the granular intro_*/
-  // reasons_*/disclosure_* columns above are legacy and unused by current
-  // code, kept only so older rows don't break. Without this, a fresh
-  // database seed would leave about_page.content empty (its NOT NULL
-  // DEFAULT '' — not NULL, so lib/about.ts's `??` fallback never kicks in)
-  // and the About page would render with no body copy at all.
   const content = `<h2>Our Mission</h2>
 <p>${a.introParagraph1}</p>
 <p>${a.introParagraph2}</p>
@@ -568,25 +561,25 @@ async function seedContactPage() {
     return;
   }
   const reasons = [
-    { icon: "HeadsetIcon", title: "Booking Advice", body: "Need advice on whether to choose an intimate tablao like Cordobes, a historic theater like City Hall, or a dinner show at Tablao de Carmen? Ask us before you book." },
-    { icon: "BriefcaseIcon", title: "Partnerships & Press", body: "Flamenco tablaos, cultural venues, tourism organizations, and affiliate partners — contact us regarding features or collaborations." },
-    { icon: "MailIcon", title: "General Inquiries", body: "Questions, feedback, or content corrections regarding our Barcelona flamenco guides." },
+    { icon: "HeadsetIcon", title: "Ticket & Visit Advice", body: "Need help deciding between a 1-Day Dated ticket, Multi-Day Pass, or Express Shuttle package? Contact our travel team before you book." },
+    { icon: "BriefcaseIcon", title: "Partnerships & Media", body: "Tour operators, travel agencies, and media partners — reach out regarding features, travel collaborations, or affiliate partnerships." },
+    { icon: "MailIcon", title: "General Inquiries", body: "Questions, feedback, or content suggestions regarding our Disneyland Paris ticket guides." },
   ];
   const c = {
-    heroEyebrow: "Contact",
+    heroEyebrow: "Contact Us",
     heroHeading: "Get in Touch",
     heroSubheading:
-      "Questions about a Barcelona flamenco show, tickets, or venue options — or a partnership inquiry? Reach out directly by email.",
+      "Questions about Disneyland Paris tickets, 2-Park Hopper options, Paris shuttle transfers, or partner inquiries? Send us a message.",
     email: "livetravelpartner@gmail.com",
-    emailNote: "We typically reply within 1–2 business days.",
-    reasonsHeading: "What we can help with",
+    emailNote: "We respond within 1–2 business days.",
+    reasonsHeading: "How we can assist you",
     footerNote:
-      "Already have a booking voucher? Please contact the ticketing provider or venue directly via the details on your confirmation email for immediate schedule adjustments or cancellations.",
-    ctaHeading: "Ready to reserve your seats?",
-    ctaButtonLabel: "Compare Barcelona Flamenco Shows & Tickets",
-    metaTitle: "Contact Us | Barcelona Flamenco Show Guide",
+      "Already purchased your ticket voucher? Please refer directly to the contact information on your email voucher for immediate order modifications or cancellations.",
+    ctaHeading: "Ready to reserve your park tickets?",
+    ctaButtonLabel: "Compare Disneyland Paris Tickets",
+    metaTitle: "Contact Us | Disneyland Paris Tickets Guide",
     metaDescription:
-      "Questions about booking an authentic Barcelona flamenco show, dinner package, or tickets online? Reach out directly to our team.",
+      "Have questions about Disneyland Paris ticket options, e-delivery, or trip planning? Reach out directly to our team.",
   };
   await sql`
     INSERT INTO contact_page (
@@ -617,7 +610,7 @@ async function main() {
   await seedSiteSettings();
   await seedAboutPage();
   await seedContactPage();
-  console.log("\nDone. Barcelona Flamenco Show database is ready.");
+  console.log("\nDone. Disneyland Paris Tickets database is ready.");
 }
 
 main()

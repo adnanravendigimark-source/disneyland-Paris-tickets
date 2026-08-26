@@ -8,62 +8,62 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Disneyland Paris exact color palette
+        disney: {
+          midnight: "#102A5C",  // Midnight Royal Blue ⭐ (Primary brand, buttons, footer)
+          navy: "#172F6B",      // Royal Navy (Hero overlays, headings, dark sections)
+          pink: "#E94B83",      // Magic Pink ⭐ (Main CTA, highlights, prices)
+          lavender: "#DCD8F2",  // Fairytale Lavender (Soft sections, cards, backgrounds)
+          gold: "#D6A84F",      // Champagne Gold (Premium accents, icons, decorative elements)
+          cream: "#FCF8F1",     // Cloud Cream (Main background)
+          sky: "#DCEAF7",       // Soft Sky Blue (Hero/light sections)
+          charcoal: "#252A35",  // Charcoal (Body text)
+          white: "#FFFFFF",     // White
+        },
         stone: {
-          50: "#fafaf9",
+          50: "#FCF8F1",
           100: "#f5f5f4",
-          900: "#18181b",
+          900: "#252A35",
         },
         gold: {
-          300: "#fcd34d",
-          400: "#fbbf24",
-          500: "#f59e0b",
-          600: "#d97706",
-          700: "#b45309",
+          300: "#e6c37c",
+          400: "#D6A84F",
+          500: "#d69e2e",
+          600: "#b7791f",
+          700: "#975a16",
         },
-        flamenco: {
-          red: "rgb(var(--color-canal-primary) / <alpha-value>)",
-          gold: "rgb(var(--color-canal-blue) / <alpha-value>)",
-          rose: "rgb(var(--color-gold-400) / <alpha-value>)",
-          ink: "rgb(var(--color-canal-ink) / <alpha-value>)",
-          crimson: "#c9182b",
-          amber: "#f59e0b",
-          ruby: "#e11d48",
-          charcoal: "#121216",
-          wine: "#881337",
-          garnet: "#991b1b",
-        },
-        // Mapping canal.* to flamenco brand CSS variables for runtime admin color customization
+        // Mapping the canal namespace classes to runtime CSS variables & theme colors
         canal: {
           blue: "rgb(var(--color-canal-blue) / <alpha-value>)",
           primary: "rgb(var(--color-canal-primary) / <alpha-value>)",
-          orange: "rgb(var(--color-canal-primary) / <alpha-value>)",
+          orange: "#E94B83",
           ink: "rgb(var(--color-canal-ink) / <alpha-value>)",
-          navy: "#121216",
-          azure: "#f59e0b",
-          royal: "#c9182b",
-          sapphire: "#991b1b",
+          navy: "#102A5C",
+          azure: "#D6A84F",
+          royal: "#E94B83",
+          sapphire: "#172F6B",
         },
       },
       fontFamily: {
         serif: ["var(--font-serif)", "Playfair Display", "Georgia", "serif"],
-        display: ["var(--font-serif)", "var(--font-display)", "Georgia", "serif"],
+        display: ["var(--font-display)", "Outfit", "Plus Jakarta Sans", "sans-serif"],
         body: ["var(--font-body)", "Plus Jakarta Sans", "system-ui", "sans-serif"],
       },
       backgroundImage: {
         mosaic:
-          "radial-gradient(circle at 15% 25%, rgba(201,24,43,0.35) 0, transparent 45%), radial-gradient(circle at 85% 15%, rgba(245,158,11,0.25) 0, transparent 45%), radial-gradient(circle at 50% 85%, rgba(18,18,22,0.65) 0, transparent 50%)",
-        "flamenco-gradient":
-          "linear-gradient(135deg, #c9182b 0%, #e11d48 50%, #ea580c 100%)",
-        "flamenco-hover":
-          "linear-gradient(135deg, #b91c1c 0%, #be123c 50%, #c2410c 100%)",
+          "radial-gradient(circle at 15% 25%, rgba(16,42,92,0.35) 0, transparent 45%), radial-gradient(circle at 85% 15%, rgba(233,75,131,0.25) 0, transparent 45%), radial-gradient(circle at 50% 85%, rgba(214,168,79,0.2) 0, transparent 50%)",
+        "disney-gradient":
+          "linear-gradient(135deg, #102A5C 0%, #172F6B 50%, #E94B83 100%)",
+        "disney-pink-gradient":
+          "linear-gradient(135deg, #E94B83 0%, #d93d74 100%)",
         "gold-gradient":
-          "linear-gradient(135deg, #f59e0b 0%, #fbbf24 50%, #d97706 100%)",
+          "linear-gradient(135deg, #D6A84F 0%, #e6c37c 50%, #b7791f 100%)",
       },
       boxShadow: {
-        glow: "0 0 35px -5px rgba(201, 24, 43, 0.40)",
-        "red-glow": "0 0 35px -5px rgba(201, 24, 43, 0.45)",
-        "gold-glow": "0 0 35px -5px rgba(245, 158, 11, 0.40)",
-        "btn-glow": "0 10px 25px -5px rgba(201, 24, 43, 0.35)",
+        glow: "0 0 35px -5px rgba(233, 75, 131, 0.40)",
+        "red-glow": "0 0 35px -5px rgba(16, 42, 92, 0.45)",
+        "gold-glow": "0 0 35px -5px rgba(214, 168, 79, 0.40)",
+        "btn-glow": "0 10px 25px -5px rgba(233, 75, 131, 0.35)",
       },
     },
   },

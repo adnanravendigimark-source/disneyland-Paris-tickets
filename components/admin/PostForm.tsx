@@ -238,7 +238,7 @@ export default function PostForm({
                   value={post.title}
                   onChange={(e) => updateTitle(e.target.value)}
                   className={inputClass}
-                  placeholder="e.g. Best Flamenco Shows in Barcelona"
+                  placeholder="e.g. Disneyland Paris Tickets Guide"
                 />
               </Field>
 
@@ -261,7 +261,7 @@ export default function PostForm({
                       update("slug", slugify(e.target.value));
                     }}
                     className={`${inputClass} ${slugChanged ? "border-amber-400 bg-amber-50" : ""}`}
-                    placeholder="best-flamenco-shows-in-barcelona"
+                    placeholder="disneyland-paris-tickets-complete-guide"
                   />
                 </Field>
                 <Field label="Category">
@@ -270,7 +270,7 @@ export default function PostForm({
                     value={post.category}
                     onChange={(e) => update("category", e.target.value)}
                     className={inputClass}
-                    placeholder="e.g. Trip Planning"
+                    placeholder="e.g. Ticket Guide"
                   />
                 </Field>
               </div>
@@ -291,17 +291,17 @@ export default function PostForm({
                     value={post.readTime}
                     onChange={(e) => update("readTime", e.target.value)}
                     className={inputClass}
-                    placeholder="e.g. 4 min read"
+                    placeholder="e.g. 5 min read"
                   />
                 </Field>
               </div>
 
-              <Field label="Author" hint='Shown as the byline on the article ("By <name>"). Format: "Name / Role", e.g. "Elena Marquez / Barcelona Culture Specialist".'>
+              <Field label="Author" hint='Shown as the byline on the article ("By <name>"). Format: "Name / Role", e.g. "Claire Dubois / Paris Travel Specialist".'>
                 <input
                   value={post.author}
                   onChange={(e) => update("author", e.target.value)}
                   className={inputClass}
-                  placeholder="e.g. Elena Marquez / Barcelona Culture Specialist"
+                  placeholder="e.g. Claire Dubois / Paris Travel Specialist"
                 />
               </Field>
 
@@ -439,7 +439,7 @@ export default function PostForm({
                   value={post.focusKeyword}
                   onChange={(e) => update("focusKeyword", e.target.value)}
                   className={inputClass}
-                  placeholder="e.g. Barcelona Flamenco Show"
+                  placeholder="e.g. Disneyland Paris Tickets"
                 />
               </Field>
               {focusChecklist && (

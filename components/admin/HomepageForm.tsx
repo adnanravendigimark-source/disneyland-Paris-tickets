@@ -408,7 +408,7 @@ export default function HomepageForm({ initial, tours }: { initial: HomepageCont
 
           <SectionCard
             id="sec-highlights"
-            title="Barcelona Flamenco Highlights section"
+            title="Disneyland Paris Highlights section"
             description="The dark trust/highlights band right below the hero."
             open={!!openSections["sec-highlights"]}
             onToggle={() => toggleSection("sec-highlights")}
@@ -511,7 +511,7 @@ export default function HomepageForm({ initial, tours }: { initial: HomepageCont
             <Field label="Small note under the bullets">
               <textarea rows={2} value={content.sections.why.note} onChange={(e) => updateWhy({ note: e.target.value })} className={inputClass} />
             </Field>
-            <Field label="Optional 3rd list heading" hint="Leave blank and empty to hide this block entirely — e.g. a “Where the top tablaos are located” list.">
+            <Field label="Optional 3rd list heading" hint="Leave blank and empty to hide this block entirely — e.g. a “Which park to visit first” list.">
               <input value={content.sections.why.extraHeading} onChange={(e) => updateWhy({ extraHeading: e.target.value })} className={inputClass} />
             </Field>
             <Field label="Optional 3rd list items">
@@ -646,7 +646,7 @@ export default function HomepageForm({ initial, tours }: { initial: HomepageCont
               <RichTextEditor value={content.sections.price.subheading} onChange={(html) => updatePrice({ subheading: html })} minHeight="4rem" />
             </Field>
             <div className="grid gap-5 sm:grid-cols-2">
-              <Field label="Column: item name" hint='e.g. "Flamenco Venue & Show"'>
+              <Field label="Column: item name" hint='e.g. "Ticket Type"'>
                 <input value={content.sections.price.itemLabel} onChange={(e) => updatePrice({ itemLabel: e.target.value })} className={inputClass} />
               </Field>
               <Field label="Column: price" hint='e.g. "Price"'>
@@ -998,7 +998,7 @@ export default function HomepageForm({ initial, tours }: { initial: HomepageCont
                 )}
               </div>
               <div className="bg-stone-50 p-3">
-                <p className="truncate text-xs uppercase tracking-wide text-stone-400">barcelonaflamencoshows.com</p>
+                <p className="truncate text-xs uppercase tracking-wide text-stone-400">disneylandparistickets.org</p>
                 <p className="mt-0.5 truncate text-sm font-semibold text-stone-900">{content.ogTitle || content.metaTitle || content.heroHeading}</p>
                 <p className="mt-0.5 line-clamp-2 text-xs text-stone-500">{(content.ogDescription || content.metaDescription || content.heroSubheading).replace(/<[^>]+>/g, "")}</p>
               </div>
@@ -1043,7 +1043,7 @@ export default function HomepageForm({ initial, tours }: { initial: HomepageCont
             />
           </SectionCard>
 
-          <SectionCard title="Dinner & Flamenco photos">
+          <SectionCard title="Park & Attraction photos">
             <RepeatableList<GalleryImage>
               items={content.sections.tower.images}
               onChange={(images) => updateTower({ images })}
@@ -1068,7 +1068,7 @@ export default function HomepageForm({ initial, tours }: { initial: HomepageCont
         <div className="space-y-5">
           <SectionCard title="Focus keyword" description="The main phrase you want the homepage to rank for. Purely a writing aid — nothing here is sent to Google.">
             <Field label="Focus keyword">
-              <input value={content.focusKeyword} onChange={(e) => update("focusKeyword", e.target.value)} className={inputClass} placeholder="e.g. Barcelona Flamenco Show" />
+              <input value={content.focusKeyword} onChange={(e) => update("focusKeyword", e.target.value)} className={inputClass} placeholder="e.g. Disneyland Paris Tickets" />
             </Field>
             {focusChecklist && (
               <ul className="space-y-1.5 rounded-xl border border-stone-200 bg-stone-50 p-4 text-sm">

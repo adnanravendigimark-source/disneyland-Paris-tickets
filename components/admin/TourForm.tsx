@@ -109,7 +109,7 @@ export default function TourForm({
             value={tour.id}
             onChange={(e) => update("id", e.target.value)}
             className={`${inputClass} ${!isNew ? "bg-stone-100 text-stone-500" : ""}`}
-            placeholder="e.g. tablao-cordobes-barcelona-flamenco-show"
+            placeholder="e.g. disneyland-paris-dated-1-day-ticket"
           />
         </div>
         <div>
@@ -295,7 +295,7 @@ export default function TourForm({
           value={tour.priceTableFeature || ""}
           onChange={(e) => update("priceTableFeature", e.target.value)}
           className={inputClass}
-          placeholder="e.g. Tapas & Sangria"
+          placeholder="e.g. Lunch at a Park Restaurant"
         />
         <p className="mt-1 text-xs text-stone-500">
           Shown in the homepage price-comparison table's "Drinks / Dinner" column for this tour. Leave

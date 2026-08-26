@@ -12,7 +12,7 @@ export default function TableOfContents({
 
   return (
     <div className="mt-8 rounded-2xl border border-red-200/80 bg-gradient-to-br from-red-50/60 via-amber-50/30 to-white p-6 shadow-sm">
-      <p className="text-xs font-bold uppercase tracking-widest text-red-600"> flamenco • {label}</p>
+      <p className="text-xs font-bold uppercase tracking-widest text-red-600">{label}</p>
       <ul className="mt-3.5 space-y-2.5 text-sm">
         {sections.map((item) => (
           <li key={item.id}>
