@@ -16,13 +16,13 @@ export default async function Hero() {
           {/* High-resolution castle photography positioned on the right */}
           <div className="relative h-full w-full">
             <Image
-              src="/images/disneyland-paris-hero.jpg"
-              alt="Disneyland Paris Sleeping Beauty Castle at sunset with fireworks"
+              src="/images/disneyland-paris-fireworks.jpg"
+              alt="Fireworks over Disneyland Paris Sleeping Beauty Castle at sunset"
               fill
               priority
               quality={95}
               sizes="100vw"
-              className="object-cover object-[70%_center] lg:object-[80%_center]"
+              className="object-cover object-[75%_center] lg:object-[85%_center]"
             />
           </div>
 
@@ -57,10 +57,9 @@ export default async function Hero() {
               Step into a world of magic, adventure and unforgettable memories!
             </p>
 
-            {/* Checklist with pink badges (NO 'Official Tickets') */}
+            {/* Checklist with pink badges */}
             <div className="mt-5 space-y-2.5">
               {[
-                "Official Tickets",
                 "Best Price Guarantee",
                 "Instant Confirmation",
               ].map((item) => (
@@ -149,7 +148,7 @@ export default async function Hero() {
               </div>
             </div>
 
-            {/* Feature 2: Guaranteed Entry (removed 'Official Tickets') */}
+            {/* Feature 2: Guaranteed Entry */}
             <div className="flex items-center gap-3.5 p-2">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#E94B83]/10 text-[#E94B83]">
                 <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" stroke="currentColor" strokeWidth="1.8">
@@ -157,8 +156,8 @@ export default async function Hero() {
                 </svg>
               </div>
               <div>
-                <p className="font-display text-sm font-bold text-[#102A5C]">Official Tickets</p>
-                <p className="text-xs text-stone-600">100% official and trusted partner</p>
+                <p className="font-display text-sm font-bold text-[#102A5C]">Guaranteed Entry</p>
+                <p className="text-xs text-stone-600">Direct gate access & trusted partner</p>
               </div>
             </div>
 
