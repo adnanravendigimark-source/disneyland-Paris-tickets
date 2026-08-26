@@ -50,7 +50,7 @@ export default async function AboutPage() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-canal-navy via-canal-navy/80 to-transparent" />
           </div>
-          <div className="relative mx-auto max-w-6xl px-4 py-16 text-center sm:px-6 sm:py-20">
+          <div className="relative mx-auto max-w-6xl px-4 pt-24 pb-16 text-center sm:px-6 sm:pt-28 sm:pb-20">
             <nav aria-label="Breadcrumb" className="text-xs font-medium text-stone-200/70">
               <ol className="flex items-center justify-center gap-1.5">
                 <li>

@@ -52,7 +52,7 @@ function formatDate(iso: string) {
 
 function getAuthorParts(author: string) {
   const [namePart, rolePart] = (author || "").split("/").map((s) => s.trim());
-  const name = namePart || "Barcelona Flamenco Show";
+  const name = namePart || "Disneyland Paris Tickets";
   const role = rolePart || "";
   const initials =
     name
@@ -62,7 +62,7 @@ function getAuthorParts(author: string) {
       .map((w) => w[0])
       .join("")
       .slice(0, 2)
-      .toUpperCase() || "BF";
+      .toUpperCase() || "DP";
   return { name, role, initials };
 }
 
@@ -88,8 +88,8 @@ export default async function Post({ params }: { params: { slug: string } }) {
     datePublished: post.date,
     dateModified: post.updatedAt || post.date,
     url: `${SITE_URL}/blog/${post.slug}`,
-    authorName: post.author || "Barcelona Flamenco Show",
-    siteName: "Barcelona Flamenco Show",
+    authorName: post.author || "Disneyland Paris Tickets",
+    siteName: "Disneyland Paris Tickets",
   });
 
   const { toc: headingToc, html: contentHtml } = extractTableOfContents(post.content);
@@ -103,7 +103,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
     <>
       <Header />
       <main className="min-h-screen bg-stone-50">
-        <div className="mx-auto max-w-6xl px-4 pt-6 sm:px-6">
+        <div className="mx-auto max-w-6xl px-4 pt-24 sm:px-6 sm:pt-28">
           {/* Breadcrumbs */}
           <nav aria-label="Breadcrumb" className="text-xs font-medium text-slate-500">
             <ol className="flex flex-wrap items-center gap-1.5">

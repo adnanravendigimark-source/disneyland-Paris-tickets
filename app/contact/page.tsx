@@ -31,7 +31,7 @@ export default async function ContactPage() {
   return (
     <>
       <Header />
-      <main className="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-24">
+      <main className="mx-auto max-w-3xl px-4 pt-24 pb-16 sm:px-6 sm:pt-28 sm:pb-24">
         <div className="text-center">
           <span className="inline-block rounded-md bg-blue-50 border border-blue-200/80 px-3 py-1 text-xs font-bold uppercase tracking-wider text-blue-600">
             {contact.heroEyebrow}

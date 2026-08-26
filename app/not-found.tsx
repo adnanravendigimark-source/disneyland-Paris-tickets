@@ -12,7 +12,7 @@ export default async function NotFound() {
   return (
     <>
       <Header />
-      <main className="mx-auto flex min-h-[60vh] max-w-2xl flex-col items-center justify-center px-4 py-20 text-center sm:px-6">
+      <main className="mx-auto flex min-h-[60vh] max-w-2xl flex-col items-center justify-center px-4 pt-24 pb-20 text-center sm:px-6">
         <p className="font-display text-7xl font-black text-blue-600">404</p>
         <h1 className="mt-4 font-display text-2xl font-bold text-slate-900 sm:text-3xl">
           {s.heading}
