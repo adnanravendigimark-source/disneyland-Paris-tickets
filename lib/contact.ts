@@ -34,7 +34,7 @@ const DEFAULT_CONTACT: ContactPageContent = {
   heroSubheading:
     "Questions about Disneyland Paris tickets, 2-Park Hopper options, Paris shuttle transfers, or partner inquiries? Send us a message.",
   email: "livetravelpartner@gmail.com",
-  emailLabel: "Email Support Directly",
+  emailLabel: "Email Us Directly",
   emailNote: "We respond within 1–2 business days.",
   reasonsHeading: "How we can assist you",
   reasons: [

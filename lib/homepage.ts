@@ -193,8 +193,6 @@ export interface HomepageContent {
   heroSubheading: string;
   heroImage: string;
   heroImageAlt: string;
-  heroVideo: string;
-  heroGallery: GalleryImage[];
   heroCtaPrimaryText: string;
   heroCtaPrimaryHref: string;
   heroCtaSecondaryText: string;
@@ -227,12 +225,9 @@ export const DEFAULT_HEADER: HeaderContent = {
   bookNowText: "BOOK TICKETS",
   navLinks: [
     { label: "Home", href: "/" },
-    { label: "Tickets", href: "/#tours" },
-    { label: "Parks & Attractions", href: "/#highlights" },
-    { label: "Plan Your Visit", href: "/#practical" },
-    { label: "Offers", href: "/#prices" },
     { label: "Blog", href: "/blog" },
     { label: "About Us", href: "/about" },
+    { label: "Contact", href: "/contact" },
   ],
   ctaText: "BOOK TICKETS",
   ctaHref: "/#tours",
@@ -275,29 +270,6 @@ export const DEFAULT_THEME: ThemeColors = {
   dark: "#5B2BA8",      // Darkened Magic Purple (hover state)
   accent: "#F04483",    // Pink
 };
-
-export const DEFAULT_GALLERY: GalleryImage[] = [
-  {
-    src: "/images/disneyland-paris-castle.jpg",
-    alt: "Sleeping Beauty Castle at Disneyland Paris under bright blue sky",
-    label: "Sleeping Beauty Castle",
-  },
-  {
-    src: "/images/disneyland-paris-park.jpg",
-    alt: "Main Street theme park entrance at Disneyland Park",
-    label: "Disneyland Park",
-  },
-  {
-    src: "/images/disneyland-paris-fireworks.jpg",
-    alt: "Illuminations fireworks and light show over castle at night",
-    label: "Nighttime Fireworks",
-  },
-  {
-    src: "/images/disneyland-paris-studios.jpg",
-    alt: "Walt Disney Studios Park entrance and studio lot",
-    label: "Walt Disney Studios",
-  },
-];
 
 export const DEFAULT_SECTIONS: HomepageSections = {
   tours: {
@@ -483,8 +455,6 @@ const DEFAULT_HOMEPAGE_CONTENT: HomepageContent = {
     "Book official Disneyland Paris tickets online with instant e-delivery, best price guarantee, and 2-Park Hopper entry. Experience magical rides, spectacular shows, and unforgettable moments.",
   heroImage: "/images/disneyland-castle-hero.png",
   heroImageAlt: "Disneyland Paris castle with fireworks",
-  heroVideo: "",
-  heroGallery: DEFAULT_GALLERY,
   heroCtaPrimaryText: "Explore Tickets",
   heroCtaPrimaryHref: "#tours",
   heroCtaSecondaryText: "See Ticket Prices",
@@ -548,11 +518,6 @@ function rowToHomepage(row: any): HomepageContent {
     heroSubheading: row.hero_subheading || DEFAULT_HOMEPAGE_CONTENT.heroSubheading,
     heroImage: row.hero_image || DEFAULT_HOMEPAGE_CONTENT.heroImage,
     heroImageAlt: row.hero_image_alt || DEFAULT_HOMEPAGE_CONTENT.heroImageAlt,
-    heroVideo: row.hero_video || "",
-    heroGallery: (() => {
-      const g = parseReasons(row.hero_gallery);
-      return g.length ? (g as unknown as GalleryImage[]) : DEFAULT_GALLERY;
-    })(),
     heroCtaPrimaryText: row.hero_cta_primary_text || DEFAULT_HOMEPAGE_CONTENT.heroCtaPrimaryText,
     heroCtaPrimaryHref: row.hero_cta_primary_href || DEFAULT_HOMEPAGE_CONTENT.heroCtaPrimaryHref,
     heroCtaSecondaryText: row.hero_cta_secondary_text || DEFAULT_HOMEPAGE_CONTENT.heroCtaSecondaryText,
@@ -626,8 +591,6 @@ export async function saveHomepageCopy(data: {
   heroSubheading: string;
   heroImage: string;
   heroImageAlt: string;
-  heroVideo: string;
-  heroGallery: GalleryImage[];
   heroCtaPrimaryText: string;
   heroCtaPrimaryHref: string;
   heroCtaSecondaryText: string;
@@ -643,13 +606,13 @@ export async function saveHomepageCopy(data: {
   await sql`
     INSERT INTO homepage (
       id, hero_badge, hero_heading, hero_subheading, hero_image, hero_image_alt,
-      hero_video, hero_gallery, hero_cta_primary_text, hero_cta_primary_href,
+      hero_cta_primary_text, hero_cta_primary_href,
       hero_cta_secondary_text, hero_cta_secondary_href,
       meta_title, meta_description, focus_keyword,
       canonical_url, og_title, og_description, og_image
     ) VALUES (
       1, ${data.heroBadge}, ${data.heroHeading}, ${data.heroSubheading}, ${data.heroImage},
-      ${data.heroImageAlt}, ${data.heroVideo || ""}, ${JSON.stringify(data.heroGallery || [])}::jsonb,
+      ${data.heroImageAlt},
       ${data.heroCtaPrimaryText || ""}, ${data.heroCtaPrimaryHref || ""},
       ${data.heroCtaSecondaryText || ""}, ${data.heroCtaSecondaryHref || ""},
       ${data.metaTitle || ""}, ${data.metaDescription || ""}, ${data.focusKeyword || ""},
@@ -661,8 +624,6 @@ export async function saveHomepageCopy(data: {
       hero_subheading = EXCLUDED.hero_subheading,
       hero_image = EXCLUDED.hero_image,
       hero_image_alt = EXCLUDED.hero_image_alt,
-      hero_video = EXCLUDED.hero_video,
-      hero_gallery = EXCLUDED.hero_gallery,
       hero_cta_primary_text = EXCLUDED.hero_cta_primary_text,
       hero_cta_primary_href = EXCLUDED.hero_cta_primary_href,
       hero_cta_secondary_text = EXCLUDED.hero_cta_secondary_text,

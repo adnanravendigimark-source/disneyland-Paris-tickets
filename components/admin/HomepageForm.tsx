@@ -4,7 +4,6 @@ import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import ImageUploadField from "./ImageUploadField";
-import VideoUploadField from "./VideoUploadField";
 import RichTextEditor from "./RichTextEditor";
 import RepeatableList from "./RepeatableList";
 import SeoPreview from "./SeoPreview";
@@ -1017,30 +1016,11 @@ export default function HomepageForm({ initial, tours }: { initial: HomepageCont
             </Field>
           </SectionCard>
 
-          <SectionCard title="Hero photo" description="The video below is optional — when set, it plays instead of the photo. The photo is still used as the video's poster frame while it loads, and for social share previews either way.">
+          <SectionCard title="Hero photo">
             <ImageUploadField label="Hero background photo" value={content.heroImage} onChange={(url) => update("heroImage", url)} aspectRatio={16 / 9} />
             <Field label="Hero photo alt text">
               <input value={content.heroImageAlt} onChange={(e) => update("heroImageAlt", e.target.value)} className={inputClass} />
             </Field>
-            <VideoUploadField label="Hero background video (optional)" value={content.heroVideo} onChange={(url) => update("heroVideo", url)} />
-          </SectionCard>
-
-          <SectionCard title="Hero photo strip" description="The 4 small photos under the hero buttons.">
-            <RepeatableList<GalleryImage>
-              items={content.heroGallery}
-              onChange={(heroGallery) => update("heroGallery", heroGallery)}
-              newItem={() => ({ src: "", alt: "", label: "" })}
-              addLabel="+ Add photo"
-              renderItem={(img, upd) => (
-                <div className="space-y-2">
-                  <ImageUploadField label="Photo" value={img.src} onChange={(url) => upd({ ...img, src: url })} aspectRatio={1} />
-                  <div className="grid gap-2 sm:grid-cols-2">
-                    <input value={img.label} onChange={(e) => upd({ ...img, label: e.target.value })} placeholder="Caption shown on the photo" className={inputClass} />
-                    <input value={img.alt} onChange={(e) => upd({ ...img, alt: e.target.value })} placeholder="Alt text" className={inputClass} />
-                  </div>
-                </div>
-              )}
-            />
           </SectionCard>
 
           <SectionCard title="Park & Attraction photos">
