@@ -4,6 +4,7 @@ import "@/styles/disneyland-hero.css";
 
 export default async function Hero() {
   const content = await getHomepageContent();
+  const benefits = content.sections.heroBenefits;
 
   const headingLines = (content.heroHeading || "Your Disneyland\nParis Adventure\nStarts Here")
     .split("\n")
@@ -101,7 +102,7 @@ export default async function Hero() {
                 <path d="m9 12 2 2 4-4" />
               </svg>
             </span>
-            <span className="dlp-benefit-text">Best Price Guarantee</span>
+            <span className="dlp-benefit-text">{benefits[0] || "Best Price Guarantee"}</span>
           </div>
 
           <div className="dlp-benefit">
@@ -110,7 +111,7 @@ export default async function Hero() {
                 <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
               </svg>
             </span>
-            <span className="dlp-benefit-text">Instant Confirmation</span>
+            <span className="dlp-benefit-text">{benefits[1] || "Instant Confirmation"}</span>
           </div>
 
           <div className="dlp-benefit">
@@ -121,7 +122,7 @@ export default async function Hero() {
                 <circle cx="12" cy="16.5" r="1" fill="currentColor" />
               </svg>
             </span>
-            <span className="dlp-benefit-text">Guaranteed Entry</span>
+            <span className="dlp-benefit-text">{benefits[2] || "Guaranteed Entry"}</span>
           </div>
         </div>
       </div>

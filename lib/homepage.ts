@@ -148,6 +148,12 @@ export interface BlogPageSection {
 }
 
 export interface HomepageSections {
+  // 3 trust-badge labels shown under the hero CTA buttons ("Best Price
+  // Guarantee" / "Instant Confirmation" / "Guaranteed Entry"). Fixed at 3
+  // items -- Hero.tsx matches each by index to its own fixed icon, so only
+  // the text is admin-editable, same pattern as alhambra-tour's
+  // sections.heroFeatures.
+  heroBenefits: string[];
   tours: TourSection;
   highlights: HighlightsSection;
   why: WhySection;
@@ -272,6 +278,7 @@ export const DEFAULT_THEME: ThemeColors = {
 };
 
 export const DEFAULT_SECTIONS: HomepageSections = {
+  heroBenefits: ["Best Price Guarantee", "Instant Confirmation", "Guaranteed Entry"],
   tours: {
     eyebrow: "Park Ticket Passes",
     heading: "Disneyland Paris Tickets & Packages",
@@ -531,6 +538,14 @@ function rowToHomepage(row: any): HomepageContent {
       return r.length ? r : DEFAULT_HOMEPAGE_CONTENT.featuredReasons;
     })(),
     sections: {
+      // Array field, not an object -- object-spread merging (like every
+      // other section below) would turn it into {0: "...", 1: "...", ...}
+      // instead of leaving it a string[], so it needs its own Array.isArray
+      // check with a whole-array fallback instead.
+      heroBenefits:
+        Array.isArray(sectionsRaw.heroBenefits) && sectionsRaw.heroBenefits.length
+          ? sectionsRaw.heroBenefits
+          : DEFAULT_SECTIONS.heroBenefits,
       tours: { ...DEFAULT_SECTIONS.tours, ...sectionsRaw.tours },
       highlights: { ...DEFAULT_SECTIONS.highlights, ...sectionsRaw.highlights },
       why: { ...DEFAULT_SECTIONS.why, ...sectionsRaw.why },

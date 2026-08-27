@@ -194,6 +194,17 @@ export default function HomepageForm({ initial, tours }: { initial: HomepageCont
     setSaved(false);
   }
 
+  function updateHeroBenefit(index: number, value: string) {
+    setContent((c) => ({
+      ...c,
+      sections: {
+        ...c.sections,
+        heroBenefits: c.sections.heroBenefits.map((b, i) => (i === index ? value : b)),
+      },
+    }));
+    setSaved(false);
+  }
+
   function updateWhy(patch: Partial<HomepageContent["sections"]["why"]>) {
     setContent((c) => ({ ...c, sections: { ...c.sections, why: { ...c.sections.why, ...patch } } }));
     setSaved(false);
@@ -402,6 +413,20 @@ export default function HomepageForm({ initial, tours }: { initial: HomepageCont
               <Field label="Secondary button link">
                 <input value={content.heroCtaSecondaryHref} onChange={(e) => update("heroCtaSecondaryHref", e.target.value)} className={inputClass} />
               </Field>
+            </div>
+            <p className="mt-2 text-xs font-medium text-stone-500">
+              Trust badges (the 3-item row under the hero buttons — icons are fixed, only the text is editable)
+            </p>
+            <div className="grid gap-3 sm:grid-cols-3">
+              {content.sections.heroBenefits.map((benefit, i) => (
+                <input
+                  key={i}
+                  value={benefit}
+                  onChange={(e) => updateHeroBenefit(i, e.target.value)}
+                  placeholder="Badge text"
+                  className={inputClass}
+                />
+              ))}
             </div>
           </SectionCard>
 
