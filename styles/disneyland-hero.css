@@ -8,7 +8,7 @@
   overflow: hidden;
   display: grid;
   grid-template-columns: 52% 48%;
-  background: linear-gradient(135deg, #FFF9F3 0%, #FFF3F7 50%, #F6EAFE 100%);
+  background: #FFF8F1;
 }
 
 /* --------------------------------------------------------------------------
