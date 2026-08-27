@@ -20,9 +20,12 @@ export default async function Header() {
             href={header.ctaHref || "/#tours"}
             className="hidden items-center gap-2 rounded-xl bg-[#7137D4] hover:bg-[#5B2BA8] px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-md shadow-[#7137D4]/25 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] md:inline-flex"
           >
-            {/* Ticket / Temple Icon */}
+            {/* Ticket Icon */}
             <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4" stroke="currentColor" strokeWidth="2">
-              <path d="M4 10h16M4 14h16M4 6h16M4 18h16M7 6v12M17 6v12" strokeLinecap="round" />
+              <path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v2z" />
+              <path d="M13 5v2" strokeLinecap="round" />
+              <path d="M13 11v2" strokeLinecap="round" />
+              <path d="M13 17v2" strokeLinecap="round" />
             </svg>
             <span>{header.bookNowText || "BOOK TICKETS"}</span>
           </Link>

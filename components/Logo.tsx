@@ -8,7 +8,7 @@ export default function Logo({
   src = "",
   alt = "Disneyland Paris Tickets",
   line1 = "DISNEYLAND",
-  line2 = "PARIS",
+  line2 = "PARIS TICKETS",
 }: {
   className?: string;
   variant?: "compact" | "stacked";
@@ -20,62 +20,53 @@ export default function Logo({
 }) {
   const customSrc = src?.trim();
 
-  // Exact Golden Castle Silhouette with Circular Ring & Base Arc matching mockup
-  const goldCastleLogo = (sizeClass: string) => (
+  // Purple Castle Silhouette with Circular Ring matching exact design
+  const purpleCastleLogo = (sizeClass: string) => (
     <div className={`relative flex items-center justify-center shrink-0 ${sizeClass}`}>
       <svg
-        viewBox="0 0 60 52"
+        viewBox="0 0 60 54"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="h-full w-full drop-shadow-sm"
+        className="h-full w-full"
       >
         {/* Outer Circular Halo Ring */}
         <circle
           cx="30"
-          cy="26"
-          r="23"
-          stroke="#FFB52E"
-          strokeWidth="1.2"
-          strokeDasharray="1 0"
-          opacity="0.85"
+          cy="27"
+          r="23.5"
+          stroke="#7137D4"
+          strokeWidth="1.5"
+          opacity="0.8"
         />
 
-        {/* Base Arc Swoosh in Midnight Blue */}
-        <path
-          d="M4 46C18 41.5 42 41.5 56 46"
-          stroke="#10233F"
-          strokeWidth="2.8"
-          strokeLinecap="round"
-        />
-
-        {/* Golden Castle Spires & Silhouette */}
-        <g fill="#FFB52E">
-          {/* Main Central Tower */}
-          <path d="M28 27V12L30 5L32 12V27H28Z" />
-          <polygon points="26,13 30,3 34,13" fill="#FFB52E" />
-          <circle cx="30" cy="3" r="1" fill="#FFB52E" />
+        {/* Purple Castle Spires & Silhouette */}
+        <g fill="#7137D4">
+          {/* Main Central Spire */}
+          <path d="M28 27V12L30 4.5L32 12V27H28Z" />
+          <polygon points="26,13 30,3 34,13" fill="#7137D4" />
+          <circle cx="30" cy="3" r="1.2" fill="#7137D4" />
 
           {/* Left Turrets */}
           <path d="M19 32V19L22 11L25 19V32H19Z" />
-          <polygon points="18,19 22,10 26,19" fill="#FFB52E" />
+          <polygon points="18,19 22,10 26,19" fill="#7137D4" />
 
-          <path d="M11 36V24L14 17L17 24V36H11Z" />
-          <polygon points="10,24 14,16 18,24" fill="#FFB52E" />
+          <path d="M11 37V24L14 17L17 24V37H11Z" />
+          <polygon points="10,24 14,16 18,24" fill="#7137D4" />
 
           {/* Right Turrets */}
           <path d="M35 32V19L38 11L41 19V32H35Z" />
-          <polygon points="34,19 38,10 42,19" fill="#FFB52E" />
+          <polygon points="34,19 38,10 42,19" fill="#7137D4" />
 
-          <path d="M43 36V24L46 17L49 24V36H43Z" />
-          <polygon points="42,24 46,16 50,24" fill="#FFB52E" />
+          <path d="M43 37V24L46 17L49 24V37H43Z" />
+          <polygon points="42,24 46,16 50,24" fill="#7137D4" />
 
           {/* Castle Wall Base */}
-          <path d="M9 43V34H51V43C42 40 18 40 9 43Z" />
+          <path d="M9 44V34H51V44C42 41 18 41 9 44Z" />
 
           {/* Castle Center Archway */}
           <path
-            d="M25 43V34C25 31.2 27.2 29 30 29C32.8 29 35 31.2 35 34V43H25Z"
-            fill={theme === "dark" ? "#10233F" : "#FFF8F1"}
+            d="M26 44V35.5C26 33 27.8 31 30 31C32.2 31 34 33 34 35.5V44H26Z"
+            fill={theme === "dark" ? "#10233F" : "#FFFFFF"}
           />
         </g>
       </svg>
@@ -84,58 +75,52 @@ export default function Logo({
 
   const isDark = theme === "dark";
   const mainTextColor = isDark ? "text-white" : "text-[#10233F]";
-  const goldColor = "text-[#FFB52E]";
+  const purpleSubColor = "text-[#7137D4]";
   const pinkColor = "text-[#F04483]";
 
   if (variant === "stacked") {
     return (
-      <Link href="/" className={`inline-flex flex-col items-center gap-2 ${className}`}>
+      <Link href="/" className={`inline-flex flex-col items-center gap-1.5 ${className}`}>
         {customSrc ? (
           <span className="relative block h-20 w-[240px] sm:h-24 sm:w-[280px]">
             <Image src={customSrc} alt={alt} fill sizes="280px" className="object-contain" priority />
           </span>
         ) : (
-          goldCastleLogo("h-14 w-16 sm:h-16 sm:w-20")
+          purpleCastleLogo("h-14 w-16 sm:h-16 sm:w-20")
         )}
         <div className="text-center leading-tight flex flex-col items-center">
-          <span className={`block font-display text-2xl font-black tracking-[0.06em] uppercase ${mainTextColor}`}>
+          <span className={`block font-display text-2xl font-black tracking-[0.05em] uppercase ${mainTextColor}`}>
             {line1 || "DISNEYLAND"}
           </span>
-          <div className="flex items-center gap-1.5 mt-0.5">
-            <span className={`font-display text-sm font-bold uppercase tracking-[0.2em] ${pinkColor}`}>
-              {line2 || "PARIS"}
-            </span>
-          </div>
-          <div className="flex items-center gap-1 mt-0.5">
-            <span className="h-[1px] w-3 bg-[#FFB52E]/60" />
-            <span className={`font-display text-[10px] font-semibold uppercase tracking-[0.28em] ${goldColor}`}>
-              TICKETS
-            </span>
-            <span className="h-[1px] w-3 bg-[#FFB52E]/60" />
-          </div>
+          <span className={`font-display text-sm font-extrabold uppercase tracking-[0.16em] ${pinkColor} mt-0.5`}>
+            {line2 || "PARIS TICKETS"}
+          </span>
+          <span className={`font-display text-[9px] font-bold uppercase tracking-[0.32em] ${purpleSubColor} opacity-70 mt-0.5`}>
+            TICKETS
+          </span>
         </div>
       </Link>
     );
   }
 
   return (
-    <Link href="/" className={`group inline-flex items-center gap-2.5 sm:gap-3.5 ${className}`}>
+    <Link href="/" className={`group inline-flex items-center gap-2.5 sm:gap-3 ${className}`}>
       {customSrc ? (
         <span className="relative block h-11 w-[140px] shrink-0 overflow-hidden sm:h-12 sm:w-[155px]">
           <Image src={customSrc} alt={alt} fill priority sizes="155px" className="object-contain" />
         </span>
       ) : (
-        goldCastleLogo("h-11 w-13 sm:h-12 sm:w-14")
+        purpleCastleLogo("h-11 w-11 sm:h-12 sm:w-12")
       )}
-      <div className="flex flex-col leading-none">
-        <span className={`font-display text-[1.2rem] sm:text-[1.35rem] font-black tracking-[0.05em] uppercase leading-none ${mainTextColor} transition-colors group-hover:text-[#F04483]`}>
+      <div className="flex flex-col leading-none justify-center">
+        <span className={`font-display text-[1.18rem] sm:text-[1.3rem] font-black tracking-[0.03em] uppercase leading-tight ${mainTextColor} transition-colors group-hover:text-[#F04483]`}>
           {line1 || "DISNEYLAND"}
         </span>
-        <span className={`font-display text-[13px] sm:text-sm font-bold uppercase tracking-[0.15em] leading-tight ${pinkColor}`}>
-          {line2 || "PARIS"}
+        <span className={`font-display text-[12px] sm:text-[13px] font-extrabold uppercase tracking-[0.12em] leading-tight ${pinkColor}`}>
+          {line2 || "PARIS TICKETS"}
         </span>
-        <span className={`font-display text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.26em] leading-tight ${goldColor}`}>
-          TICKETS
+        <span className={`font-display text-[8.5px] sm:text-[9.5px] font-bold uppercase tracking-[0.28em] leading-tight ${purpleSubColor} opacity-70`}>
+          T I C K E T S
         </span>
       </div>
     </Link>

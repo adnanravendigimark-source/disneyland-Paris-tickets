@@ -1,9 +1,9 @@
 {
-  "heroBadge": "DISNEYLAND PARIS TICKETS",
-  "heroHeading": "Step Into Pure Magic & Unforgettable Adventure",
-  "heroSubheading": "Book Disneyland Paris tickets online with instant e-delivery, lowest price guarantee, and 2-Park Hopper entry. Discover Sleeping Beauty Castle, thrill rides, and nighttime fireworks.",
-  "heroImage": "/images/disneyland-paris-hero.jpg",
-  "heroImageAlt": "Disneyland Paris fairytale castle at sunset with fireworks illumination and magical atmosphere",
+  "heroBadge": "OFFICIAL TICKETS, UNFORGETTABLE MEMORIES",
+  "heroHeading": "Your Disneyland\nParis Adventure\nStarts Here",
+  "heroSubheading": "Book official Disneyland Paris tickets online with instant e-delivery, best price guarantee, and 2-Park Hopper entry. Experience magical rides, spectacular shows, and unforgettable moments.",
+  "heroImage": "/images/disneyland-castle-hero.png",
+  "heroImageAlt": "Disneyland Paris castle with fireworks",
   "heroCtaPrimaryText": "Explore Tickets",
   "heroCtaPrimaryHref": "#tours",
   "heroCtaSecondaryText": "See Ticket Prices",
@@ -15,8 +15,8 @@
   "featuredBadgeLabel": "Best Value 1-Day Ticket",
   "featuredUrgencyText": "High Demand · Instant E-Ticket Confirmation",
   "featuredReasons": [
-    "92,000+ verified reviews — rated 4.9 / 5 by park visitors",
-    "Digital e-tickets delivered instantly to your smartphone",
+    "92,000+ verified customer reviews — rated 4.9 / 5",
+    "Official e-tickets delivered instantly to your smartphone",
     "Choice of 1-Park or 2-Park Hopper flexibility with best price guarantee"
   ]
 }
