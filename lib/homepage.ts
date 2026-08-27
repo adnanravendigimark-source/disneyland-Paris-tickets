@@ -481,8 +481,8 @@ const DEFAULT_HOMEPAGE_CONTENT: HomepageContent = {
   heroHeading: "Your Disneyland\nParis Adventure\nStarts Here",
   heroSubheading:
     "Book official Disneyland Paris tickets online with instant e-delivery, best price guarantee, and 2-Park Hopper entry. Experience magical rides, spectacular shows, and unforgettable moments.",
-  heroImage: "/images/disneyland-paris-hero.jpg",
-  heroImageAlt: "Disneyland Paris fairytale castle at sunset with fireworks illumination and magical atmosphere",
+  heroImage: "/images/disneyland-castle-hero.png",
+  heroImageAlt: "Disneyland Paris castle with fireworks",
   heroVideo: "",
   heroGallery: DEFAULT_GALLERY,
   heroCtaPrimaryText: "Explore Tickets",

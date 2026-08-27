@@ -1,0 +1,293 @@
+/* Hero section styling — ported directly from the reference implementation
+   in disneyland-paris-hero-code/nextjs/disneyland-hero.css (provided by the
+   site owner), class names prefixed with "dlp-" so they can't collide with
+   any Tailwind utility class or another component's CSS. Values are the
+   literal hex codes from that file's :root variables (--ink/--purple/
+   --pink/--cream/--muted/--lavender) inlined directly rather than kept as
+   custom properties, so they can't drift from the project's own
+   --color-regal-* variables used elsewhere.
+   ink=#10233F purple=#7137D4 pink=#F04483 cream=#FFF8F1 muted=#536071
+   lavender=#EEE7FF */
+
+.dlp-hero {
+  min-height: 88vh;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 54% 46%;
+  background: linear-gradient(120deg, #fff9f3 0%, #fff4f7 52%, #f6e9ff 100%);
+}
+.dlp-heroLeft {
+  position: relative;
+  z-index: 3;
+  padding: 112px 20px 105px 68px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.dlp-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  width: max-content;
+  padding: 11px 22px;
+  border-radius: 999px;
+  border: 1px solid #F78CB4;
+  color: #873BCB;
+  background: rgba(255, 255, 255, 0.55);
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  font-size: 14px;
+}
+.dlp-star {
+  color: #F04483;
+  font-size: 19px;
+}
+.dlp-hero h1 {
+  max-width: 760px;
+  margin: 34px 0 24px;
+  font: 800 clamp(40px, 5.1vw, 82px) / 1.06 var(--font-manrope), Manrope, sans-serif;
+  letter-spacing: -3.6px;
+  color: #10233F;
+}
+.dlp-hero h1 span {
+  background: linear-gradient(90deg, #F04483 0%, #8B3DD0 95%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.dlp-copy {
+  max-width: 680px;
+  margin: 0 0 38px;
+  color: #536071;
+  font-size: 19px;
+  line-height: 1.65;
+}
+.dlp-actions {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.dlp-btn {
+  min-height: 58px;
+  padding: 0 30px;
+  border-radius: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font: 700 15px var(--font-manrope), Manrope, sans-serif;
+  text-decoration: none;
+}
+.dlp-btn.dlp-primary {
+  color: #fff;
+  background: linear-gradient(135deg, #7137D4, #823BDD);
+  box-shadow: 0 13px 25px rgba(113, 55, 212, 0.22);
+}
+.dlp-btn.dlp-secondary {
+  color: #F04483;
+  background: #fff;
+  border: 1.5px solid #F04483;
+}
+.dlp-benefits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 36px;
+  margin-top: 42px;
+}
+.dlp-benefit {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #10233F;
+}
+.dlp-benefit span {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #EEE7FF;
+  color: #7137D4;
+  font-size: 18px;
+  border: 1px solid #dfd0ff;
+}
+
+.dlp-heroRight {
+  position: relative;
+  min-height: 780px;
+  overflow: hidden;
+  border-bottom-left-radius: 48% 24%;
+}
+.dlp-castle {
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(1.04) contrast(1.02);
+}
+.dlp-heroRight::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(255, 248, 241, 0.88) 0%, rgba(255, 248, 241, 0.34) 13%, transparent 34%);
+  pointer-events: none;
+}
+.dlp-heroRight::after {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  left: -90px;
+  top: -5%;
+  width: 185px;
+  height: 110%;
+  border-radius: 50%;
+  border-right: 1px solid rgba(240, 68, 131, 0.35);
+  pointer-events: none;
+}
+.dlp-stats {
+  position: absolute;
+  z-index: 5;
+  left: 7%;
+  right: 7%;
+  bottom: 28px;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  border-radius: 24px;
+  padding: 24px 26px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  box-shadow: 0 20px 55px rgba(35, 24, 65, 0.18);
+}
+.dlp-stat {
+  text-align: center;
+  padding: 4px 16px;
+  border-right: 1px solid #dddde4;
+}
+.dlp-stat:last-child {
+  border-right: 0;
+}
+.dlp-stat div {
+  font-size: 25px;
+  margin-bottom: 8px;
+}
+.dlp-stat strong {
+  display: block;
+  font: 700 17px var(--font-manrope), Manrope, sans-serif;
+  color: #10233F;
+}
+.dlp-stat span {
+  color: #626a77;
+  font-size: 13px;
+}
+.dlp-sparkle {
+  position: absolute;
+  z-index: 4;
+  color: #fff;
+  font-size: 30px;
+}
+.dlp-s1 {
+  left: 7%;
+  top: 13%;
+}
+.dlp-s2 {
+  left: 45%;
+  top: 29%;
+  font-size: 25px;
+}
+.dlp-s3 {
+  left: 51%;
+  bottom: 22%;
+  font-size: 20px;
+}
+.dlp-wave {
+  position: absolute;
+  z-index: 4;
+  left: -4%;
+  bottom: -65px;
+  width: 70%;
+  height: 130px;
+  border-radius: 50% 50% 0 0;
+  transform: rotate(-2deg);
+  background: linear-gradient(100deg, #9A5AE1, #F04B8C);
+}
+
+@media (max-width: 1200px) {
+  .dlp-heroLeft {
+    padding-left: 40px;
+  }
+  .dlp-hero {
+    grid-template-columns: 56% 44%;
+  }
+}
+@media (max-width: 900px) {
+  .dlp-hero {
+    display: block;
+  }
+  .dlp-heroLeft {
+    padding: 100px 25px 40px;
+  }
+  .dlp-hero h1 {
+    letter-spacing: -2.3px;
+    font-size: 54px;
+  }
+  .dlp-heroRight {
+    min-height: 620px;
+    border-radius: 0;
+  }
+  .dlp-heroRight::before {
+    background: linear-gradient(180deg, rgba(255, 248, 241, 0.2), transparent 25%);
+  }
+  .dlp-heroRight::after {
+    display: none;
+  }
+  .dlp-stats {
+    bottom: 18px;
+    left: 4%;
+    right: 4%;
+  }
+  .dlp-wave {
+    display: none;
+  }
+}
+@media (max-width: 560px) {
+  .dlp-heroLeft {
+    padding: 88px 20px 35px;
+  }
+  .dlp-hero h1 {
+    font-size: 43px;
+    line-height: 1.08;
+  }
+  .dlp-copy {
+    font-size: 16px;
+    line-height: 1.55;
+  }
+  .dlp-actions {
+    flex-direction: column;
+  }
+  .dlp-btn {
+    width: 100%;
+  }
+  .dlp-benefits {
+    gap: 14px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .dlp-heroRight {
+    min-height: 520px;
+  }
+  .dlp-stats {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 16px;
+  }
+  .dlp-stat {
+    border-right: 0;
+    border-bottom: 1px solid #dddde4;
+    padding: 9px;
+  }
+  .dlp-stat:last-child {
+    border-bottom: 0;
+  }
+}

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Outfit, Plus_Jakarta_Sans, Playfair_Display } from "next/font/google";
+import { Outfit, Plus_Jakarta_Sans, Playfair_Display, Manrope } from "next/font/google";
 import { SITE_URL, SITE_NAME } from "@/lib/site";
 import { resolveRobots } from "@/lib/seo";
 import { getSiteChrome } from "@/lib/homepage";
@@ -25,6 +25,15 @@ const bodyFont = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-body",
+});
+
+// Used by the hero section (styles/disneyland-hero.css), ported verbatim
+// from the site owner's reference design in disneyland-paris-hero-code,
+// which specifies Manrope throughout its font shorthand declarations.
+const manropeFont = Manrope({
+  subsets: ["latin"],
+  weight: ["700", "800"],
+  variable: "--font-manrope",
 });
 
 const DEFAULT_OG_IMAGE = `${SITE_URL}/images/disneyland-paris-hero.jpg`;
@@ -117,7 +126,7 @@ export default async function RootLayout({
   const themeStyle = buildThemeStyle(theme);
 
   return (
-    <html lang="en" className={`${serifFont.variable} ${displayFont.variable} ${bodyFont.variable}`}>
+    <html lang="en" className={`${serifFont.variable} ${displayFont.variable} ${bodyFont.variable} ${manropeFont.variable}`}>
       <head>
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://www.google-analytics.com" />
