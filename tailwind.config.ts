@@ -10,24 +10,24 @@ const config: Config = {
       colors: {
         // Disneyland Paris exact color palette
         disney: {
-          midnight: "#102A5C",  // Midnight Royal Blue ⭐ (Primary brand, buttons, footer)
-          navy: "#172F6B",      // Royal Navy (Hero overlays, headings, dark sections)
-          pink: "#E94B83",      // Magic Pink ⭐ (Main CTA, highlights, prices)
-          lavender: "#DCD8F2",  // Fairytale Lavender (Soft sections, cards, backgrounds)
-          gold: "#D6A84F",      // Champagne Gold (Premium accents, icons, decorative elements)
-          cream: "#FCF8F1",     // Cloud Cream (Main background)
-          sky: "#DCEAF7",       // Soft Sky Blue (Hero/light sections)
+          midnight: "#10233F",  // Midnight Royal Blue ⭐ (Primary brand, buttons, footer)
+          navy: "#5B2BA8",      // Royal Navy (Hero overlays, headings, dark sections)
+          pink: "#F04483",      // Magic Pink ⭐ (Main CTA, highlights, prices)
+          lavender: "#EEE7FF",  // Fairytale Lavender (Soft sections, cards, backgrounds)
+          gold: "#FFB52E",      // Champagne Gold (Premium accents, icons, decorative elements)
+          cream: "#FFF8F1",     // Cloud Cream (Main background)
+          sky: "#EEE7FF",       // Soft Sky Blue (Hero/light sections)
           charcoal: "#252A35",  // Charcoal (Body text)
           white: "#FFFFFF",     // White
         },
         stone: {
-          50: "#FCF8F1",
+          50: "#FFF8F1",
           100: "#f5f5f4",
           900: "#252A35",
         },
         gold: {
           300: "#e6c37c",
-          400: "#D6A84F",
+          400: "#FFB52E",
           500: "#d69e2e",
           600: "#b7791f",
           700: "#975a16",
@@ -39,12 +39,12 @@ const config: Config = {
         regal: {
           blue: "rgb(var(--color-regal-blue) / <alpha-value>)",
           primary: "rgb(var(--color-regal-primary) / <alpha-value>)",
-          orange: "#E94B83",
+          orange: "#F04483",
           ink: "rgb(var(--color-regal-ink) / <alpha-value>)",
-          navy: "#102A5C",
-          azure: "#D6A84F",
-          royal: "#E94B83",
-          sapphire: "#172F6B",
+          navy: "#10233F",
+          azure: "#FFB52E",
+          royal: "#F04483",
+          sapphire: "#5B2BA8",
         },
       },
       fontFamily: {
@@ -54,19 +54,19 @@ const config: Config = {
       },
       backgroundImage: {
         "magic-glow":
-          "radial-gradient(circle at 15% 25%, rgba(16,42,92,0.35) 0, transparent 45%), radial-gradient(circle at 85% 15%, rgba(233,75,131,0.25) 0, transparent 45%), radial-gradient(circle at 50% 85%, rgba(214,168,79,0.2) 0, transparent 50%)",
+          "radial-gradient(circle at 15% 25%, rgba(16,35,63,0.35) 0, transparent 45%), radial-gradient(circle at 85% 15%, rgba(240,68,131,0.25) 0, transparent 45%), radial-gradient(circle at 50% 85%, rgba(255,181,46,0.2) 0, transparent 50%)",
         "disney-gradient":
-          "linear-gradient(135deg, #102A5C 0%, #172F6B 50%, #E94B83 100%)",
+          "linear-gradient(135deg, #10233F 0%, #5B2BA8 50%, #F04483 100%)",
         "disney-pink-gradient":
-          "linear-gradient(135deg, #E94B83 0%, #d93d74 100%)",
+          "linear-gradient(135deg, #F04483 0%, #d93d74 100%)",
         "gold-gradient":
-          "linear-gradient(135deg, #D6A84F 0%, #e6c37c 50%, #b7791f 100%)",
+          "linear-gradient(135deg, #FFB52E 0%, #e6c37c 50%, #b7791f 100%)",
       },
       boxShadow: {
-        glow: "0 0 35px -5px rgba(233, 75, 131, 0.40)",
-        "red-glow": "0 0 35px -5px rgba(16, 42, 92, 0.45)",
-        "gold-glow": "0 0 35px -5px rgba(214, 168, 79, 0.40)",
-        "btn-glow": "0 10px 25px -5px rgba(233, 75, 131, 0.35)",
+        glow: "0 0 35px -5px rgba(240, 68, 131, 0.40)",
+        "red-glow": "0 0 35px -5px rgba(16, 35, 63, 0.45)",
+        "gold-glow": "0 0 35px -5px rgba(255, 181, 46, 0.40)",
+        "btn-glow": "0 10px 25px -5px rgba(240, 68, 131, 0.35)",
       },
     },
   },

@@ -32,9 +32,9 @@ export default async function BlogIndexPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-[#FCF8F1]">
+      <main className="min-h-screen bg-[#FFF8F1]">
         {/* Blog Hero Banner */}
-        <section className="relative overflow-hidden bg-[#102A5C] text-white">
+        <section className="relative overflow-hidden bg-[#10233F] text-white">
           <div className="absolute inset-0">
             <SafeImage
               src={heroImage || "/images/disneyland-paris-hero.jpg"}
@@ -45,27 +45,27 @@ export default async function BlogIndexPage() {
               sizes="100vw"
               className="object-cover object-center opacity-35"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#102A5C] via-[#102A5C]/80 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#10233F] via-[#10233F]/80 to-transparent" />
             <div className="absolute inset-0 bg-mosaic mix-blend-soft-light" aria-hidden="true" />
           </div>
 
           <div className="relative mx-auto max-w-6xl px-4 pt-24 pb-16 sm:px-6 sm:pt-28 sm:pb-20 text-center sm:text-left">
             {/* Breadcrumb */}
-            <nav aria-label="Breadcrumb" className="text-xs font-medium text-[#DCEAF7]/80">
+            <nav aria-label="Breadcrumb" className="text-xs font-medium text-[#EEE7FF]/80">
               <ol className="flex items-center justify-center sm:justify-start gap-1.5">
                 <li>
                   <Link href="/" className="hover:text-white transition-colors">
                     Home
                   </Link>
                 </li>
-                <li className="text-[#DCEAF7]/40">&gt;</li>
+                <li className="text-[#EEE7FF]/40">&gt;</li>
                 <li className="font-semibold text-white" aria-current="page">
                   Blog
                 </li>
               </ol>
             </nav>
 
-            <span className="mt-4 inline-block rounded-md bg-white/10 border border-white/20 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#D6A84F]">
+            <span className="mt-4 inline-block rounded-md bg-white/10 border border-white/20 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#FFB52E]">
               {s.eyebrow}
             </span>
 
@@ -76,11 +76,11 @@ export default async function BlogIndexPage() {
             {/* Decorative Divider */}
             <div className="mt-5 flex items-center justify-center sm:justify-start gap-3 max-w-xs mx-auto sm:mx-0">
               <span className="h-px flex-1 bg-white/30" />
-              <StarIcon className="h-4 w-4 text-[#D6A84F]" />
+              <StarIcon className="h-4 w-4 text-[#FFB52E]" />
               <span className="h-px flex-1 bg-white/30" />
             </div>
 
-            <p className="mt-4 max-w-lg text-xs leading-relaxed text-[#DCEAF7] sm:text-sm">
+            <p className="mt-4 max-w-lg text-xs leading-relaxed text-[#EEE7FF] sm:text-sm">
               {s.subheading}
             </p>
           </div>

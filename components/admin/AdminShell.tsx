@@ -63,7 +63,7 @@ export default function AdminShell({
               Disney navy/pink gradient badge, so all three brand marks
               (public header, admin sidebar, browser tab) match. */}
           <div className="flex items-center gap-2.5 border-b border-white/10 px-5 py-5">
-            <span className="relative flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-[#102A5C] to-[#172F6B] shadow-md text-lg">
+            <span className="relative flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-[#10233F] to-[#5B2BA8] shadow-md text-lg">
               🏰
             </span>
             <div className="min-w-0">

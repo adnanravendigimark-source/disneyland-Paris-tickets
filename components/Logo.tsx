@@ -34,7 +34,7 @@ export default function Logo({
           cx="30"
           cy="26"
           r="23"
-          stroke="#D6A84F"
+          stroke="#FFB52E"
           strokeWidth="1.2"
           strokeDasharray="1 0"
           opacity="0.85"
@@ -43,31 +43,31 @@ export default function Logo({
         {/* Base Arc Swoosh in Midnight Blue */}
         <path
           d="M4 46C18 41.5 42 41.5 56 46"
-          stroke="#102A5C"
+          stroke="#10233F"
           strokeWidth="2.8"
           strokeLinecap="round"
         />
 
         {/* Golden Castle Spires & Silhouette */}
-        <g fill="#D6A84F">
+        <g fill="#FFB52E">
           {/* Main Central Tower */}
           <path d="M28 27V12L30 5L32 12V27H28Z" />
-          <polygon points="26,13 30,3 34,13" fill="#D6A84F" />
-          <circle cx="30" cy="3" r="1" fill="#D6A84F" />
+          <polygon points="26,13 30,3 34,13" fill="#FFB52E" />
+          <circle cx="30" cy="3" r="1" fill="#FFB52E" />
 
           {/* Left Turrets */}
           <path d="M19 32V19L22 11L25 19V32H19Z" />
-          <polygon points="18,19 22,10 26,19" fill="#D6A84F" />
+          <polygon points="18,19 22,10 26,19" fill="#FFB52E" />
 
           <path d="M11 36V24L14 17L17 24V36H11Z" />
-          <polygon points="10,24 14,16 18,24" fill="#D6A84F" />
+          <polygon points="10,24 14,16 18,24" fill="#FFB52E" />
 
           {/* Right Turrets */}
           <path d="M35 32V19L38 11L41 19V32H35Z" />
-          <polygon points="34,19 38,10 42,19" fill="#D6A84F" />
+          <polygon points="34,19 38,10 42,19" fill="#FFB52E" />
 
           <path d="M43 36V24L46 17L49 24V36H43Z" />
-          <polygon points="42,24 46,16 50,24" fill="#D6A84F" />
+          <polygon points="42,24 46,16 50,24" fill="#FFB52E" />
 
           {/* Castle Wall Base */}
           <path d="M9 43V34H51V43C42 40 18 40 9 43Z" />
@@ -75,7 +75,7 @@ export default function Logo({
           {/* Castle Center Archway */}
           <path
             d="M25 43V34C25 31.2 27.2 29 30 29C32.8 29 35 31.2 35 34V43H25Z"
-            fill={theme === "dark" ? "#102A5C" : "#FCF8F1"}
+            fill={theme === "dark" ? "#10233F" : "#FFF8F1"}
           />
         </g>
       </svg>
@@ -83,9 +83,9 @@ export default function Logo({
   );
 
   const isDark = theme === "dark";
-  const mainTextColor = isDark ? "text-white" : "text-[#102A5C]";
-  const goldColor = "text-[#D6A84F]";
-  const pinkColor = "text-[#E94B83]";
+  const mainTextColor = isDark ? "text-white" : "text-[#10233F]";
+  const goldColor = "text-[#FFB52E]";
+  const pinkColor = "text-[#F04483]";
 
   if (variant === "stacked") {
     return (
@@ -107,11 +107,11 @@ export default function Logo({
             </span>
           </div>
           <div className="flex items-center gap-1 mt-0.5">
-            <span className="h-[1px] w-3 bg-[#D6A84F]/60" />
+            <span className="h-[1px] w-3 bg-[#FFB52E]/60" />
             <span className={`font-display text-[10px] font-semibold uppercase tracking-[0.28em] ${goldColor}`}>
               TICKETS
             </span>
-            <span className="h-[1px] w-3 bg-[#D6A84F]/60" />
+            <span className="h-[1px] w-3 bg-[#FFB52E]/60" />
           </div>
         </div>
       </Link>
@@ -128,7 +128,7 @@ export default function Logo({
         goldCastleLogo("h-11 w-13 sm:h-12 sm:w-14")
       )}
       <div className="flex flex-col leading-none">
-        <span className={`font-display text-[1.2rem] sm:text-[1.35rem] font-black tracking-[0.05em] uppercase leading-none ${mainTextColor} transition-colors group-hover:text-[#E94B83]`}>
+        <span className={`font-display text-[1.2rem] sm:text-[1.35rem] font-black tracking-[0.05em] uppercase leading-none ${mainTextColor} transition-colors group-hover:text-[#F04483]`}>
           {line1 || "DISNEYLAND"}
         </span>
         <span className={`font-display text-[13px] sm:text-sm font-bold uppercase tracking-[0.15em] leading-tight ${pinkColor}`}>

@@ -20,15 +20,15 @@ html {
 
 body {
   color: #252A35;
-  background-color: #FCF8F1;
+  background-color: #FFF8F1;
 }
 
 /* Disneyland Paris brand-color CSS variables — space-separated RGB triplets */
 :root {
-  --color-regal-primary: 16 42 92;      /* #102A5C - Midnight Royal Blue */
-  --color-regal-blue: 214 168 79;       /* #D6A84F - Champagne Gold */
+  --color-regal-primary: 16 35 63;      /* #10233F - Midnight Royal Blue */
+  --color-regal-blue: 255 181 46;       /* #FFB52E - Champagne Gold */
   --color-regal-ink: 37 42 53;          /* #252A35 - Charcoal */
-  --color-gold-400: 233 75 131;        /* #E94B83 - Magic Pink */
+  --color-gold-400: 240 68 131;        /* #F04483 - Magic Pink */
 }
 
 /* Shared typography for admin-entered rich text */
@@ -37,7 +37,7 @@ body {
 .rich-content h3 {
   font-family: var(--font-display), "Outfit", "Plus Jakarta Sans", sans-serif;
   font-weight: 700;
-  color: #102A5C;
+  color: #10233F;
   margin-top: 1.1em;
   margin-bottom: 0.4em;
   scroll-margin-top: 6rem;
@@ -69,13 +69,13 @@ body {
   list-style: decimal;
 }
 .rich-content a {
-  color: #E94B83;
+  color: #F04483;
   text-decoration: underline;
   text-underline-offset: 3px;
   font-weight: 600;
 }
 .rich-content a:hover {
-  color: #102A5C;
+  color: #10233F;
 }
 .rich-content a.text-white,
 .rich-content a[class*="text-white"],
@@ -90,13 +90,13 @@ body {
 }
 .rich-content strong {
   font-weight: 700;
-  color: #102A5C;
+  color: #10233F;
 }
 .rich-content img {
   max-width: 100%;
   border-radius: 1rem;
   margin: 1em 0;
-  box-shadow: 0 4px 20px rgba(16, 42, 92, 0.1);
+  box-shadow: 0 4px 20px rgba(16, 35, 63, 0.1);
 }
 .rich-content figure {
   margin: 1em 0;
@@ -127,13 +127,13 @@ body {
 }
 .rich-content table td,
 .rich-content table th {
-  border: 1px solid rgba(16, 42, 92, 0.15);
+  border: 1px solid rgba(16, 35, 63, 0.15);
   padding: 0.65em 0.85em;
   text-align: left;
 }
 .rich-content table th {
-  background: rgba(220, 234, 247, 0.5);
-  color: #102A5C;
+  background: rgba(238, 231, 255, 0.5);
+  color: #10233F;
   font-weight: 600;
 }
 
@@ -147,7 +147,7 @@ body {
   color: inherit;
 }
 .rich-content-invert a {
-  color: #D6A84F;
+  color: #FFB52E;
 }
 
 /* Tiptap's Placeholder extension */

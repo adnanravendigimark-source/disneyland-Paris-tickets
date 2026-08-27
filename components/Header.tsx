@@ -18,7 +18,7 @@ export default async function Header() {
         <div className="flex items-center gap-3">
           <Link
             href={header.ctaHref || "/#tours"}
-            className="hidden items-center gap-2 rounded-xl bg-[#102A5C] hover:bg-[#172F6B] px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-md shadow-[#102A5C]/20 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] md:inline-flex"
+            className="hidden items-center gap-2 rounded-xl bg-[#7137D4] hover:bg-[#5B2BA8] px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-md shadow-[#7137D4]/25 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] md:inline-flex"
           >
             {/* Ticket / Temple Icon */}
             <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4" stroke="currentColor" strokeWidth="2">

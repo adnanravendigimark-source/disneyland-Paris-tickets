@@ -270,10 +270,10 @@ export const DEFAULT_FOOTER: FooterContent = {
 };
 
 export const DEFAULT_THEME: ThemeColors = {
-  primary: "#102A5C",   // Midnight Royal Blue
-  secondary: "#D6A84F", // Champagne Gold
-  dark: "#172F6B",      // Royal Navy
-  accent: "#E94B83",    // Magic Pink
+  primary: "#10233F",   // Deep Ink
+  secondary: "#FFB52E", // Gold
+  dark: "#5B2BA8",      // Darkened Magic Purple (hover state)
+  accent: "#F04483",    // Pink
 };
 
 export const DEFAULT_GALLERY: GalleryImage[] = [
@@ -477,10 +477,10 @@ export const DEFAULT_SECTIONS: HomepageSections = {
 };
 
 const DEFAULT_HOMEPAGE_CONTENT: HomepageContent = {
-  heroBadge: "🏰 Official Disneyland Paris E-Tickets",
-  heroHeading: "Disneyland Paris\nTickets",
+  heroBadge: "Official Tickets, Unforgettable Memories",
+  heroHeading: "Your Disneyland\nParis Adventure\nStarts Here",
   heroSubheading:
-    "Step into a world of magic. Compare official Disneyland Paris 1-Day tickets, Multi-Day Park Hopper passes, and Paris shuttle combos with instant mobile confirmation.",
+    "Book official Disneyland Paris tickets online with instant e-delivery, best price guarantee, and 2-Park Hopper entry. Experience magical rides, spectacular shows, and unforgettable moments.",
   heroImage: "/images/disneyland-paris-hero.jpg",
   heroImageAlt: "Disneyland Paris fairytale castle at sunset with fireworks illumination and magical atmosphere",
   heroVideo: "",

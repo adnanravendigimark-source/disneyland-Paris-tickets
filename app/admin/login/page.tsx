@@ -8,12 +8,12 @@ export const metadata = {
 
 export default function AdminLoginPage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-[#102A5C] px-4">
+    <div className="flex min-h-screen items-center justify-center bg-[#10233F] px-4">
       <div className="w-full max-w-sm rounded-2xl bg-white p-8 shadow-xl">
-        <p className="text-center font-display text-lg font-bold text-[#102A5C]">
+        <p className="text-center font-display text-lg font-bold text-[#10233F]">
           Disneyland Paris Tickets
         </p>
-        <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-[#E94B83]">
+        <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-[#F04483]">
           Content Admin
         </p>
         <div className="mt-6">

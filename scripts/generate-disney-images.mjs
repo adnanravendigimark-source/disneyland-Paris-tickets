@@ -15,21 +15,21 @@ function makeCastleSvg(width, height, title, subtitle, theme = 'magic') {
   const bgGradient = isNight 
     ? `<linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
         <stop offset="0%" stop-color="#0a1936" />
-        <stop offset="50%" stop-color="#102A5C" />
-        <stop offset="100%" stop-color="#172F6B" />
+        <stop offset="50%" stop-color="#10233F" />
+        <stop offset="100%" stop-color="#5B2BA8" />
        </linearGradient>`
     : isSunset
     ? `<linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="#172F6B" />
+        <stop offset="0%" stop-color="#5B2BA8" />
         <stop offset="40%" stop-color="#4A2563" />
-        <stop offset="75%" stop-color="#E94B83" />
-        <stop offset="100%" stop-color="#D6A84F" />
+        <stop offset="75%" stop-color="#F04483" />
+        <stop offset="100%" stop-color="#FFB52E" />
        </linearGradient>`
     : `<linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="#102A5C" />
-        <stop offset="40%" stop-color="#172F6B" />
-        <stop offset="80%" stop-color="#DCEAF7" />
-        <stop offset="100%" stop-color="#FCF8F1" />
+        <stop offset="0%" stop-color="#10233F" />
+        <stop offset="40%" stop-color="#5B2BA8" />
+        <stop offset="80%" stop-color="#EEE7FF" />
+        <stop offset="100%" stop-color="#FFF8F1" />
        </linearGradient>`;
 
   const stars = Array.from({ length: 45 }).map(() => {
@@ -44,7 +44,7 @@ function makeCastleSvg(width, height, title, subtitle, theme = 'magic') {
     const cx = (Math.random() * width).toFixed(1);
     const cy = (Math.random() * (height * 0.5)).toFixed(1);
     const size = (Math.random() * 12 + 8).toFixed(1);
-    const color = Math.random() > 0.5 ? '#E94B83' : '#D6A84F';
+    const color = Math.random() > 0.5 ? '#F04483' : '#FFB52E';
     return `<g transform="translate(${cx}, ${cy})">
       <path d="M0,${-size} L2,-2 L${size},0 L2,2 L0,${size} L-2,2 L${-size},0 L-2,-2 Z" fill="${color}" opacity="0.85" />
     </g>`;
@@ -52,21 +52,21 @@ function makeCastleSvg(width, height, title, subtitle, theme = 'magic') {
 
   const fireworks = (isNight || isSunset) ? `
     <g transform="translate(${width * 0.25}, ${height * 0.25})">
-      <circle cx="0" cy="0" r="4" fill="#E94B83" />
+      <circle cx="0" cy="0" r="4" fill="#F04483" />
       ${Array.from({ length: 12 }).map((_, i) => {
         const angle = (i * 30) * Math.PI / 180;
         const x2 = (Math.cos(angle) * 45).toFixed(1);
         const y2 = (Math.sin(angle) * 45).toFixed(1);
-        return `<line x1="0" y1="0" x2="${x2}" y2="${y2}" stroke="#E94B83" stroke-width="2" opacity="0.75" stroke-dasharray="4 2" />`;
+        return `<line x1="0" y1="0" x2="${x2}" y2="${y2}" stroke="#F04483" stroke-width="2" opacity="0.75" stroke-dasharray="4 2" />`;
       }).join('')}
     </g>
     <g transform="translate(${width * 0.75}, ${height * 0.2})">
-      <circle cx="0" cy="0" r="5" fill="#D6A84F" />
+      <circle cx="0" cy="0" r="5" fill="#FFB52E" />
       ${Array.from({ length: 12 }).map((_, i) => {
         const angle = (i * 30) * Math.PI / 180;
         const x2 = (Math.cos(angle) * 55).toFixed(1);
         const y2 = (Math.sin(angle) * 55).toFixed(1);
-        return `<line x1="0" y1="0" x2="${x2}" y2="${y2}" stroke="#D6A84F" stroke-width="2.5" opacity="0.8" stroke-dasharray="5 3" />`;
+        return `<line x1="0" y1="0" x2="${x2}" y2="${y2}" stroke="#FFB52E" stroke-width="2.5" opacity="0.8" stroke-dasharray="5 3" />`;
       }).join('')}
     </g>
   ` : '';
@@ -83,16 +83,16 @@ function makeCastleSvg(width, height, title, subtitle, theme = 'magic') {
     <defs>
       ${bgGradient}
       <linearGradient id="castleGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-        <stop offset="0%" stop-color="#102A5C" />
+        <stop offset="0%" stop-color="#10233F" />
         <stop offset="100%" stop-color="#0a152e" />
       </linearGradient>
       <linearGradient id="roofGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-        <stop offset="0%" stop-color="#E94B83" />
-        <stop offset="100%" stop-color="#102A5C" />
+        <stop offset="0%" stop-color="#F04483" />
+        <stop offset="100%" stop-color="#10233F" />
       </linearGradient>
       <linearGradient id="goldRoof" x1="0%" y1="0%" x2="0%" y2="100%">
         <stop offset="0%" stop-color="#FCE195" />
-        <stop offset="100%" stop-color="#D6A84F" />
+        <stop offset="100%" stop-color="#FFB52E" />
       </linearGradient>
       <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
         <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.5"/>
@@ -115,11 +115,11 @@ function makeCastleSvg(width, height, title, subtitle, theme = 'magic') {
       <!-- Side Turrets -->
       <rect x="-320" y="-250" width="80" height="200" fill="url(#castleGrad)" />
       <polygon points="-320,-250 -280,-390 -240,-250" fill="url(#roofGrad)" />
-      <path d="M-280,-390 L-280,-420 L-265,-405 Z" fill="#D6A84F" />
+      <path d="M-280,-390 L-280,-420 L-265,-405 Z" fill="#FFB52E" />
 
       <rect x="240" y="-250" width="80" height="200" fill="url(#castleGrad)" />
       <polygon points="240,-250 280,-390 320,-250" fill="url(#roofGrad)" />
-      <path d="M280,-390 L280,-420 L295,-405 Z" fill="#D6A84F" />
+      <path d="M280,-390 L280,-420 L295,-405 Z" fill="#FFB52E" />
 
       <!-- Inner Towers -->
       <rect x="-210" y="-320" width="100" height="250" fill="url(#castleGrad)" />
@@ -132,8 +132,8 @@ function makeCastleSvg(width, height, title, subtitle, theme = 'magic') {
       <rect x="-110" y="-450" width="220" height="380" fill="url(#castleGrad)" />
       <polygon points="-110,-450 0,-650 110,-450" fill="url(#goldRoof)" />
       <!-- Top Spire Flag -->
-      <line x1="0" y1="-650" x2="0" y2="-720" stroke="#D6A84F" stroke-width="4" />
-      <polygon points="0,-720 45,-705 0,-690" fill="#E94B83" />
+      <line x1="0" y1="-650" x2="0" y2="-720" stroke="#FFB52E" stroke-width="4" />
+      <polygon points="0,-720 45,-705 0,-690" fill="#F04483" />
 
       <!-- Glowing Windows -->
       <rect x="-40" y="-350" width="80" height="120" rx="40" fill="#FCE195" opacity="0.9" />
@@ -142,21 +142,21 @@ function makeCastleSvg(width, height, title, subtitle, theme = 'magic') {
 
       <!-- Castle Gateway Arch -->
       <path d="M-60,130 L-60,20 Q0,-40 60,20 L60,130 Z" fill="#050b17" />
-      <path d="M-60,20 Q0,-40 60,20" stroke="#D6A84F" stroke-width="6" fill="none" />
+      <path d="M-60,20 Q0,-40 60,20" stroke="#FFB52E" stroke-width="6" fill="none" />
     </g>
 
     <!-- Foreground Water / Plaza Glow -->
     <rect x="0" y="${height * 0.85}" width="${width}" height="${height * 0.15}" fill="#081329" opacity="0.9" />
-    <ellipse cx="${width/2}" cy="${height * 0.85}" rx="${width * 0.45}" ry="${height * 0.08}" fill="#E94B83" opacity="0.15" />
+    <ellipse cx="${width/2}" cy="${height * 0.85}" rx="${width * 0.45}" ry="${height * 0.08}" fill="#F04483" opacity="0.15" />
 
     <!-- Overlay Title Card if provided -->
     ${safeTitle ? `
     <g filter="url(#shadow)">
-      <rect x="${width * 0.08}" y="${height * 0.12}" width="${width * 0.5}" height="${height * 0.35}" rx="20" fill="#102A5C" opacity="0.82" />
-      <rect x="${width * 0.08}" y="${height * 0.12}" width="${width * 0.5}" height="${height * 0.35}" rx="20" stroke="#D6A84F" stroke-width="2" fill="none" opacity="0.6" />
+      <rect x="${width * 0.08}" y="${height * 0.12}" width="${width * 0.5}" height="${height * 0.35}" rx="20" fill="#10233F" opacity="0.82" />
+      <rect x="${width * 0.08}" y="${height * 0.12}" width="${width * 0.5}" height="${height * 0.35}" rx="20" stroke="#FFB52E" stroke-width="2" fill="none" opacity="0.6" />
       <text x="${width * 0.12}" y="${height * 0.22}" font-family="Outfit, sans-serif" font-weight="800" font-size="${Math.round(width * 0.038)}" fill="#FFFFFF">${safeTitle}</text>
-      <text x="${width * 0.12}" y="${height * 0.32}" font-family="Plus Jakarta Sans, sans-serif" font-weight="600" font-size="${Math.round(width * 0.022)}" fill="#E94B83">${safeSubtitle}</text>
-      <text x="${width * 0.12}" y="${height * 0.40}" font-family="Plus Jakarta Sans, sans-serif" font-size="${Math.round(width * 0.016)}" fill="#DCEAF7">Official E-Tickets &amp; Instant Mobile Delivery</text>
+      <text x="${width * 0.12}" y="${height * 0.32}" font-family="Plus Jakarta Sans, sans-serif" font-weight="600" font-size="${Math.round(width * 0.022)}" fill="#F04483">${safeSubtitle}</text>
+      <text x="${width * 0.12}" y="${height * 0.40}" font-family="Plus Jakarta Sans, sans-serif" font-size="${Math.round(width * 0.016)}" fill="#EEE7FF">Official E-Tickets &amp; Instant Mobile Delivery</text>
     </g>
     ` : ''}
   </svg>`;

@@ -1,163 +1,252 @@
 import Image from "next/image";
 import { getHomepageContent } from "@/lib/homepage";
 
-// Fixed icons for the 4 trust badges below the hero photo, matched by index
-// to the feature copy below. Layout/structure ported from alhambra-tour's
-// Hero.tsx (split photo + precise inline-gradient blend + bordered feature
-// cards) — colors kept on Disney's own navy/pink/gold palette.
-const HERO_FEATURE_ICONS = [
-  <svg key="delivery" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-6 w-6">
-    <path d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>,
-  <svg key="entry" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-6 w-6">
-    <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>,
-  <svg key="flexible" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-6 w-6">
-    <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>,
-  <svg key="support" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-6 w-6">
-    <path d="M18.364 5.636a9 9 0 010 12.728m0 0l-2.829-2.829m2.829 2.829L21 21M15.536 8.464a5 5 0 010 7.072m0 0l-2.829-2.829m-4.243 2.829a4.978 4.978 0 01-1.414-2.83m-1.414 5.658a9 9 0 01-2.167-9.238m7.824 2.167a1 1 0 111.414 1.414m-1.414-1.414L3 3" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>,
-];
+// Redesigned to match the provided mockup: a blob-radius photo panel with a
+// floating stats card, a gradient middle heading line, decorative sparkles,
+// and a purple-to-pink gradient wave divider at the bottom of the section.
+// New brand palette (per the shared color table):
+//   #10233F Deep Ink (headings)   #7137D4 Magic Purple (primary CTA)
+//   #F04483 Pink (secondary CTA)  #FFF8F1 Soft Cream (hero background)
+//   #EEE7FF Lavender (icon fills) #FFB52E Gold (small accents)
 
-const HERO_FEATURES = [
-  { title: "Instant Delivery", body: "Get your e-tickets instantly by email" },
-  { title: "Guaranteed Entry", body: "Direct gate access & trusted partner" },
-  { title: "Flexible Options", body: "Choose the ticket that fits your plans" },
-  { title: "24/7 Support", body: "We're here to help you before & during" },
+const STAT_ITEMS = [
+  {
+    label: "2 Parks",
+    sub: "Endless Magic",
+    color: "#7137D4",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-6 w-6">
+        <path d="M12 2 9 8H3l5 4-2 8 6-4 6 4-2-8 5-4h-6l-3-6z" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
+  {
+    label: "50+ Rides",
+    sub: "Thrills & Fun",
+    color: "#F04483",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-6 w-6">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M12 3v18M3 12h18M6 6l12 12M18 6 6 18" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    label: "Spectacular Shows",
+    sub: "Day & Night",
+    color: "#FFB52E",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-6 w-6">
+        <path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1" strokeLinecap="round" />
+        <circle cx="12" cy="12" r="3" />
+      </svg>
+    ),
+  },
 ];
 
 export default async function Hero() {
   const content = await getHomepageContent();
 
-  // The H1 is edited as a 2-row textarea in the admin so it can keep the
-  // brand's two-tone "Disneyland Paris" (navy) / "Tickets" (pink) split —
-  // first line navy, everything after it pink. Falls back to a single-tone
-  // line if an admin ever collapses it to one line.
-  const headingLines = (content.heroHeading || "Disneyland Paris\nTickets").split("\n").filter(Boolean);
-  const [headingLine1, ...headingRest] = headingLines;
-  const headingLine2 = headingRest.join(" ");
+  // The H1 is edited as a multi-row textarea in the admin. First and last
+  // lines render in Deep Ink; anything in between renders in the pink-to-
+  // purple gradient — matches the 3-line "Your Disneyland / Paris Adventure
+  // / Starts Here" mockup while still degrading gracefully for a shorter
+  // admin-entered heading.
+  const headingLines = (content.heroHeading || "Your Disneyland\nParis Adventure\nStarts Here")
+    .split("\n")
+    .filter(Boolean);
+  const firstLine = headingLines[0];
+  const lastLine = headingLines.length > 1 ? headingLines[headingLines.length - 1] : "";
+  const middleLines = headingLines.slice(1, headingLines.length > 1 ? -1 : undefined);
 
   return (
-    <section id="top" className="relative w-full bg-[#FCF8F1] text-[#252A35] overflow-hidden">
-      <div className="relative min-h-[580px] lg:min-h-[640px] flex items-center">
-        {/* Right side image container */}
-        <div className="absolute right-0 top-0 bottom-0 w-full lg:w-3/5">
+    <section id="top" className="relative w-full bg-[#FFF8F1] overflow-hidden">
+      <div className="relative min-h-[620px] lg:min-h-[680px]">
+        {/* Right side image panel — inset from the section edges with a big
+            asymmetric radius on the left/top-left/bottom-left to approximate
+            the mockup's organic "blob" photo shape blending into the cream
+            background, instead of a hard-edged rectangle. */}
+        <div className="absolute right-0 top-6 bottom-28 left-1/2 hidden lg:block overflow-hidden rounded-[3rem] rounded-l-[220px] shadow-2xl shadow-[#7137D4]/20">
           <Image
             src={content.heroImage || "/images/disneyland-paris-fireworks.jpg"}
             alt={content.heroImageAlt || "Fireworks over Disneyland Paris Sleeping Beauty Castle at sunset"}
             fill
             priority
             quality={85}
-            sizes="(max-width: 1024px) 100vw, 60vw"
+            sizes="50vw"
             className="object-cover object-center"
           />
-          {/* Gradient overlay — mobile and desktop need opposite treatment,
-              same reasoning as alhambra-tour's Hero.tsx: on mobile the
-              eyebrow/heading/subtitle/buttons/badges all stack directly on
-              top of the full-bleed photo, so the overlay stays strong
-              through most of the frame; on desktop the text sits in a
-              separate solid-cream zone beside the photo, so the overlay
-              only needs to be opaque right at that seam and the rest of the
-              photo stays clear. Inline gradients (not Tailwind's via-color
-              utilities) so the stop positions are exact. */}
-          <div
-            className="absolute inset-0 lg:hidden"
-            style={{
-              background:
-                "linear-gradient(to top, #FCF8F1 0%, rgba(252,248,241,0.92) 60%, rgba(252,248,241,0.85) 85%, rgba(252,248,241,0.5) 100%)",
-            }}
+        </div>
+        {/* Mobile: same photo, full-bleed behind the text with a strong
+            bottom-up cream fade so the stacked content stays legible. */}
+        <div className="absolute inset-x-0 top-0 h-[340px] lg:hidden overflow-hidden rounded-b-[4rem]">
+          <Image
+            src={content.heroImage || "/images/disneyland-paris-fireworks.jpg"}
+            alt={content.heroImageAlt || "Fireworks over Disneyland Paris Sleeping Beauty Castle at sunset"}
+            fill
+            priority
+            quality={80}
+            sizes="100vw"
+            className="object-cover object-center"
           />
           <div
-            className="hidden lg:block absolute inset-0"
+            className="absolute inset-0"
             style={{
-              background:
-                "linear-gradient(to right, #FCF8F1 0%, rgba(252,248,241,0.65) 12%, rgba(252,248,241,0.15) 24%, transparent 38%)",
+              background: "linear-gradient(to top, #FFF8F1 0%, rgba(255,248,241,0.6) 45%, transparent 80%)",
             }}
           />
         </div>
 
+        {/* Decorative sparkles near the top of the text column */}
+        <svg viewBox="0 0 24 24" fill="#7137D4" className="hidden lg:block absolute left-[46%] top-16 h-6 w-6 opacity-70" aria-hidden="true">
+          <path d="M12 2l1.6 6.4L20 10l-6.4 1.6L12 18l-1.6-6.4L4 10l6.4-1.6L12 2z" />
+        </svg>
+        <svg viewBox="0 0 24 24" fill="#F04483" className="hidden lg:block absolute left-[41%] top-32 h-3.5 w-3.5 opacity-70" aria-hidden="true">
+          <path d="M12 2l1.6 6.4L20 10l-6.4 1.6L12 18l-1.6-6.4L4 10l6.4-1.6L12 2z" />
+        </svg>
+
         {/* Hero Content Left Column — extra top padding makes room for the
             floating StickyHeader, transparent and overlapping the top
             ~5rem of this section until the page scrolls. */}
-        <div className="relative mx-auto w-full max-w-7xl px-4 pt-24 pb-12 sm:px-6 sm:pt-28 sm:pb-16 lg:px-8 lg:pt-32 lg:pb-20 z-10">
-          <div className="max-w-xl lg:max-w-2xl">
+        <div className="relative mx-auto w-full max-w-7xl px-4 pt-[380px] pb-16 sm:px-6 lg:px-8 lg:pt-32 lg:pb-24">
+          <div className="max-w-xl">
             {/* Eyebrow */}
-            <p className="flex items-center gap-1.5 text-xs sm:text-sm font-bold uppercase tracking-[0.22em] text-[#E94B83] mb-3">
-              <span>{content.heroBadge || "Official Disneyland Paris E-Tickets"}</span>
-              <span className="text-base">✨</span>
+            <p className="inline-flex items-center gap-2 rounded-full border border-[#7137D4]/25 bg-[#EEE7FF] px-4 py-1.5 text-xs sm:text-sm font-bold uppercase tracking-[0.1em] text-[#7137D4] mb-5">
+              <svg viewBox="0 0 24 24" fill="#F04483" className="h-3.5 w-3.5 shrink-0">
+                <path d="M12 2l1.6 6.4L20 10l-6.4 1.6L12 18l-1.6-6.4L4 10l6.4-1.6L12 2z" />
+              </svg>
+              <span>{content.heroBadge || "Official Tickets, Unforgettable Memories"}</span>
             </p>
 
             {/* Main Headline */}
-            <h1 className="font-display font-extrabold leading-[1.05] tracking-tight mb-3">
-              <span className="block text-5xl sm:text-6xl lg:text-[4.2rem] text-[#102A5C]">{headingLine1}</span>
-              {headingLine2 && (
-                <span className="block text-5xl sm:text-6xl lg:text-[4.2rem] text-[#E94B83] mt-1">{headingLine2}</span>
-              )}
+            <h1 className="font-display font-extrabold leading-[1.08] tracking-tight mb-4 text-4xl sm:text-5xl lg:text-[3.4rem]">
+              <span className="block text-[#10233F]">{firstLine}</span>
+              {middleLines.map((line, i) => (
+                <span
+                  key={i}
+                  className="block bg-gradient-to-r from-[#F04483] to-[#7137D4] bg-clip-text text-transparent"
+                >
+                  {line}
+                </span>
+              ))}
+              {lastLine && <span className="block text-[#10233F]">{lastLine}</span>}
             </h1>
 
             {/* Subtitle — admin edits this via a rich-text editor, so it's
-                stripped to plain text here rather than interpolated raw
-                (otherwise any HTML it produces would show as literal
-                visible tags). */}
-            <p className="text-base sm:text-lg leading-relaxed text-[#252A35]/90 max-w-lg mb-8">
+                stripped to plain text here rather than interpolated raw. */}
+            <p className="text-base sm:text-lg leading-relaxed text-[#252A35]/80 max-w-lg mb-8">
               {content.heroSubheading
                 ? content.heroSubheading.replace(/<[^>]+>/g, "")
-                : "Step into a world of magic, adventure and unforgettable memories!"}
+                : "Book official Disneyland Paris tickets online with instant e-delivery, best price guarantee, and 2-Park Hopper entry."}
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-wrap items-center gap-4 mb-8">
+            <div className="flex flex-wrap items-center gap-4 mb-9">
               <a
                 href={content.heroCtaPrimaryHref || "#tours"}
-                className="inline-flex items-center gap-2.5 rounded-xl bg-[#102A5C] hover:bg-[#172F6B] px-7 py-3.5 text-sm font-bold tracking-wider uppercase text-white shadow-md transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
+                className="inline-flex items-center gap-2.5 rounded-xl bg-[#7137D4] hover:bg-[#5B2BA8] px-7 py-3.5 text-sm font-bold tracking-wide uppercase text-white shadow-lg shadow-[#7137D4]/30 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
               >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-4 w-4">
+                  <path d="M4 10h16M4 14h16M4 6h16M4 18h16M7 6v12M17 6v12" strokeLinecap="round" />
+                </svg>
                 <span>{content.heroCtaPrimaryText || "Explore Tickets"}</span>
                 <span className="text-base">→</span>
               </a>
 
               <a
                 href={content.heroCtaSecondaryHref || "#prices"}
-                className="inline-flex items-center gap-2 rounded-xl border-2 border-[#E94B83] bg-white hover:bg-[#E94B83]/10 px-6 py-3.5 text-sm font-bold tracking-wider uppercase text-[#E94B83] shadow-sm transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
+                className="inline-flex items-center gap-2 rounded-xl border-2 border-[#F04483] bg-white hover:bg-[#F04483]/10 px-6 py-3.5 text-sm font-bold tracking-wide uppercase text-[#F04483] shadow-sm transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
               >
-                <span>🎁</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-4 w-4">
+                  <path d="M20 12v9H4v-9M2 7h20v5H2V7zM12 7v14M12 7c-1.5-3-6-3-6 0s4.5 3 6 0zM12 7c1.5-3 6-3 6 0s-4.5 3-6 0z" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
                 <span>{content.heroCtaSecondaryText || "See Ticket Prices"}</span>
               </a>
             </div>
 
             {/* Trust Badges Row */}
-            <div className="flex flex-wrap items-center gap-5 sm:gap-7 text-xs sm:text-sm font-semibold text-[#252A35]">
+            <div className="flex flex-wrap items-center gap-5 sm:gap-7 text-xs sm:text-sm font-semibold text-[#10233F]">
               <div className="flex items-center gap-2">
-                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#DCD8F2] text-[#102A5C] text-xs font-bold">🛡️</span>
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#EEE7FF] text-[#7137D4]">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-4 w-4">
+                    <path d="M12 2 4 5v6c0 5 3.4 8.4 8 11 4.6-2.6 8-6 8-11V5l-8-3z" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="m9 12 2 2 4-4" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </span>
                 <span>Best Price Guarantee</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#DCD8F2] text-[#102A5C] text-xs font-bold">⚡</span>
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#EEE7FF] text-[#F04483]">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-4 w-4">
+                    <path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </span>
                 <span>Instant Confirmation</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#DCD8F2] text-[#102A5C] text-xs font-bold">🎟️</span>
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#EEE7FF] text-[#FFB52E]">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-4 w-4">
+                    <rect x="4" y="10" width="16" height="10" rx="2" />
+                    <path d="M8 10V7a4 4 0 0 1 8 0v3" strokeLinecap="round" />
+                  </svg>
+                </span>
                 <span>Guaranteed Entry</span>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Feature Highlights Bar (Below Hero Image) */}
-      <div className="border-t border-[#DCD8F2] bg-[#FCF8F1] py-7 px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-          {HERO_FEATURE_ICONS.map((icon, i) => (
-            <div key={i} className="flex items-center gap-4 rounded-xl bg-white/70 p-4 border border-[#DCD8F2] shadow-xs">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#E94B83]/10 text-[#E94B83]">
-                {icon}
-              </div>
-              <div>
-                <h4 className="font-display font-bold text-sm text-[#102A5C]">{HERO_FEATURES[i].title}</h4>
-                <p className="text-xs text-[#252A35]/80 mt-0.5">{HERO_FEATURES[i].body}</p>
-              </div>
+        {/* Floating stats card — overlaps the bottom of the image panel,
+            matching the mockup's white card straddling the photo/wave
+            boundary. Desktop only; mobile shows it stacked in normal flow
+            instead since there's no room to float it. */}
+        <div className="hidden lg:flex absolute right-10 bottom-14 z-10 items-stretch divide-x divide-stone-100 rounded-2xl bg-white px-8 py-6 shadow-xl shadow-[#10233F]/10">
+          {STAT_ITEMS.map((stat) => (
+            <div key={stat.label} className="flex flex-col items-center gap-2 px-6 first:pl-0 last:pr-0 text-center">
+              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#EEE7FF]" style={{ color: stat.color }}>
+                {stat.icon}
+              </span>
+              <span className="font-display text-sm font-extrabold text-[#10233F]">{stat.label}</span>
+              <span className="text-xs text-[#252A35]/60">{stat.sub}</span>
             </div>
           ))}
+        </div>
+        <div className="mx-auto grid max-w-7xl grid-cols-3 gap-3 px-4 pb-10 lg:hidden">
+          {STAT_ITEMS.map((stat) => (
+            <div key={stat.label} className="flex flex-col items-center gap-1.5 rounded-2xl bg-white p-3 text-center shadow-sm">
+              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#EEE7FF]" style={{ color: stat.color }}>
+                {stat.icon}
+              </span>
+              <span className="font-display text-xs font-extrabold text-[#10233F]">{stat.label}</span>
+              <span className="text-[10px] text-[#252A35]/60">{stat.sub}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Bottom gradient wave divider */}
+      <div className="relative -mt-1">
+        <svg viewBox="0 0 1440 140" fill="none" xmlns="http://www.w3.org/2000/svg" className="block w-full h-20 sm:h-28 lg:h-32" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="heroWaveGradient" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#7137D4" />
+              <stop offset="100%" stopColor="#F04483" />
+            </linearGradient>
+          </defs>
+          <path d="M0,48 C240,90 480,10 720,36 C960,62 1200,100 1440,52 L1440,140 L0,140 Z" fill="url(#heroWaveGradient)" />
+        </svg>
+        <div className="absolute bottom-4 left-6 sm:left-10 flex items-center gap-2.5">
+          <svg viewBox="0 0 24 24" fill="#ffffff" className="h-7 w-7 opacity-90">
+            <circle cx="12" cy="13" r="7" />
+            <circle cx="5.5" cy="6" r="3" />
+            <circle cx="18.5" cy="6" r="3" />
+          </svg>
+          <svg viewBox="0 0 24 24" fill="#ffffff" className="h-3 w-3 opacity-80">
+            <path d="M12 2l1.6 6.4L20 10l-6.4 1.6L12 18l-1.6-6.4L4 10l6.4-1.6L12 2z" />
+          </svg>
+          <svg viewBox="0 0 24 24" fill="#ffffff" className="h-2 w-2 opacity-70">
+            <path d="M12 2l1.6 6.4L20 10l-6.4 1.6L12 18l-1.6-6.4L4 10l6.4-1.6L12 2z" />
+          </svg>
         </div>
       </div>
     </section>

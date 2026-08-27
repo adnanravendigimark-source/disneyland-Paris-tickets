@@ -384,8 +384,8 @@ export default function HomepageForm({ initial, tours }: { initial: HomepageCont
             <Field label="Hero badge (small pill above the headline)">
               <input value={content.heroBadge} onChange={(e) => update("heroBadge", e.target.value)} className={inputClass} />
             </Field>
-            <Field label="Hero headline (H1)">
-              <textarea rows={2} value={content.heroHeading} onChange={(e) => update("heroHeading", e.target.value)} className={inputClass} />
+            <Field label="Hero headline (H1)" hint="One line per row. First line and last line are Deep Ink; any line(s) in between are shown in the pink-to-purple gradient.">
+              <textarea rows={3} value={content.heroHeading} onChange={(e) => update("heroHeading", e.target.value)} className={inputClass} />
             </Field>
             <Field label="Hero subheading">
               <RichTextEditor value={content.heroSubheading} onChange={(html) => update("heroSubheading", html)} minHeight="4rem" />
