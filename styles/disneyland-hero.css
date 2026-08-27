@@ -1,293 +1,437 @@
-/* Hero section styling — ported directly from the reference implementation
-   in disneyland-paris-hero-code/nextjs/disneyland-hero.css (provided by the
-   site owner), class names prefixed with "dlp-" so they can't collide with
-   any Tailwind utility class or another component's CSS. Values are the
-   literal hex codes from that file's :root variables (--ink/--purple/
-   --pink/--cream/--muted/--lavender) inlined directly rather than kept as
-   custom properties, so they can't drift from the project's own
-   --color-regal-* variables used elsewhere.
-   ink=#10233F purple=#7137D4 pink=#F04483 cream=#FFF8F1 muted=#536071
-   lavender=#EEE7FF */
+/* ==========================================================================
+   Disneyland Paris Hero Section - Exact Design Match
+   ========================================================================== */
 
 .dlp-hero {
-  min-height: 88vh;
+  min-height: 84vh;
   position: relative;
   overflow: hidden;
   display: grid;
-  grid-template-columns: 54% 46%;
-  background: linear-gradient(120deg, #fff9f3 0%, #fff4f7 52%, #f6e9ff 100%);
+  grid-template-columns: 52% 48%;
+  background: linear-gradient(135deg, #FFF9F3 0%, #FFF3F7 50%, #F6EAFE 100%);
 }
+
+/* --------------------------------------------------------------------------
+   Hero Left Column (Text & CTAs)
+   -------------------------------------------------------------------------- */
 .dlp-heroLeft {
   position: relative;
-  z-index: 3;
-  padding: 112px 20px 105px 68px;
+  z-index: 10;
+  padding: 100px 24px 70px 72px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
+/* Eyebrow Badge */
 .dlp-eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
   width: max-content;
-  padding: 11px 22px;
+  padding: 7px 18px;
   border-radius: 999px;
-  border: 1px solid #F78CB4;
+  border: 1.5px solid #F7A8C8;
   color: #873BCB;
-  background: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(8px);
   font-weight: 800;
-  letter-spacing: 0.8px;
-  font-size: 14px;
+  letter-spacing: 0.6px;
+  font-size: 11.5px;
+  text-transform: uppercase;
+  box-shadow: 0 3px 12px rgba(240, 68, 131, 0.08);
 }
+
 .dlp-star {
   color: #F04483;
-  font-size: 19px;
+  font-size: 14px;
+  line-height: 1;
 }
-.dlp-hero h1 {
-  max-width: 760px;
-  margin: 34px 0 24px;
-  font: 800 clamp(40px, 5.1vw, 82px) / 1.06 var(--font-manrope), Manrope, sans-serif;
-  letter-spacing: -3.6px;
+
+/* Heading with Sparkle Doodles */
+.dlp-heading-wrapper {
+  position: relative;
+  max-width: 620px;
+  margin: 20px 0 16px;
+}
+
+.dlp-heading {
+  margin: 0;
+  font: 800 clamp(32px, 3.7vw, 56px) / 1.1 var(--font-manrope), var(--font-display), Manrope, sans-serif;
+  letter-spacing: -1.8px;
+}
+
+.dlp-heading-dark {
   color: #10233F;
 }
-.dlp-hero h1 span {
-  background: linear-gradient(90deg, #F04483 0%, #8B3DD0 95%);
+
+.dlp-heading-gradient {
+  background: linear-gradient(90deg, #F04483 0%, #7E38D8 95%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  display: inline-block;
 }
+
+.dlp-doodle-sparkles {
+  position: absolute;
+  top: 4px;
+  right: 40px;
+  width: 44px;
+  height: 44px;
+  pointer-events: none;
+  animation: dlpFloat 4s ease-in-out infinite;
+}
+
+.dlp-doodle-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 2px 6px rgba(135, 59, 203, 0.18));
+}
+
+/* Subheading Copy */
 .dlp-copy {
-  max-width: 680px;
-  margin: 0 0 38px;
+  max-width: 560px;
+  margin: 0 0 26px;
   color: #536071;
-  font-size: 19px;
-  line-height: 1.65;
+  font-size: 15.5px;
+  line-height: 1.6;
+  font-weight: 450;
 }
+
+/* Action Buttons */
 .dlp-actions {
   display: flex;
-  gap: 20px;
+  gap: 16px;
   flex-wrap: wrap;
+  align-items: center;
 }
+
 .dlp-btn {
-  min-height: 58px;
-  padding: 0 30px;
-  border-radius: 15px;
+  min-height: 50px;
+  padding: 0 24px;
+  border-radius: 12px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  font: 700 15px var(--font-manrope), Manrope, sans-serif;
+  gap: 8px;
+  font: 700 13.5px var(--font-manrope), var(--font-display), Manrope, sans-serif;
+  letter-spacing: 0.3px;
   text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
 }
+
+.dlp-btn:hover {
+  transform: translateY(-2px);
+}
+
+.dlp-btn:active {
+  transform: translateY(0);
+}
+
+.dlp-btn-icon {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+}
+
 .dlp-btn.dlp-primary {
-  color: #fff;
-  background: linear-gradient(135deg, #7137D4, #823BDD);
-  box-shadow: 0 13px 25px rgba(113, 55, 212, 0.22);
+  color: #FFFFFF;
+  background: linear-gradient(135deg, #7137D4 0%, #823BDD 100%);
+  box-shadow: 0 10px 24px rgba(113, 55, 212, 0.26);
 }
+
+.dlp-btn.dlp-primary:hover {
+  background: linear-gradient(135deg, #6228C9 0%, #752FD0 100%);
+  box-shadow: 0 14px 28px rgba(113, 55, 212, 0.35);
+}
+
 .dlp-btn.dlp-secondary {
   color: #F04483;
-  background: #fff;
+  background: #FFFFFF;
   border: 1.5px solid #F04483;
+  box-shadow: 0 4px 14px rgba(240, 68, 131, 0.07);
 }
+
+.dlp-btn.dlp-secondary:hover {
+  background: #FFF5F8;
+  border-color: #E03575;
+  color: #E03575;
+  box-shadow: 0 6px 18px rgba(240, 68, 131, 0.12);
+}
+
+.dlp-icon-pink {
+  color: #F04483;
+}
+
+/* Trust Badges Row */
 .dlp-benefits {
   display: flex;
   flex-wrap: wrap;
-  gap: 36px;
-  margin-top: 42px;
+  gap: 22px;
+  margin-top: 28px;
 }
+
 .dlp-benefit {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 9px;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 13px;
   color: #10233F;
 }
-.dlp-benefit span {
-  width: 40px;
-  height: 40px;
+
+.dlp-benefit-icon {
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   display: grid;
   place-items: center;
   background: #EEE7FF;
   color: #7137D4;
-  font-size: 18px;
-  border: 1px solid #dfd0ff;
+  border: 1px solid #DFD0FF;
+  flex-shrink: 0;
 }
 
-.dlp-heroRight {
-  position: relative;
-  min-height: 780px;
-  overflow: hidden;
-  border-bottom-left-radius: 48% 24%;
+.dlp-benefit-icon svg {
+  width: 16px;
+  height: 16px;
 }
-.dlp-castle {
-  object-fit: cover;
-  object-position: center;
-  filter: saturate(1.04) contrast(1.02);
-}
-.dlp-heroRight::before {
-  content: "";
-  position: absolute;
-  z-index: 2;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(255, 248, 241, 0.88) 0%, rgba(255, 248, 241, 0.34) 13%, transparent 34%);
-  pointer-events: none;
-}
-.dlp-heroRight::after {
-  content: "";
-  position: absolute;
-  z-index: 3;
-  left: -90px;
-  top: -5%;
-  width: 185px;
-  height: 110%;
-  border-radius: 50%;
-  border-right: 1px solid rgba(240, 68, 131, 0.35);
-  pointer-events: none;
-}
-.dlp-stats {
-  position: absolute;
-  z-index: 5;
-  left: 7%;
-  right: 7%;
-  bottom: 28px;
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(12px);
-  border-radius: 24px;
-  padding: 24px 26px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  box-shadow: 0 20px 55px rgba(35, 24, 65, 0.18);
-}
-.dlp-stat {
-  text-align: center;
-  padding: 4px 16px;
-  border-right: 1px solid #dddde4;
-}
-.dlp-stat:last-child {
-  border-right: 0;
-}
-.dlp-stat div {
-  font-size: 25px;
-  margin-bottom: 8px;
-}
-.dlp-stat strong {
-  display: block;
-  font: 700 17px var(--font-manrope), Manrope, sans-serif;
+
+.dlp-benefit-text {
+  font-weight: 600;
   color: #10233F;
 }
-.dlp-stat span {
-  color: #626a77;
-  font-size: 13px;
+
+/* --------------------------------------------------------------------------
+   Hero Right Column (Castle Visual)
+   -------------------------------------------------------------------------- */
+.dlp-heroRight {
+  position: relative;
+  min-height: 720px;
+  overflow: visible;
+  display: flex;
+  align-items: flex-end;
 }
+
+.dlp-castle-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  /* Organic curved border on the left matching reference */
+  border-top-left-radius: 50% 30%;
+  border-bottom-left-radius: 45% 20%;
+}
+
+.dlp-castle {
+  object-fit: cover;
+  object-position: center 38%;
+  filter: saturate(1.05) contrast(1.02);
+}
+
+/* Subtle Organic Left Gradient & Glow Outline */
+.dlp-curve-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  box-shadow: inset 25px 0 35px -10px rgba(255, 248, 241, 0.9), inset 2px 0 0 0 rgba(240, 68, 131, 0.35);
+}
+
+/* Whimsical Sparkles on Sky */
 .dlp-sparkle {
   position: absolute;
   z-index: 4;
-  color: #fff;
-  font-size: 30px;
-}
-.dlp-s1 {
-  left: 7%;
-  top: 13%;
-}
-.dlp-s2 {
-  left: 45%;
-  top: 29%;
-  font-size: 25px;
-}
-.dlp-s3 {
-  left: 51%;
-  bottom: 22%;
-  font-size: 20px;
-}
-.dlp-wave {
-  position: absolute;
-  z-index: 4;
-  left: -4%;
-  bottom: -65px;
-  width: 70%;
-  height: 130px;
-  border-radius: 50% 50% 0 0;
-  transform: rotate(-2deg);
-  background: linear-gradient(100deg, #9A5AE1, #F04B8C);
+  color: #FFFFFF;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.9), 0 0 24px rgba(240, 68, 131, 0.6);
+  pointer-events: none;
+  animation: dlpSparklePulse 3s ease-in-out infinite;
 }
 
-@media (max-width: 1200px) {
-  .dlp-heroLeft {
-    padding-left: 40px;
+.dlp-s1 {
+  left: 12%;
+  top: 14%;
+  font-size: 26px;
+  animation-delay: 0s;
+}
+
+.dlp-s2 {
+  left: 48%;
+  top: 26%;
+  font-size: 22px;
+  animation-delay: 1s;
+}
+
+.dlp-s3 {
+  left: 56%;
+  top: 15%;
+  font-size: 28px;
+  animation-delay: 2s;
+}
+
+.dlp-s4 {
+  left: 78%;
+  top: 32%;
+  font-size: 20px;
+  animation-delay: 1.5s;
+}
+
+/* --------------------------------------------------------------------------
+   Bottom Left Wave with Mickey Silhouette
+   -------------------------------------------------------------------------- */
+.dlp-bottom-mickey-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 360px;
+  height: 110px;
+  z-index: 15;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.dlp-wave-path {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.dlp-mickey-silhouette-group {
+  position: absolute;
+  bottom: 12px;
+  left: 26px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #FFFFFF;
+}
+
+.dlp-mickey-head-svg {
+  width: 34px;
+  height: 32px;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.15));
+}
+
+.dlp-mickey-stars-col {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  gap: 2px;
+}
+
+.dlp-mickey-star {
+  color: #FFFFFF;
+  font-size: 13px;
+  opacity: 0.9;
+  line-height: 1;
+}
+
+.dlp-mstar1 {
+  font-size: 15px;
+}
+
+.dlp-mstar2 {
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.dlp-mstar3 {
+  font-size: 13px;
+}
+
+/* --------------------------------------------------------------------------
+   Animations
+   -------------------------------------------------------------------------- */
+@keyframes dlpFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
   }
-  .dlp-hero {
-    grid-template-columns: 56% 44%;
+  50% {
+    transform: translateY(-5px) rotate(2.5deg);
   }
 }
-@media (max-width: 900px) {
+
+@keyframes dlpSparklePulse {
+  0%, 100% {
+    opacity: 0.85;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(0.8);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Breakpoints
+   -------------------------------------------------------------------------- */
+@media (max-width: 1280px) {
+  .dlp-heroLeft {
+    padding: 95px 20px 60px 48px;
+  }
+  .dlp-heading {
+    letter-spacing: -1.5px;
+  }
+}
+
+@media (max-width: 1024px) {
   .dlp-hero {
-    display: block;
+    grid-template-columns: 54% 46%;
   }
   .dlp-heroLeft {
-    padding: 100px 25px 40px;
+    padding: 90px 20px 55px 36px;
   }
-  .dlp-hero h1 {
-    letter-spacing: -2.3px;
-    font-size: 54px;
+}
+
+@media (max-width: 860px) {
+  .dlp-hero {
+    display: flex;
+    flex-direction: column;
+  }
+  .dlp-heroLeft {
+    padding: 90px 24px 40px;
   }
   .dlp-heroRight {
-    min-height: 620px;
+    min-height: 480px;
+  }
+  .dlp-castle-container {
     border-radius: 0;
   }
-  .dlp-heroRight::before {
-    background: linear-gradient(180deg, rgba(255, 248, 241, 0.2), transparent 25%);
+  .dlp-curve-glow {
+    box-shadow: inset 0 25px 30px -10px rgba(255, 248, 241, 0.9);
   }
-  .dlp-heroRight::after {
-    display: none;
-  }
-  .dlp-stats {
-    bottom: 18px;
-    left: 4%;
-    right: 4%;
-  }
-  .dlp-wave {
+  .dlp-bottom-mickey-wave {
     display: none;
   }
 }
+
 @media (max-width: 560px) {
   .dlp-heroLeft {
-    padding: 88px 20px 35px;
+    padding: 85px 18px 30px;
   }
-  .dlp-hero h1 {
-    font-size: 43px;
-    line-height: 1.08;
+  .dlp-heading {
+    font-size: 32px;
+    letter-spacing: -1px;
+    line-height: 1.12;
   }
   .dlp-copy {
-    font-size: 16px;
-    line-height: 1.55;
+    font-size: 14.5px;
+    line-height: 1.5;
+    margin-bottom: 22px;
   }
   .dlp-actions {
     flex-direction: column;
+    width: 100%;
   }
   .dlp-btn {
     width: 100%;
   }
   .dlp-benefits {
-    gap: 14px;
     flex-direction: column;
+    gap: 12px;
     align-items: flex-start;
-  }
-  .dlp-heroRight {
-    min-height: 520px;
-  }
-  .dlp-stats {
-    grid-template-columns: 1fr;
-    gap: 8px;
-    padding: 16px;
-  }
-  .dlp-stat {
-    border-right: 0;
-    border-bottom: 1px solid #dddde4;
-    padding: 9px;
-  }
-  .dlp-stat:last-child {
-    border-bottom: 0;
   }
 }
