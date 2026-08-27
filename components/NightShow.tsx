@@ -11,7 +11,7 @@ export default async function NightShow() {
   const s = sections.nightShow;
 
   return (
-    <section id="night-show" className="bg-[#EEE7FF]/30 py-20">
+    <section id="night-show" className="bg-white py-20">
       <div className="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:items-center">
         <div>
           <span className="inline-flex items-center gap-1.5 rounded-md bg-[#10233F]/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#10233F]">

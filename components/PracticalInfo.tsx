@@ -5,7 +5,7 @@ export default async function PracticalInfo() {
   const s = sections.practical;
 
   return (
-    <section id="practical" className="bg-[#FFF8F1] py-20 border-y border-stone-200/80">
+    <section id="practical" className="bg-white py-20 border-y border-stone-200/80">
       <div className="mx-auto grid max-w-6xl gap-8 px-4 sm:px-6 lg:grid-cols-3">
         <div className="rounded-2xl border border-stone-200/80 bg-white p-6 shadow-sm">
           <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#FFB52E]/15 text-[#FFB52E] font-bold text-lg mb-4 border border-[#FFB52E]/30">

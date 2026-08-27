@@ -5,7 +5,7 @@ export default async function WhatYouSee() {
   const s = sections.why;
 
   return (
-    <section className="bg-gradient-to-b from-[#FFF8F1] via-white to-[#FFF8F1] py-20">
+    <section className="bg-white py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="max-w-3xl">
           <span className="inline-block text-xs font-bold uppercase tracking-widest text-[#F04483]">

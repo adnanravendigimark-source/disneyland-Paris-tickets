@@ -143,7 +143,7 @@ export default async function RootLayout({
           `}
         </Script>
       </head>
-      <body className="font-body bg-[#FFF8F1] text-[#252A35] antialiased selection:bg-[#F04483] selection:text-white">
+      <body className="font-body bg-white text-[#252A35] antialiased selection:bg-[#F04483] selection:text-white">
         {themeStyle && <style dangerouslySetInnerHTML={{ __html: themeStyle }} />}
         {children}
         <script
