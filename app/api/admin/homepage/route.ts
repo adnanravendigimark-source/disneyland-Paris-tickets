@@ -23,7 +23,7 @@ export async function GET() {
 }
 
 // Saves everything the Homepage admin tabs own: hero copy/gallery/CTA
-// buttons, the four content sections (Why/Tower/Practical/Price), the
+// buttons, the four content sections (Why/Night Show/Practical/Price), the
 // site-wide header/footer, and brand colors. Deliberately does NOT touch
 // featured_tour_* (owned by PUT /api/admin/recommended) or no_index/
 // no_follow (owned by PUT /api/admin/indexing) even though the client

@@ -7,7 +7,7 @@ import type { SafeUser } from "@/lib/users";
 import PasswordStrengthField from "./PasswordStrengthField";
 
 const inputClass =
-  "w-full rounded-lg border border-stone-300 px-3 py-2 text-sm focus:border-canal-blue focus:outline-none focus:ring-1 focus:ring-canal-blue";
+  "w-full rounded-lg border border-stone-300 px-3 py-2 text-sm focus:border-regal-blue focus:outline-none focus:ring-1 focus:ring-regal-blue";
 const labelClass = "mb-1 block text-sm font-medium text-stone-700";
 
 export default function UserEditForm({ user, onCancel }: { user: SafeUser; onCancel?: () => void }) {
@@ -126,7 +126,7 @@ export default function UserEditForm({ user, onCancel }: { user: SafeUser; onCan
                   type="checkbox"
                   checked={pages.includes(key)}
                   onChange={() => togglePage(key)}
-                  className="h-[18px] w-[18px] rounded border-stone-300 text-canal-orange focus:ring-canal-blue"
+                  className="h-[18px] w-[18px] rounded border-stone-300 text-regal-orange focus:ring-regal-blue"
                 />
                 {PAGE_LABELS[key]}
               </label>

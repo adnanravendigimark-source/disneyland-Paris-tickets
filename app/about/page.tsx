@@ -37,7 +37,7 @@ export default async function AboutPage() {
       <Header />
       <main>
         {/* Hero banner */}
-        <section className="relative overflow-hidden bg-canal-navy text-white">
+        <section className="relative overflow-hidden bg-regal-navy text-white">
           <div className="absolute inset-0">
             <SafeImage
               src={about.heroImage}
@@ -48,7 +48,7 @@ export default async function AboutPage() {
               sizes="100vw"
               className="object-cover object-center opacity-35"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-canal-navy via-canal-navy/80 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-regal-navy via-regal-navy/80 to-transparent" />
           </div>
           <div className="relative mx-auto max-w-6xl px-4 pt-24 pb-16 text-center sm:px-6 sm:pt-28 sm:pb-20">
             <nav aria-label="Breadcrumb" className="text-xs font-medium text-stone-200/70">

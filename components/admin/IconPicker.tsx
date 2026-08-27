@@ -20,7 +20,7 @@ export default function IconPicker({
       <select
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full rounded-lg border border-stone-300 px-3 py-2 text-sm focus:border-canal-blue focus:outline-none focus:ring-1 focus:ring-canal-blue"
+        className="w-full rounded-lg border border-stone-300 px-3 py-2 text-sm focus:border-regal-blue focus:outline-none focus:ring-1 focus:ring-regal-blue"
       >
         {Object.keys(ICON_OPTIONS).map((key) => (
           <option key={key} value={key}>

@@ -9,7 +9,7 @@ import type { ContentBlock, ContentBlockType } from "@/lib/posts";
 import type { PrivacyPolicy } from "@/lib/legal";
 
 const inputClass =
-  "w-full rounded-lg border border-stone-300 px-3 py-2 text-sm focus:border-canal-blue focus:outline-none focus:ring-1 focus:ring-canal-blue";
+  "w-full rounded-lg border border-stone-300 px-3 py-2 text-sm focus:border-regal-blue focus:outline-none focus:ring-1 focus:ring-regal-blue";
 
 function emptyBlock(type: ContentBlockType): ContentBlock {
   return type === "list" ? { type, items: [""] } : { type, text: "" };

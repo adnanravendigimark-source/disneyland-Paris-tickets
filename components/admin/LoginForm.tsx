@@ -84,7 +84,7 @@ export default function LoginForm() {
           required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full rounded-lg border border-stone-300 px-3 py-2.5 text-sm focus:border-canal-blue focus:outline-none focus:ring-1 focus:ring-canal-blue"
+          className="w-full rounded-lg border border-stone-300 px-3 py-2.5 text-sm focus:border-regal-blue focus:outline-none focus:ring-1 focus:ring-regal-blue"
           autoFocus
         />
       </div>
@@ -95,7 +95,7 @@ export default function LoginForm() {
           required
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-full rounded-lg border border-stone-300 px-3 py-2.5 text-sm focus:border-canal-blue focus:outline-none focus:ring-1 focus:ring-canal-blue"
+          className="w-full rounded-lg border border-stone-300 px-3 py-2.5 text-sm focus:border-regal-blue focus:outline-none focus:ring-1 focus:ring-regal-blue"
           placeholder="••••••••"
         />
       </div>

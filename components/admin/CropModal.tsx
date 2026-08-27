@@ -167,7 +167,7 @@ export default function CropModal({
   }
 
   const handleClass =
-    "absolute h-4 w-4 rounded-full border-2 border-white bg-canal-blue shadow touch-none";
+    "absolute h-4 w-4 rounded-full border-2 border-white bg-regal-blue shadow touch-none";
 
   return (
     <div

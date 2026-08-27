@@ -108,13 +108,13 @@ export default async function Post({ params }: { params: { slug: string } }) {
           <nav aria-label="Breadcrumb" className="text-xs font-medium text-slate-500">
             <ol className="flex flex-wrap items-center gap-1.5">
               <li>
-                <Link href="/" className="hover:text-canal-blue transition-colors">
+                <Link href="/" className="hover:text-regal-blue transition-colors">
                   Home
                 </Link>
               </li>
               <li className="text-slate-300">&gt;</li>
               <li>
-                <Link href="/blog" className="hover:text-canal-blue transition-colors">
+                <Link href="/blog" className="hover:text-regal-blue transition-colors">
                   Blog
                 </Link>
               </li>
@@ -144,11 +144,11 @@ export default async function Post({ params }: { params: { slug: string } }) {
             {/* Author Meta Row */}
             <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs font-medium text-slate-600">
               <span className="inline-flex items-center gap-1.5">
-                <CalendarIcon className="h-4 w-4 text-canal-blue" />
+                <CalendarIcon className="h-4 w-4 text-regal-blue" />
                 {formatDate(post.date)}
               </span>
               <span className="inline-flex items-center gap-1.5">
-                <ClockPayIcon className="h-4 w-4 text-canal-blue" />
+                <ClockPayIcon className="h-4 w-4 text-regal-blue" />
                 {post.readTime}
               </span>
               <span className="inline-flex items-center gap-2">
@@ -190,7 +190,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
               {/* Bottom Article CTA Card */}
               <div className="mt-12 flex flex-col items-center justify-between gap-5 rounded-2xl border border-stone-200/80 bg-gradient-to-br from-sky-50/60 via-white to-blue-50/40 p-6 text-center sm:flex-row sm:text-left shadow-sm">
                 <div className="flex items-center gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-canal-blue">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-regal-blue">
                     <TicketIcon className="h-6 w-6" />
                   </div>
                   <div>

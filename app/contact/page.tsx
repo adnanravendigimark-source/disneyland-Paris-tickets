@@ -86,7 +86,7 @@ export default async function ContactPage() {
           dangerouslySetInnerHTML={{ __html: contact.footerNote }}
         />
 
-        <div className="mt-10 flex flex-col items-center gap-4 rounded-2xl bg-gradient-to-r from-canal-navy to-slate-900 p-8 text-center text-white shadow-xl">
+        <div className="mt-10 flex flex-col items-center gap-4 rounded-2xl bg-gradient-to-r from-regal-navy to-slate-900 p-8 text-center text-white shadow-xl">
           <p className="text-base font-bold">{contact.ctaHeading}</p>
           <a
             href="/#tours"

@@ -10,7 +10,7 @@ export const dynamic = "force-dynamic";
 
 const cards: { href: string; label: string; desc: string; icon: typeof HomeIcon; pageKey: PageKey }[] = [
   { href: "/admin/homepage", label: "Homepage Content", desc: "Hero headline, subheading, photo, and SEO.", icon: HomeIcon, pageKey: "homepage" },
-  { href: "/admin/recommended", label: "Recommended Tour", desc: "Which show gets the gold spotlight + sticky mobile bar.", icon: StarBadgeIcon, pageKey: "homepage" },
+  { href: "/admin/recommended", label: "Recommended Tour", desc: "Which tour gets the gold spotlight + sticky mobile bar.", icon: StarBadgeIcon, pageKey: "homepage" },
   { href: "/admin/tours", label: "Tours & Tickets", desc: "The bookable Disneyland Paris tickets shown on the homepage.", icon: TicketStackIcon, pageKey: "tours" },
   { href: "/admin/posts", label: "Blog Posts", desc: "Articles shown on /blog, including full SEO per post.", icon: DocumentIcon, pageKey: "posts" },
   { href: "/admin/faqs", label: "FAQs", desc: "Homepage FAQ accordion.", icon: QuestionIcon, pageKey: "faqs" },
@@ -75,9 +75,9 @@ export default async function AdminDashboardPage() {
             <Link
               key={card.href}
               href={card.href}
-              className="group flex items-start gap-4 rounded-2xl border border-stone-200 bg-white p-5 transition hover:border-canal-orange/40 hover:shadow-sm"
+              className="group flex items-start gap-4 rounded-2xl border border-stone-200 bg-white p-5 transition hover:border-regal-orange/40 hover:shadow-sm"
             >
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-stone-100 text-stone-500 transition group-hover:bg-canal-orange/10 group-hover:text-canal-orange">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-stone-100 text-stone-500 transition group-hover:bg-regal-orange/10 group-hover:text-regal-orange">
                 <Icon className="h-5 w-5" />
               </span>
               <span>
@@ -101,9 +101,9 @@ export default async function AdminDashboardPage() {
           <div className="mt-3 grid gap-4 sm:grid-cols-2">
             <Link
               href={indexingCard.href}
-              className="group flex items-start gap-4 rounded-2xl border border-stone-200 bg-white p-5 transition hover:border-canal-orange/40 hover:shadow-sm"
+              className="group flex items-start gap-4 rounded-2xl border border-stone-200 bg-white p-5 transition hover:border-regal-orange/40 hover:shadow-sm"
             >
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-stone-100 text-stone-500 transition group-hover:bg-canal-orange/10 group-hover:text-canal-orange">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-stone-100 text-stone-500 transition group-hover:bg-regal-orange/10 group-hover:text-regal-orange">
                 <indexingCard.icon className="h-5 w-5" />
               </span>
               <span>

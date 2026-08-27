@@ -7,7 +7,7 @@ import type { HomepageContent } from "@/lib/homepage";
 import type { Tour } from "@/lib/data";
 
 const inputClass =
-  "w-full rounded-lg border border-stone-300 px-3 py-2 text-sm focus:border-canal-blue focus:outline-none focus:ring-1 focus:ring-canal-blue";
+  "w-full rounded-lg border border-stone-300 px-3 py-2 text-sm focus:border-regal-blue focus:outline-none focus:ring-1 focus:ring-regal-blue";
 const labelClass = "mb-1 block text-sm font-medium text-stone-700";
 
 // Edits the same underlying homepage record as the Homepage page, but only

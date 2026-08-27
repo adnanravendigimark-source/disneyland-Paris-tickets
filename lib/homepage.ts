@@ -67,7 +67,7 @@ export interface WhySection {
   ctaHref: string;
 }
 
-export interface TowerSection {
+export interface NightShowSection {
   eyebrow: string;
   heading: string;
   body: string;
@@ -151,7 +151,7 @@ export interface HomepageSections {
   tours: TourSection;
   highlights: HighlightsSection;
   why: WhySection;
-  tower: TowerSection;
+  nightShow: NightShowSection;
   practical: PracticalSection;
   price: PriceSection;
   faq: FaqSection;
@@ -367,7 +367,7 @@ export const DEFAULT_SECTIONS: HomepageSections = {
     ctaButtonText: "Explore Disneyland Paris Tickets →",
     ctaHref: "#tours",
   },
-  tower: {
+  nightShow: {
     eyebrow: "Nighttime Spectacle",
     heading: "Fireworks, Illuminations & Castle Night Show",
     body:
@@ -569,7 +569,11 @@ function rowToHomepage(row: any): HomepageContent {
       tours: { ...DEFAULT_SECTIONS.tours, ...sectionsRaw.tours },
       highlights: { ...DEFAULT_SECTIONS.highlights, ...sectionsRaw.highlights },
       why: { ...DEFAULT_SECTIONS.why, ...sectionsRaw.why },
-      tower: { ...DEFAULT_SECTIONS.tower, ...sectionsRaw.tower },
+      // Reads sectionsRaw.nightShow first, falling back to the legacy
+      // "tower" key (this section's field/JSON key before it was renamed
+      // away from a leftover boat-cruise-sibling-repo name) so any content
+      // an admin already saved under the old key isn't silently dropped.
+      nightShow: { ...DEFAULT_SECTIONS.nightShow, ...(sectionsRaw.nightShow || (sectionsRaw as any).tower) },
       practical: { ...DEFAULT_SECTIONS.practical, ...sectionsRaw.practical },
       price: { ...DEFAULT_SECTIONS.price, ...sectionsRaw.price },
       faq: { ...DEFAULT_SECTIONS.faq, ...sectionsRaw.faq },

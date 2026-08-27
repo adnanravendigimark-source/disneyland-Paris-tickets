@@ -15,7 +15,7 @@ import type { Tour } from "@/lib/data";
 import type { PostRedirectRow } from "@/lib/redirects";
 
 const inputClass =
-  "w-full rounded-lg border border-stone-300 px-3 py-2 text-sm focus:border-canal-blue focus:outline-none focus:ring-1 focus:ring-canal-blue";
+  "w-full rounded-lg border border-stone-300 px-3 py-2 text-sm focus:border-regal-blue focus:outline-none focus:ring-1 focus:ring-regal-blue";
 const labelClass = "mb-1 block text-sm font-medium text-stone-700";
 const hintClass = "mt-1 text-xs text-stone-500";
 
@@ -200,7 +200,7 @@ export default function PostForm({
                 type="button"
                 onClick={() => setActiveTab(tab.key)}
                 className={`flex items-center gap-1.5 rounded-xl px-3.5 py-2 text-sm font-medium transition ${
-                  activeTab === tab.key ? "bg-canal-blue text-white shadow-sm" : "text-stone-600 hover:bg-stone-100"
+                  activeTab === tab.key ? "bg-regal-blue text-white shadow-sm" : "text-stone-600 hover:bg-stone-100"
                 }`}
               >
                 <span aria-hidden="true">{tab.icon}</span>
@@ -377,10 +377,10 @@ export default function PostForm({
               <Field label="Button link" hint="A relative path (e.g. /#tours) or a full https:// URL.">
                 <input value={post.ctaButtonHref} onChange={(e) => update("ctaButtonHref", e.target.value)} className={inputClass} />
               </Field>
-              <div className="rounded-2xl border border-canal-blue/20 bg-canal-blue/5 p-6">
+              <div className="rounded-2xl border border-regal-blue/20 bg-regal-blue/5 p-6">
                 <p className="text-sm font-semibold text-stone-900">{post.ctaHeading || "Ready to book?"}</p>
                 <p className="mt-1 text-sm text-stone-900/70">{post.ctaBody}</p>
-                <span className="mt-4 inline-flex rounded-full bg-canal-orange px-5 py-2.5 text-sm font-semibold text-white">
+                <span className="mt-4 inline-flex rounded-full bg-regal-orange px-5 py-2.5 text-sm font-semibold text-white">
                   {post.ctaButtonText || "See Price Comparison"}
                 </span>
               </div>

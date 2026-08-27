@@ -25,9 +25,9 @@ body {
 
 /* Disneyland Paris brand-color CSS variables — space-separated RGB triplets */
 :root {
-  --color-canal-primary: 16 42 92;      /* #102A5C - Midnight Royal Blue */
-  --color-canal-blue: 214 168 79;       /* #D6A84F - Champagne Gold */
-  --color-canal-ink: 37 42 53;          /* #252A35 - Charcoal */
+  --color-regal-primary: 16 42 92;      /* #102A5C - Midnight Royal Blue */
+  --color-regal-blue: 214 168 79;       /* #D6A84F - Champagne Gold */
+  --color-regal-ink: 37 42 53;          /* #252A35 - Charcoal */
   --color-gold-400: 233 75 131;        /* #E94B83 - Magic Pink */
 }
 

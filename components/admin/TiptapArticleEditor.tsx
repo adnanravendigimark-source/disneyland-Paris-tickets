@@ -137,7 +137,7 @@ const ToolbarButton = ({
     onClick={onClick}
     className={`rounded px-2.5 py-1 text-xs font-semibold transition disabled:cursor-not-allowed disabled:opacity-40 ${
       active
-        ? "bg-canal-blue text-white shadow-sm ring-1 ring-canal-blue"
+        ? "bg-regal-blue text-white shadow-sm ring-1 ring-regal-blue"
         : "text-stone-600 hover:bg-stone-200 hover:text-stone-900"
     }`}
   >
@@ -358,7 +358,7 @@ export default function TiptapArticleEditor({
   const inTable = editor.isActive("table");
 
   return (
-    <div className="rounded-lg border border-stone-300 focus-within:border-canal-blue focus-within:ring-1 focus-within:ring-canal-blue">
+    <div className="rounded-lg border border-stone-300 focus-within:border-regal-blue focus-within:ring-1 focus-within:ring-regal-blue">
       <div
         className="sticky z-10 flex flex-wrap items-center justify-between gap-1 rounded-t-lg border-b border-stone-200 bg-stone-50 p-1.5"
         style={{ top: stickyOffset || 0 }}
@@ -455,7 +455,7 @@ export default function TiptapArticleEditor({
         </div>
 
         <div className="flex items-center gap-1.5 px-2 py-0.5 text-xs text-stone-500">
-          <span className="h-2 w-2 rounded-full bg-canal-blue" />
+          <span className="h-2 w-2 rounded-full bg-regal-blue" />
           <span>Current:</span>
           <span className="font-semibold text-stone-800">{getFormatLabel()}</span>
         </div>

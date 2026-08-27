@@ -94,7 +94,7 @@ export default function MediaLibraryModal({
                       type="button"
                       onClick={() => onSelect(item.url)}
                       title={tooltip}
-                      className="group relative aspect-square overflow-hidden rounded-lg border border-stone-200 bg-stone-100 transition hover:border-canal-blue hover:ring-2 hover:ring-canal-blue/40"
+                      className="group relative aspect-square overflow-hidden rounded-lg border border-stone-200 bg-stone-100 transition hover:border-regal-blue hover:ring-2 hover:ring-regal-blue/40"
                     >
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img src={item.url} alt="" className="h-full w-full object-cover" loading="lazy" />

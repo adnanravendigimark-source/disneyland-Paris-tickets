@@ -1,14 +1,17 @@
 import { getHomepageContent } from "@/lib/homepage";
 
-// Content editable from /admin/homepage → Content tab (see
-// lib/homepage.ts's HighlightsSection / DEFAULT_SECTIONS.highlights).
-export default async function CanalHighlights() {
+// Renamed from CanalHighlights.tsx — leftover name from the boat-cruise
+// sibling repo this project was copied from; content is (and always was)
+// the Disneyland "Why Visit" highlights grid, editable from
+// /admin/homepage → Content tab (see lib/homepage.ts's HighlightsSection /
+// DEFAULT_SECTIONS.highlights).
+export default async function Highlights() {
   const { sections } = await getHomepageContent();
   const s = sections.highlights;
 
   return (
     <section id="highlights" className="bg-[#102A5C] py-20 text-white relative overflow-hidden">
-      <div className="absolute inset-0 bg-mosaic opacity-60 mix-blend-soft-light" aria-hidden="true" />
+      <div className="absolute inset-0 bg-magic-glow opacity-60 mix-blend-soft-light" aria-hidden="true" />
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
         <span className="inline-flex items-center gap-1.5 rounded-full border border-[#D6A84F]/40 bg-[#D6A84F]/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#D6A84F]">
           <span>✨</span> {s.eyebrow}

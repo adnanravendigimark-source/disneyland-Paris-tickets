@@ -96,9 +96,9 @@ export function generateMetadata(): Metadata {
 
 function buildThemeStyle(theme: { primary: string; secondary: string; dark: string; accent: string }) {
   const vars: [string, string | null][] = [
-    ["--color-canal-primary", hexToRgbTriplet(theme.primary)],
-    ["--color-canal-blue", hexToRgbTriplet(theme.secondary)],
-    ["--color-canal-ink", hexToRgbTriplet(theme.dark)],
+    ["--color-regal-primary", hexToRgbTriplet(theme.primary)],
+    ["--color-regal-blue", hexToRgbTriplet(theme.secondary)],
+    ["--color-regal-ink", hexToRgbTriplet(theme.dark)],
     ["--color-gold-400", hexToRgbTriplet(theme.accent)],
   ];
   const declarations = vars

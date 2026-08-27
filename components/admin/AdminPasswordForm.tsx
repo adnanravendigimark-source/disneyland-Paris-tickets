@@ -5,7 +5,7 @@ import PasswordStrengthField, { calcStrength } from "./PasswordStrengthField";
 import SaveBar from "./SaveBar";
 
 const inputClass =
-  "w-full rounded-lg border border-stone-300 px-3 py-2 pr-10 text-sm focus:border-canal-blue focus:outline-none focus:ring-1 focus:ring-canal-blue";
+  "w-full rounded-lg border border-stone-300 px-3 py-2 pr-10 text-sm focus:border-regal-blue focus:outline-none focus:ring-1 focus:ring-regal-blue";
 const labelClass = "mb-1 block text-sm font-medium text-stone-700";
 
 export default function AdminPasswordForm() {

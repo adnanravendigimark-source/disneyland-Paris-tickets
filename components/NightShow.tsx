@@ -1,12 +1,17 @@
 import Image from "next/image";
 import { getHomepageContent } from "@/lib/homepage";
 
-export default async function EveningCruise() {
+// Renamed from EveningCruise.tsx — this repo was copied from a boat-cruise
+// sibling project and the file/section kept that project's naming even
+// after the content was updated to Disneyland Paris's nighttime fireworks
+// show. See lib/homepage.ts's NightShowSection for the matching data-model
+// rename.
+export default async function NightShow() {
   const { sections } = await getHomepageContent();
-  const s = sections.tower;
+  const s = sections.nightShow;
 
   return (
-    <section id="dinner-show" className="bg-[#DCEAF7]/30 py-20">
+    <section id="night-show" className="bg-[#DCEAF7]/30 py-20">
       <div className="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:items-center">
         <div>
           <span className="inline-flex items-center gap-1.5 rounded-md bg-[#102A5C]/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#102A5C]">

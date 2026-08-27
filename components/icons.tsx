@@ -117,13 +117,3 @@ export function SearchIcon({ className = "h-6 w-6" }: IconProps) {
     </svg>
   );
 }
-
-export function WaveBoatIcon({ className = "h-6 w-6" }: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" className={className} stroke="currentColor" strokeWidth={1.6}>
-      <path d="M4 16.5c1.4 1.3 3 1.3 4.4 0 1.4-1.3 3-1.3 4.4 0 1.4 1.3 3 1.3 4.4 0 1.4-1.3 3-1.3 4.4 0" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M6 13.5 8 6l2 3.5M12 13.5l1.5-5.5L16 13.5" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M9.5 6h5" strokeLinecap="round" />
-    </svg>
-  );
-}

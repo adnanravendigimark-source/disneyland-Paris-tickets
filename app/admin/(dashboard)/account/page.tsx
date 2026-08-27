@@ -15,7 +15,7 @@ export default async function AdminAccountPage() {
 
       <div className="mt-8 rounded-2xl border border-stone-200 bg-white p-6">
         <div className="flex items-center gap-3 border-b border-stone-100 pb-5">
-          <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-canal-ink text-base font-bold text-white">
+          <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-regal-ink text-base font-bold text-white">
             {session?.email?.slice(0, 1).toUpperCase() || "A"}
           </span>
           <div>

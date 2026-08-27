@@ -32,12 +32,15 @@ const config: Config = {
           600: "#b7791f",
           700: "#975a16",
         },
-        // Mapping the canal namespace classes to runtime CSS variables & theme colors
-        canal: {
-          blue: "rgb(var(--color-canal-blue) / <alpha-value>)",
-          primary: "rgb(var(--color-canal-primary) / <alpha-value>)",
+        // Mapping the regal namespace classes to runtime CSS variables & theme colors
+        // (renamed from "canal" — a leftover from the boat-cruise sibling
+        // repo this project was copied from; the color VALUES were already
+        // correct Disney hex codes, only the namespace name was stale)
+        regal: {
+          blue: "rgb(var(--color-regal-blue) / <alpha-value>)",
+          primary: "rgb(var(--color-regal-primary) / <alpha-value>)",
           orange: "#E94B83",
-          ink: "rgb(var(--color-canal-ink) / <alpha-value>)",
+          ink: "rgb(var(--color-regal-ink) / <alpha-value>)",
           navy: "#102A5C",
           azure: "#D6A84F",
           royal: "#E94B83",
@@ -50,7 +53,7 @@ const config: Config = {
         body: ["var(--font-body)", "Plus Jakarta Sans", "system-ui", "sans-serif"],
       },
       backgroundImage: {
-        mosaic:
+        "magic-glow":
           "radial-gradient(circle at 15% 25%, rgba(16,42,92,0.35) 0, transparent 45%), radial-gradient(circle at 85% 15%, rgba(233,75,131,0.25) 0, transparent 45%), radial-gradient(circle at 50% 85%, rgba(214,168,79,0.2) 0, transparent 50%)",
         "disney-gradient":
           "linear-gradient(135deg, #102A5C 0%, #172F6B 50%, #E94B83 100%)",

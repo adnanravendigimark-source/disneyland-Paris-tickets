@@ -24,7 +24,7 @@ import type {
 import type { Tour } from "@/lib/data";
 
 const inputClass =
-  "w-full rounded-lg border border-stone-300 px-3 py-2 text-sm focus:border-canal-blue focus:outline-none focus:ring-1 focus:ring-canal-blue";
+  "w-full rounded-lg border border-stone-300 px-3 py-2 text-sm focus:border-regal-blue focus:outline-none focus:ring-1 focus:ring-regal-blue";
 const labelClass = "mb-1 block text-sm font-medium text-stone-700";
 const hintClass = "mt-1 text-xs text-stone-500";
 
@@ -46,7 +46,7 @@ const CONTENT_SECTIONS = [
   { id: "sec-highlights", label: "Highlights" },
   { id: "sec-tourgrid", label: "Tour Grid" },
   { id: "sec-why", label: "What You See" },
-  { id: "sec-tower", label: "Dinner & Show" },
+  { id: "sec-nightshow", label: "Fireworks & Night Show" },
   { id: "sec-practical", label: "Practical Info" },
   { id: "sec-price", label: "Price Comparison" },
   { id: "sec-blogteaser", label: "Blog Teaser" },
@@ -200,8 +200,8 @@ export default function HomepageForm({ initial, tours }: { initial: HomepageCont
     setSaved(false);
   }
 
-  function updateTower(patch: Partial<HomepageContent["sections"]["tower"]>) {
-    setContent((c) => ({ ...c, sections: { ...c.sections, tower: { ...c.sections.tower, ...patch } } }));
+  function updateNightShow(patch: Partial<HomepageContent["sections"]["nightShow"]>) {
+    setContent((c) => ({ ...c, sections: { ...c.sections, nightShow: { ...c.sections.nightShow, ...patch } } }));
     setSaved(false);
   }
 
@@ -293,7 +293,7 @@ export default function HomepageForm({ initial, tours }: { initial: HomepageCont
             onClick={() => setActiveTab(tab.key)}
             className={`flex items-center gap-1.5 rounded-xl px-3.5 py-2 text-sm font-medium transition ${
               activeTab === tab.key
-                ? "bg-canal-blue text-white shadow-sm"
+                ? "bg-regal-blue text-white shadow-sm"
                 : "text-stone-600 hover:bg-stone-100"
             }`}
           >
@@ -545,27 +545,27 @@ export default function HomepageForm({ initial, tours }: { initial: HomepageCont
           </SectionCard>
 
           <SectionCard
-            id="sec-tower"
-            title="Dinner & Show section"
+            id="sec-nightshow"
+            title="Fireworks & Night Show section"
             description="Images live on the Images tab."
-            open={!!openSections["sec-tower"]}
-            onToggle={() => toggleSection("sec-tower")}
+            open={!!openSections["sec-nightshow"]}
+            onToggle={() => toggleSection("sec-nightshow")}
           >
             <div className="grid gap-5 sm:grid-cols-2">
               <Field label="Eyebrow label">
-                <input value={content.sections.tower.eyebrow} onChange={(e) => updateTower({ eyebrow: e.target.value })} className={inputClass} />
+                <input value={content.sections.nightShow.eyebrow} onChange={(e) => updateNightShow({ eyebrow: e.target.value })} className={inputClass} />
               </Field>
               <Field label="Heading (H2)">
-                <input value={content.sections.tower.heading} onChange={(e) => updateTower({ heading: e.target.value })} className={inputClass} />
+                <input value={content.sections.nightShow.heading} onChange={(e) => updateNightShow({ heading: e.target.value })} className={inputClass} />
               </Field>
             </div>
             <Field label="Body text">
-              <RichTextEditor value={content.sections.tower.body} onChange={(html) => updateTower({ body: html })} />
+              <RichTextEditor value={content.sections.nightShow.body} onChange={(html) => updateNightShow({ body: html })} />
             </Field>
             <Field label="Bullet points">
               <RepeatableList<string>
-                items={content.sections.tower.bullets}
-                onChange={(bullets) => updateTower({ bullets })}
+                items={content.sections.nightShow.bullets}
+                onChange={(bullets) => updateNightShow({ bullets })}
                 newItem={() => ""}
                 addLabel="+ Add bullet"
                 renderItem={(item, upd) => (
@@ -575,10 +575,10 @@ export default function HomepageForm({ initial, tours }: { initial: HomepageCont
             </Field>
             <div className="grid gap-5 sm:grid-cols-2">
               <Field label="Button text">
-                <input value={content.sections.tower.ctaButtonText} onChange={(e) => updateTower({ ctaButtonText: e.target.value })} className={inputClass} />
+                <input value={content.sections.nightShow.ctaButtonText} onChange={(e) => updateNightShow({ ctaButtonText: e.target.value })} className={inputClass} />
               </Field>
               <Field label="Button link">
-                <input value={content.sections.tower.ctaHref} onChange={(e) => updateTower({ ctaHref: e.target.value })} className={inputClass} />
+                <input value={content.sections.nightShow.ctaHref} onChange={(e) => updateNightShow({ ctaHref: e.target.value })} className={inputClass} />
               </Field>
             </div>
           </SectionCard>
@@ -701,7 +701,7 @@ export default function HomepageForm({ initial, tours }: { initial: HomepageCont
                           <td className="px-3 py-2 text-stone-700">{tour.priceTableFeature || "No"}</td>
                           <td className="px-3 py-2 text-stone-700">{tour.bestFor}</td>
                           <td className="px-3 py-2 text-right">
-                            <Link href={`/admin/tours/${tour.id}`} className="font-medium text-canal-blue hover:underline">
+                            <Link href={`/admin/tours/${tour.id}`} className="font-medium text-regal-blue hover:underline">
                               Edit →
                             </Link>
                           </td>
@@ -1045,8 +1045,8 @@ export default function HomepageForm({ initial, tours }: { initial: HomepageCont
 
           <SectionCard title="Park & Attraction photos">
             <RepeatableList<GalleryImage>
-              items={content.sections.tower.images}
-              onChange={(images) => updateTower({ images })}
+              items={content.sections.nightShow.images}
+              onChange={(images) => updateNightShow({ images })}
               newItem={() => ({ src: "", alt: "", label: "" })}
               addLabel="+ Add photo"
               renderItem={(img, upd) => (

@@ -115,7 +115,7 @@ export default function RichImageModal({
             {isEditing ? "Edit Image Details" : "Insert image"}
           </h3>
           {isEditing && (
-            <span className="rounded-full bg-blue-50 px-2.5 py-0.5 text-xs font-bold uppercase tracking-wide text-canal-blue">
+            <span className="rounded-full bg-blue-50 px-2.5 py-0.5 text-xs font-bold uppercase tracking-wide text-regal-blue">
               Editing Image
             </span>
           )}
@@ -132,7 +132,7 @@ export default function RichImageModal({
             value={url}
             onChange={(e) => setUrl(e.target.value)}
             placeholder="https://... or upload a file"
-            className="w-full rounded-lg border border-stone-300 px-3 py-2 text-sm focus:border-canal-blue focus:outline-none focus:ring-1 focus:ring-canal-blue"
+            className="w-full rounded-lg border border-stone-300 px-3 py-2 text-sm focus:border-regal-blue focus:outline-none focus:ring-1 focus:ring-regal-blue"
           />
           <button
             type="button"
@@ -199,7 +199,7 @@ export default function RichImageModal({
             value={alt}
             onChange={(e) => setAlt(e.target.value)}
             placeholder="Describe what is shown in the image (e.g. Sleeping Beauty Castle at Disneyland Paris)"
-            className="w-full rounded-lg border border-stone-300 px-3 py-2 text-sm focus:border-canal-blue focus:outline-none focus:ring-1 focus:ring-canal-blue"
+            className="w-full rounded-lg border border-stone-300 px-3 py-2 text-sm focus:border-regal-blue focus:outline-none focus:ring-1 focus:ring-regal-blue"
           />
         </div>
 
@@ -212,7 +212,7 @@ export default function RichImageModal({
             value={caption}
             onChange={(e) => setCaption(e.target.value)}
             placeholder="Shown under the photo on the article"
-            className="w-full rounded-lg border border-stone-300 px-3 py-2 text-sm focus:border-canal-blue focus:outline-none focus:ring-1 focus:ring-canal-blue"
+            className="w-full rounded-lg border border-stone-300 px-3 py-2 text-sm focus:border-regal-blue focus:outline-none focus:ring-1 focus:ring-regal-blue"
           />
         </div>
 

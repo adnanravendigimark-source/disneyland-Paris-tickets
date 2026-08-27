@@ -7,7 +7,7 @@ import SaveBar from "./SaveBar";
 import type { FAQ } from "@/lib/data";
 
 const inputClass =
-  "w-full rounded-lg border border-stone-300 px-3 py-2 text-sm focus:border-canal-blue focus:outline-none focus:ring-1 focus:ring-canal-blue";
+  "w-full rounded-lg border border-stone-300 px-3 py-2 text-sm focus:border-regal-blue focus:outline-none focus:ring-1 focus:ring-regal-blue";
 
 export default function FaqsForm({ initial }: { initial: FAQ[] }) {
   const router = useRouter();
