@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import { Outfit, Plus_Jakarta_Sans, Playfair_Display } from "next/font/google";
-import { SITE_URL } from "@/lib/site";
+import { SITE_URL, SITE_NAME } from "@/lib/site";
 import { resolveRobots } from "@/lib/seo";
 import { getSiteChrome } from "@/lib/homepage";
 import { hexToRgbTriplet } from "@/lib/color";
@@ -27,22 +27,21 @@ const bodyFont = Plus_Jakarta_Sans({
   variable: "--font-body",
 });
 
-const DEFAULT_OG_IMAGE =
-  "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=2400&auto=format&fit=crop";
+const DEFAULT_OG_IMAGE = `${SITE_URL}/images/disneyland-paris-hero.jpg`;
 
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "Barcelona Flamenco Show",
+  name: SITE_NAME,
   url: SITE_URL,
   description:
-    "Independent guide comparing authentic Barcelona flamenco shows, historic tablaos, and tapas dinner packages from licensed venues.",
+    "Independent travel portal and visitor guide for Disneyland Paris tickets, 2-Park Hopper passes, and Paris shuttle combo transfers.",
 };
 
 const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "Barcelona Flamenco Show",
+  name: SITE_NAME,
   url: SITE_URL,
 };
 
@@ -52,41 +51,44 @@ export function generateMetadata(): Metadata {
   return {
     metadataBase: new URL(SITE_URL),
     title: {
-      default: "Barcelona Flamenco Show Tickets & Best Tablaos (2026)",
-      template: "%s | Barcelona Flamenco Show",
+      default: "Disneyland Paris Tickets — Book Official Passes & Ticket Deals (2026)",
+      template: "%s | Disneyland Paris Tickets",
     },
     description:
-      "Compare authentic Barcelona flamenco shows, historic tablaos on Las Ramblas, and dinner & tapas packages. Instant online booking, free cancellation on most tickets.",
+      "Book official Disneyland Paris tickets online. Compare 1-Day, Multi-Day, Park Hopper passes, prices, and Express shuttle combos with instant mobile delivery.",
     keywords: [
-      "Barcelona Flamenco Show",
-      "Flamenco shows Barcelona",
-      "best flamenco show Barcelona",
-      "Barcelona flamenco tickets",
-      "Tablao Cordobes Barcelona",
-      "Teatro City Hall Flamenco",
-      "Los Tarantos Flamenco",
-      "Tablao de Carmen Barcelona",
-      "Flamenco show with dinner Barcelona",
-      "Gothic Quarter Flamenco",
+      "Disneyland Paris Tickets",
+      "Disneyland Paris ticket prices",
+      "Disneyland Paris tickets and deals",
+      "Disneyland Paris 1 day tickets",
+      "Disneyland Paris 2 day tickets",
+      "Disneyland Paris park tickets",
+      "Disneyland Paris tickets for families",
+      "Disneyland Paris attractions",
+      "Disneyland Paris rides",
+      "Disneyland Park tickets",
+      "Walt Disney Studios Park tickets",
+      "Disneyland Paris planning tips",
+      "Disneyland Paris opening information",
     ],
     alternates: {
       canonical: "/",
     },
     robots,
     openGraph: {
-      title: "Barcelona Flamenco Show Tickets & Best Tablaos | Live Shows + Dinner",
+      title: "Disneyland Paris Tickets — Official Passes, Prices & Hopper Deals",
       description:
-        "Passionate live flamenco performances, historic tablaos, and tapas dinner packages in Barcelona. Compare prices and book online.",
+        "Book official Disneyland Paris tickets online. Compare 1-Day, Multi-Day, 2-Park Hopper passes, and shuttle combos with instant mobile e-ticket delivery.",
       type: "website",
       url: SITE_URL,
-      siteName: "Barcelona Flamenco Show",
-      images: [{ url: DEFAULT_OG_IMAGE, width: 2400, height: 1350, alt: "Passionate flamenco dancer performing live in Barcelona" }],
+      siteName: SITE_NAME,
+      images: [{ url: DEFAULT_OG_IMAGE, width: 1920, height: 1080, alt: "Disneyland Paris Sleeping Beauty Castle at sunset" }],
     },
     twitter: {
       card: "summary_large_image",
-      title: "Barcelona Flamenco Show Tickets & Best Tablaos | Live Shows + Dinner",
+      title: "Disneyland Paris Tickets — Official Passes, Prices & Hopper Deals",
       description:
-        "Passionate live flamenco performances, historic tablaos, and tapas dinner packages in Barcelona. Compare prices and book online.",
+        "Book official Disneyland Paris tickets online. Compare 1-Day, Multi-Day, 2-Park Hopper passes, and shuttle combos with instant mobile e-ticket delivery.",
       images: [DEFAULT_OG_IMAGE],
     },
   };
@@ -117,15 +119,10 @@ export default async function RootLayout({
   return (
     <html lang="en" className={`${serifFont.variable} ${displayFont.variable} ${bodyFont.variable}`}>
       <head>
-        {/* Warms up the connection to Google's analytics domains ahead of
-            the afterInteractive gtag.js load below, shaving the DNS/TLS
-            handshake off its actual request instead of paying for it when
-            the script fires. */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://www.google-analytics.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-        {/* Google tag (gtag.js) */}
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-79QHG880Z2" strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
@@ -137,7 +134,7 @@ export default async function RootLayout({
           `}
         </Script>
       </head>
-      <body className="font-body bg-stone-50 text-zinc-900 antialiased selection:bg-red-500 selection:text-white">
+      <body className="font-body bg-[#FCF8F1] text-[#252A35] antialiased selection:bg-[#E94B83] selection:text-white">
         {themeStyle && <style dangerouslySetInnerHTML={{ __html: themeStyle }} />}
         {children}
         <script

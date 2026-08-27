@@ -1,6 +1,6 @@
 import type { PageKey } from "./pageAccess";
 
-const SECRET = process.env.ADMIN_SESSION_SECRET || "barcelona-flamenco-admin-dev-secret-change-me";
+const SECRET = process.env.ADMIN_SESSION_SECRET || "disneyland-paris-tickets-admin-dev-secret-change-me";
 export const ADMIN_COOKIE_NAME = "bfs_admin_session";
 
 export type SessionRole = "admin" | "editor";

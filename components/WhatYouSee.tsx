@@ -5,28 +5,28 @@ export default async function WhatYouSee() {
   const s = sections.why;
 
   return (
-    <section className="bg-gradient-to-b from-stone-50 via-white to-stone-50 py-20">
+    <section className="bg-gradient-to-b from-[#FCF8F1] via-white to-[#FCF8F1] py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="max-w-3xl">
-          <span className="inline-block text-xs font-bold uppercase tracking-widest text-red-600">
+          <span className="inline-block text-xs font-bold uppercase tracking-widest text-[#E94B83]">
             {s.eyebrow}
           </span>
-          <h2 className="mt-2 font-display text-3xl font-bold text-zinc-900 sm:text-4xl">{s.heading}</h2>
+          <h2 className="mt-2 font-display text-3xl font-bold text-[#102A5C] sm:text-4xl">{s.heading}</h2>
           <div
-            className="rich-content mt-3 text-base text-stone-600"
+            className="rich-content mt-3 text-base text-[#252A35]"
             dangerouslySetInnerHTML={{ __html: s.intro }}
           />
         </div>
 
         <div className="mt-12 grid gap-10 lg:grid-cols-2 lg:items-start">
           <div className="rounded-2xl border border-stone-200/80 bg-white p-7 shadow-sm">
-            <h3 className="font-display text-xl font-bold text-zinc-900">{s.timelineHeading}</h3>
-            <ol className="mt-6 space-y-6 border-l-2 border-red-500/30 pl-6">
+            <h3 className="font-display text-xl font-bold text-[#102A5C]">{s.timelineHeading}</h3>
+            <ol className="mt-6 space-y-6 border-l-2 border-[#E94B83]/30 pl-6">
               {s.timeline.map((row, i) => (
                 <li key={row.time + i} className="relative">
-                  <span className="absolute -left-[31px] top-1 h-3.5 w-3.5 rounded-full bg-red-600 ring-4 ring-red-100" />
-                  <span className="text-xs font-bold uppercase tracking-wider text-red-600">{row.time}</span>
-                  <p className="mt-1 text-sm font-semibold text-stone-700">{row.step}</p>
+                  <span className="absolute -left-[31px] top-1 h-3.5 w-3.5 rounded-full bg-[#E94B83] ring-4 ring-[#E94B83]/15" />
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#E94B83]">{row.time}</span>
+                  <p className="mt-1 text-sm font-semibold text-[#252A35]">{row.step}</p>
                 </li>
               ))}
             </ol>
@@ -34,42 +34,42 @@ export default async function WhatYouSee() {
 
           <div className="space-y-6">
             <div className="rounded-2xl border border-stone-200/80 bg-white p-7 shadow-sm">
-              <h3 className="font-display text-xl font-bold text-zinc-900">{s.learnHeading}</h3>
+              <h3 className="font-display text-xl font-bold text-[#102A5C]">{s.learnHeading}</h3>
               <ul className="mt-5 space-y-3">
                 {s.learn.map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 rounded-xl bg-red-50/70 border border-red-100 p-3.5 text-sm text-stone-700">
-                    <span className="text-red-600 font-bold">◆</span>
+                  <li key={i} className="flex items-start gap-3 rounded-xl bg-[#DCEAF7]/30 border border-[#DCEAF7] p-3.5 text-sm text-[#252A35]">
+                    <span className="text-[#E94B83] font-bold">◆</span>
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
-              <p className="mt-4 text-xs text-stone-400">{s.note}</p>
+              <p className="mt-4 text-xs text-stone-500">{s.note}</p>
             </div>
           </div>
         </div>
 
         {s.extraItems.length > 0 && (
           <div className="mt-12">
-            <h3 className="font-display text-xl font-bold text-zinc-900">{s.extraHeading}</h3>
+            <h3 className="font-display text-xl font-bold text-[#102A5C]">{s.extraHeading}</h3>
             <div className="mt-5 grid gap-4 sm:grid-cols-3">
               {s.extraItems.map((point, i) => (
-                <div key={point.name + i} className="rounded-2xl border border-stone-200/80 bg-white p-5 shadow-sm transition hover:border-red-400/40">
-                  <p className="text-sm font-bold text-red-600">{point.name}</p>
-                  <p className="mt-1.5 text-xs leading-relaxed text-stone-600">{point.note}</p>
+                <div key={point.name + i} className="rounded-2xl border border-stone-200/80 bg-white p-5 shadow-sm transition hover:border-[#E94B83]/40">
+                  <p className="text-sm font-bold text-[#E94B83]">{point.name}</p>
+                  <p className="mt-1.5 text-xs leading-relaxed text-[#252A35]">{point.note}</p>
                 </div>
               ))}
             </div>
           </div>
         )}
 
-        <div className="mt-12 flex flex-col items-start gap-4 rounded-2xl border border-amber-400/20 bg-gradient-to-r from-zinc-950 via-stone-900 to-zinc-950 p-8 text-white shadow-xl sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-12 flex flex-col items-start gap-4 rounded-2xl border border-[#D6A84F]/30 bg-gradient-to-r from-[#102A5C] via-[#172F6B] to-[#102A5C] p-8 text-white shadow-xl sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="text-lg font-bold">{s.ctaText}</p>
-            <p className="text-xs text-amber-300 mt-0.5 font-medium">{s.ctaSubtext}</p>
+            <p className="text-xs text-[#D6A84F] mt-0.5 font-medium">{s.ctaSubtext}</p>
           </div>
           <a
             href={s.ctaHref}
-            className="shrink-0 rounded-xl border border-amber-300/30 bg-gradient-to-r from-red-600 via-rose-600 to-amber-600 px-7 py-3 text-sm font-bold text-white shadow-md shadow-red-950/40 transition-all duration-200 hover:scale-[1.03] hover:shadow-lg hover:shadow-red-600/40 hover:brightness-105 active:scale-[0.98]"
+            className="shrink-0 rounded-xl bg-[#E94B83] hover:bg-[#d93d74] px-7 py-3 text-sm font-bold text-white shadow-md shadow-[#E94B83]/30 transition-all duration-200 hover:scale-[1.03] active:scale-[0.98]"
           >
             {s.ctaButtonText}
           </a>

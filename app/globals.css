@@ -19,24 +19,25 @@ html {
 }
 
 body {
-  color: #18181b;
+  color: #252A35;
+  background-color: #FCF8F1;
 }
 
-/* Barcelona Flamenco brand-color CSS variables — space-separated RGB triplets */
+/* Disneyland Paris brand-color CSS variables — space-separated RGB triplets */
 :root {
-  --color-canal-primary: 201 24 43;    /* #c9182b - Deep Passion Spanish Crimson */
-  --color-canal-blue: 217 119 6;       /* #d97706 - Spanish Andalusian Gold / Amber */
-  --color-canal-ink: 18 18 22;         /* #121216 - Midnight Tablao Noir */
-  --color-gold-400: 225 29 72;         /* #e11d48 - Spanish Ruby / Rose */
+  --color-canal-primary: 16 42 92;      /* #102A5C - Midnight Royal Blue */
+  --color-canal-blue: 214 168 79;       /* #D6A84F - Champagne Gold */
+  --color-canal-ink: 37 42 53;          /* #252A35 - Charcoal */
+  --color-gold-400: 233 75 131;        /* #E94B83 - Magic Pink */
 }
 
 /* Shared typography for admin-entered rich text */
 .rich-content h1,
 .rich-content h2,
 .rich-content h3 {
-  font-family: var(--font-display), "Outfit", "Georgia", sans-serif;
+  font-family: var(--font-display), "Outfit", "Plus Jakarta Sans", sans-serif;
   font-weight: 700;
-  color: #18181b;
+  color: #102A5C;
   margin-top: 1.1em;
   margin-bottom: 0.4em;
   scroll-margin-top: 6rem;
@@ -54,6 +55,7 @@ body {
 .rich-content p {
   margin: 0.65em 0;
   line-height: 1.75;
+  color: #252A35;
 }
 .rich-content ul,
 .rich-content ol {
@@ -67,13 +69,13 @@ body {
   list-style: decimal;
 }
 .rich-content a {
-  color: #dc2626;
+  color: #E94B83;
   text-decoration: underline;
   text-underline-offset: 3px;
   font-weight: 600;
 }
 .rich-content a:hover {
-  color: #b91c1c;
+  color: #102A5C;
 }
 .rich-content a.text-white,
 .rich-content a[class*="text-white"],
@@ -88,13 +90,13 @@ body {
 }
 .rich-content strong {
   font-weight: 700;
-  color: #18181b;
+  color: #102A5C;
 }
 .rich-content img {
   max-width: 100%;
   border-radius: 1rem;
   margin: 1em 0;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(16, 42, 92, 0.1);
 }
 .rich-content figure {
   margin: 1em 0;
@@ -105,7 +107,7 @@ body {
 .rich-content figcaption {
   margin-top: 0.5em;
   font-size: 0.85em;
-  color: rgba(24, 24, 27, 0.6);
+  color: rgba(37, 42, 53, 0.7);
   text-align: center;
 }
 .rich-content table {
@@ -125,12 +127,13 @@ body {
 }
 .rich-content table td,
 .rich-content table th {
-  border: 1px solid rgba(24, 24, 27, 0.12);
+  border: 1px solid rgba(16, 42, 92, 0.15);
   padding: 0.65em 0.85em;
   text-align: left;
 }
 .rich-content table th {
-  background: rgba(220, 38, 38, 0.06);
+  background: rgba(220, 234, 247, 0.5);
+  color: #102A5C;
   font-weight: 600;
 }
 
@@ -144,7 +147,7 @@ body {
   color: inherit;
 }
 .rich-content-invert a {
-  color: #fbbf24;
+  color: #D6A84F;
 }
 
 /* Tiptap's Placeholder extension */
@@ -159,6 +162,6 @@ body {
 /* Placeholder text for RichTextEditor */
 [data-rte-empty="true"]:before {
   content: attr(data-placeholder);
-  color: rgba(24, 24, 27, 0.35);
+  color: rgba(37, 42, 53, 0.35);
   pointer-events: none;
 }

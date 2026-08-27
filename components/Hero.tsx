@@ -93,27 +93,6 @@ export default async function Hero() {
           </div>
         </div>
 
-        {/* Floating Circular "BEST PRICE GUARANTEE" Badge on the right */}
-        <div className="hidden md:flex absolute right-8 lg:right-24 bottom-14 z-20">
-          <div className="relative flex h-36 w-36 lg:h-44 lg:w-44 flex-col items-center justify-center rounded-full border-4 border-[#E94B83] bg-white p-3 text-center shadow-2xl transition-transform duration-300 hover:scale-105">
-            {/* Pink Castle Icon */}
-            <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6 lg:h-8 lg:w-8 text-[#E94B83]" stroke="currentColor" strokeWidth="2">
-              <path d="M4 21V10L7 7L10 10V21H4Z" fill="#E94B83" fillOpacity="0.2" />
-              <path d="M14 21V10L17 7L20 10V21H14Z" fill="#E94B83" fillOpacity="0.2" />
-              <path d="M9 21V6L12 3L15 6V21H9Z" fill="#E94B83" />
-              <circle cx="12" cy="3" r="1" fill="#E94B83" />
-            </svg>
-            <span className="mt-1 font-display text-[11px] lg:text-[13px] font-extrabold uppercase leading-tight text-[#E94B83] tracking-wide">
-              BEST PRICE<br />GUARANTEE
-            </span>
-            <div className="mt-1 flex items-center gap-0.5 text-[#E94B83] text-xs">
-              <span>★</span>
-              <span>★</span>
-              <span>★</span>
-            </div>
-          </div>
-        </div>
-
         {/* Organic Bottom Wave Divider matching mockup */}
         <div className="absolute bottom-0 inset-x-0 z-10 pointer-events-none overflow-hidden leading-none">
           <svg

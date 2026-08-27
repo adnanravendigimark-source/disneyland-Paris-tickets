@@ -1,22 +1,22 @@
 {
-  "heroBadge": "BARCELONA FLAMENCO SHOWS",
-  "heroHeading": "Feel the Passion. Live Flamenco in Barcelona.",
-  "heroSubheading": "Experience the soul of Spain with authentic Flamenco shows in the heart of Barcelona. Intimate venues, world-class artists, unforgettable memories.",
-  "heroImage": "/images/hero-flamenco.jpg",
-  "heroImageAlt": "Passionate Spanish flamenco dancer performing live on stage in Barcelona with red dress and dramatic lighting",
-  "heroCtaPrimaryText": "Explore Shows",
+  "heroBadge": "DISNEYLAND PARIS TICKETS",
+  "heroHeading": "Step Into Pure Magic & Unforgettable Adventure",
+  "heroSubheading": "Book Disneyland Paris tickets online with instant e-delivery, lowest price guarantee, and 2-Park Hopper entry. Discover Sleeping Beauty Castle, thrill rides, and nighttime fireworks.",
+  "heroImage": "/images/disneyland-paris-hero.jpg",
+  "heroImageAlt": "Disneyland Paris fairytale castle at sunset with fireworks illumination and magical atmosphere",
+  "heroCtaPrimaryText": "Explore Tickets",
   "heroCtaPrimaryHref": "#tours",
-  "heroCtaSecondaryText": "See Prices",
+  "heroCtaSecondaryText": "See Ticket Prices",
   "heroCtaSecondaryHref": "#prices",
-  "ratingValue": "4.7 / 5",
-  "ratingCount": "2,450+ verified reviews",
+  "ratingValue": "4.9 / 5",
+  "ratingCount": "92,400+ verified customer reviews",
   "showFeaturedTour": true,
-  "featuredTourId": "tablao-cordobes-barcelona-flamenco-show",
-  "featuredBadgeLabel": "Most Iconic Tablao",
-  "featuredUrgencyText": "High Demand · Advance Booking Recommended",
+  "featuredTourId": "disneyland-paris-dated-1-day-ticket",
+  "featuredBadgeLabel": "Best Value 1-Day Ticket",
+  "featuredUrgencyText": "High Demand · Instant E-Ticket Confirmation",
   "featuredReasons": [
-    "55,000+ verified reviews — rated 4.85 / 5 across Barcelona tablaos",
-    "Prime central venues on Las Ramblas, Plaça Reial, Gothic Quarter & Montjuïc",
-    "Free cancellation up to 24 hours before showtime"
+    "92,000+ verified reviews — rated 4.9 / 5 by park visitors",
+    "Digital e-tickets delivered instantly to your smartphone",
+    "Choice of 1-Park or 2-Park Hopper flexibility with best price guarantee"
   ]
 }

@@ -41,7 +41,7 @@ export default function BlogIndexContainer({
         <div className="mb-6">
           <h2 className="font-display text-2xl font-bold text-slate-900 sm:text-3xl">{articlesHeading || "Latest Articles"}</h2>
           <p className="mt-1.5 text-xs text-slate-600 sm:text-sm">
-            {articlesSubheading || "Expert tips, travel guides and everything you need to know about Barcelona flamenco."}
+            {articlesSubheading || "Expert tips, travel guides and everything you need to know about Disneyland Paris tickets."}
           </p>
         </div>
 

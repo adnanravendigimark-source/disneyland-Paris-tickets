@@ -19,30 +19,30 @@ export interface AboutPageContent {
 
 const DEFAULT_ABOUT: AboutPageContent = {
   heroEyebrow: "About Us",
-  heroHeading: "Your Independent Guide to Barcelona Flamenco Shows & Tickets",
+  heroHeading: "Your Independent Guide to Disneyland Paris Tickets & Passes",
   heroSubheading:
-    "We help travelers discover authentic Barcelona flamenco shows, historic tablaos, and dinner packages — curated from Spain's finest venues and explained in plain language.",
-  heroImage: "/images/hero-flamenco.jpg",
-  heroImageAlt: "Authentic live flamenco performance in Barcelona with passionate dancer and Spanish guitar",
+    "We help travelers compare official Disneyland Paris tickets, 2-Park Hopper passes, and Paris shuttle combos with clear advice and instant mobile delivery.",
+  heroImage: "/images/disneyland-paris-castle.jpg",
+  heroImageAlt: "Sleeping Beauty Castle at Disneyland Paris under bright blue sky",
   content: `<h2>Our Mission</h2>
-<p>We built this guide with a clear conviction: attending a live flamenco performance is one of the most intense, unforgettable cultural moments in Spain — but only if you choose an authentic venue. With dozens of tourist flyers and promotional booths scattered along Las Ramblas, choosing the right tablao shouldn't be confusing.</p>
-<p>We are an independent Barcelona flamenco guide. We compare world-renowned institutions like Tablao Cordobes, historic theater performances at Teatro City Hall, intimate Gothic Quarter tablaos like Los Tarantos, and full tapas &amp; dinner experiences like Tablao de Carmen, pointing you directly to genuine master artists.</p>
-<h2>How We Select Our Featured Flamenco Shows</h2>
-<p>Every tablao and show listed on this guide is vetted against four strict criteria:</p>
+<p>We built this portal to help families and travelers navigate <strong>Disneyland Paris tickets</strong> with total transparency. Choosing between 1-Day dated passes, multi-day hopper options, flexible tickets, and Express shuttle transfers shouldn't be complicated or stressful.</p>
+<p>We provide comprehensive visitor guides, price breakdowns, park itineraries, and crowd calendars so you can book official e-tickets with confidence.</p>
+<h2>How We Help You Plan Your Park Day</h2>
+<p>Every ticket option and planning guide featured on our website is evaluated against strict standards:</p>
 <ul>
-<li><strong>Artistic Authenticity &amp; Mastery</strong> — We feature established venues that showcase award-winning <em>cantaores</em>, virtuosic Spanish guitarists, and revered <em>bailaores</em> performing true unchoreographed improvisational flamenco.</li>
-<li><strong>Acoustic &amp; Sightline Quality</strong> — Whether it's an intimate cave-style tablao without microphones or a 19th-century theater hall, we ensure every venue offers clear, captivating stage views and acoustic richness.</li>
-<li><strong>Verified Guest Reviews</strong> — We only feature performances with thousands of verified positive reviews and consistently high traveler satisfaction ratings.</li>
-<li><strong>Transparent Pricing &amp; Guarantees</strong> — The ticket price you see is the full price, with clear options for included drinks, tapas tastings, or full multi-course Spanish dinners, plus free cancellation up to 24 hours in advance.</li>
+    <li><strong>Direct Gate Access</strong> — We link exclusively to authorized primary ticket partners providing e-tickets with direct barcode turnstile entry.</li>
+<li><strong>Best Price Transparency</strong> — Clear price comparisons between 1-Park, 2-Park Hopper, and Multi-Day passes so you get the best value for your trip.</li>
+<li><strong>Verified Customer Feedback</strong> — Curated visitor reviews and insider tips covering ride wait times, park hopper strategies, and fireworks viewing spots.</li>
+<li><strong>Instant Mobile Delivery &amp; Flexibility</strong> — All ticket passes feature instant digital delivery to your smartphone with clear date confirmation policies.</li>
 </ul>
-<h2>Independent Flamenco Guide</h2>
-<p>This is an independent cultural guide and booking comparison resource, not an individual theater or ticketing company. Bookings made through our verified links are fulfilled securely by GetYourGuide, our trusted ticketing partner, backed by instant mobile voucher delivery and flexible cancellation policies.</p>
-<h2>Affiliate Disclosure</h2>
-<p>When you book a Barcelona flamenco show through links on this website, we may earn an affiliate commission from the booking partner at no extra cost to you. This enables us to maintain our guide, review venues independently, and keep our content freely accessible to travelers worldwide.</p>
-<p>Have questions before you reserve? Visit our <a href="/contact">contact page</a>.</p>`,
-  metaTitle: "About Us | Barcelona Flamenco Show Guide & Tickets",
+<h2>Independent Travel Portal Disclaimer</h2>
+<p>This website is an independent ticket guide and travel resource. We are not affiliated with, endorsed by, or associated with Euro Disney S.C.A., The Walt Disney Company, or their subsidiaries. Ticket purchases initiated through our links are fulfilled securely by GetYourGuide, our trusted primary ticketing partner.</p>
+<h2>Affiliate Referral Disclosure</h2>
+<p>When you purchase Disneyland Paris tickets through referral links on our site, we may receive an affiliate commission from our booking partner at no extra cost to you. This supports our ongoing operation and enables us to keep our visitor guides freely accessible.</p>
+<p>Have questions before booking? Visit our <a href="/contact">contact page</a>.</p>`,
+  metaTitle: "About Us | Disneyland Paris Tickets Guide",
   metaDescription:
-    "Who curates our Barcelona flamenco show recommendations, how we select authentic tablaos, and why booking ahead guarantees prime seating.",
+    "Learn about our independent Disneyland Paris ticket guide, how we compare official park passes, and tips for booking.",
   canonicalUrl: "",
   noIndex: false,
   noFollow: false,

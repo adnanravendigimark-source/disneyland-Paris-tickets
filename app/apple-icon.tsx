@@ -11,17 +11,18 @@ export default function AppleIcon() {
           width: "100%",
           height: "100%",
           display: "flex",
+          flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          background: "linear-gradient(135deg, #dc2626 0%, #991b1b 100%)",
+          background: "linear-gradient(135deg, #102A5C 0%, #172F6B 60%, #E94B83 100%)",
           borderRadius: "36px",
-          color: "#fde047",
-          fontSize: "100px",
+          color: "#D6A84F",
+          fontSize: "90px",
           fontWeight: "bold",
-          boxShadow: "0 8px 24px rgba(220, 38, 38, 0.4)",
+          boxShadow: "0 8px 24px rgba(16, 42, 92, 0.4)",
         }}
       >
-        💃
+        🏰
       </div>
     ),
     { ...size }

@@ -17,13 +17,13 @@ export default async function TourGrid() {
   return (
     <section id="tours" className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
       <div className="max-w-3xl">
-        <span className="inline-block text-xs font-bold uppercase tracking-widest text-blue-600">
+        <span className="inline-block text-xs font-bold uppercase tracking-widest text-[#E94B83]">
           {content.sections.tours.eyebrow}
         </span>
-        <h2 className="mt-2 font-display text-3xl font-bold text-slate-900 sm:text-4xl">
+        <h2 className="mt-2 font-display text-3xl font-bold text-[#102A5C] sm:text-4xl">
           {content.sections.tours.heading}
         </h2>
-        <p className="mt-3 text-base text-slate-600">{content.sections.tours.subheading}</p>
+        <p className="mt-3 text-base text-[#252A35]">{content.sections.tours.subheading}</p>
       </div>
       <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {orderedTours.map((tour) => (

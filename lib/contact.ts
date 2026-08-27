@@ -29,26 +29,26 @@ export interface ContactPageContent {
 }
 
 const DEFAULT_CONTACT: ContactPageContent = {
-  heroEyebrow: "Contact",
+  heroEyebrow: "Contact Us",
   heroHeading: "Get in Touch",
   heroSubheading:
-    "Questions about a Barcelona flamenco show, tickets, or venue options — or a partnership inquiry? Reach out directly by email.",
+    "Questions about Disneyland Paris tickets, 2-Park Hopper options, Paris shuttle transfers, or partner inquiries? Send us a message.",
   email: "livetravelpartner@gmail.com",
-  emailLabel: "Email Us Directly",
-  emailNote: "We typically reply within 1–2 business days.",
-  reasonsHeading: "What we can help with",
+  emailLabel: "Email Support Directly",
+  emailNote: "We respond within 1–2 business days.",
+  reasonsHeading: "How we can assist you",
   reasons: [
-    { icon: "HeadsetIcon", title: "Booking Advice", body: "Need advice on whether to choose an intimate tablao like Cordobes, a historic theater like City Hall, or a dinner show at Tablao de Carmen? Ask us before you book." },
-    { icon: "BriefcaseIcon", title: "Partnerships & Press", body: "Flamenco tablaos, cultural venues, tourism organizations, and affiliate partners — contact us regarding features or collaborations." },
-    { icon: "MailIcon", title: "General Inquiries", body: "Questions, feedback, or content corrections regarding our Barcelona flamenco guides." },
+    { icon: "HeadsetIcon", title: "Ticket & Visit Advice", body: "Need help deciding between a 1-Day Dated ticket, Multi-Day Pass, or Express Shuttle package? Contact our travel team before you book." },
+    { icon: "BriefcaseIcon", title: "Partnerships & Media", body: "Tour operators, travel agencies, and media partners — reach out regarding features, travel collaborations, or affiliate partnerships." },
+    { icon: "MailIcon", title: "General Inquiries", body: "Questions, feedback, or content suggestions regarding our Disneyland Paris ticket guides." },
   ],
   footerNote:
-    "Already have a booking voucher? Please contact the ticketing provider or venue directly via the details on your confirmation email for immediate schedule adjustments or cancellations.",
-  ctaHeading: "Ready to reserve your seats?",
-  ctaButtonLabel: "Compare Barcelona Flamenco Shows & Tickets",
-  metaTitle: "Contact Us | Barcelona Flamenco Show Guide",
+    "Already purchased your ticket voucher? Please refer directly to the contact information on your email voucher for immediate order modifications or cancellations.",
+  ctaHeading: "Ready to reserve your park tickets?",
+  ctaButtonLabel: "Explore Disneyland Paris Tickets",
+  metaTitle: "Contact Us | Disneyland Paris Tickets Guide",
   metaDescription:
-    "Questions about booking an authentic Barcelona flamenco show, dinner package, or tickets online? Reach out directly to our team.",
+    "Have questions about Disneyland Paris ticket options, e-delivery, or trip planning? Reach out directly to our team.",
   canonicalUrl: "",
   noIndex: false,
   noFollow: false,

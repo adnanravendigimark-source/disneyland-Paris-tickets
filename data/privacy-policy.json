@@ -1,31 +1,31 @@
 {
-  "heroEyebrow": "Legal",
-  "heroHeading": "Privacy Policy",
-  "heroSubheading": "How we handle and protect your personal information when you browse our Barcelona Flamenco Show guide.",
+  "heroEyebrow": "Legal & Transparency",
+  "heroHeading": "Privacy Policy & Affiliate Disclaimer",
+  "heroSubheading": "How we handle and protect your personal information when you browse our Disneyland Paris Tickets guide.",
   "sections": [
     {
-      "heading": "1. Who We Are",
-      "body": "<p>This website is an independent travel guide and booking comparison resource dedicated to helping visitors discover and book authentic <strong>Barcelona flamenco shows, historic tablaos, and dinner packages</strong> in Barcelona, Spain.</p><p>We are not a direct tour operator or ticketing agency. Bookings initiated through our links are processed by our trusted partner GetYourGuide, governed by their respective privacy terms and security protocols.</p>"
+      "heading": "1. Who We Are & Independent Portal Disclaimer",
+      "body": "<p>This website is an independent travel portal and ticket guide dedicated to providing accurate visitor information, ticket price comparisons, and planning tips for <strong>Disneyland Paris</strong>.</p><p><strong>Trademark Notice:</strong> This website is independently operated and is not affiliated with, authorized by, sponsored by, or endorsed by Euro Disney S.C.A., The Walt Disney Company, or any of their subsidiaries. All trademarks, service marks, and brand names are the property of their respective owners.</p>"
     },
     {
       "heading": "2. Information We Collect",
-      "body": "<p>We do not collect or store sensitive personal information such as credit card details or home addresses directly on our servers. When you use this website, we may receive:</p><ul><li><strong>Usage Data:</strong> Anonymized analytical data regarding pages visited, browser type, device information, and referral sources.</li><li><strong>Direct Inquiries:</strong> Any email address or contact details you provide voluntarily when reaching out via our contact form or support email.</li></ul>"
+      "body": "<p>We do not collect or store sensitive personal payment details or credit card information directly on our servers. When you navigate our website, we may gather:</p><ul><li><strong>Anonymized Analytics Data:</strong> Page views, browser type, operating system, and general referrer URLs.</li><li><strong>Contact Form Inquiries:</strong> Any email address or message content voluntarily submitted through our customer support form.</li></ul>"
     },
     {
-      "heading": "3. Cookies and Analytics",
-      "body": "<p>We use standard, industry-compliant cookies and Google Analytics to measure aggregate visitor metrics and improve site performance. You can choose to disable or block cookies through your individual browser settings at any time without restricting your access to our content.</p>"
+      "heading": "3. Cookies & Analytical Metrics",
+      "body": "<p>We utilize standard performance cookies and analytics services to understand visitor traffic patterns and optimize loading speeds. You can disable or modify cookie permissions via your browser settings at any time without restricting page access.</p>"
     },
     {
-      "heading": "4. Third-Party Booking Partners",
-      "body": "<p>When you click on a ticket booking link to purchase flamenco tickets, you are redirected to authorized ticketing partners (such as GetYourGuide). These third parties manage checkout security, payment handling, and ticket voucher dispatch according to their own strict privacy standards (GDPR compliant).</p>"
+      "heading": "4. Third-Party Referral Links",
+      "body": "<p>When clicking booking links to purchase e-tickets, you are securely transferred to authorized primary ticket distributors (including GetYourGuide). Checkout security, payment processing, and e-ticket voucher delivery are managed directly by these GDPR-compliant partners.</p>"
     },
     {
-      "heading": "5. Contact & Data Inquiries",
-      "body": "<p>If you have any questions about this Privacy Policy or wish to request information regarding any data you have submitted to us, please contact us at <a href=\"mailto:livetravelpartner@gmail.com\" class=\"text-red-600 hover:underline\">livetravelpartner@gmail.com</a>.</p>"
+      "heading": "5. Contact Information",
+      "body": "<p>For questions concerning this Privacy Policy, please email our support team at <a href=\"mailto:livetravelpartner@gmail.com\" class=\"text-disney-pink font-semibold hover:underline\">livetravelpartner@gmail.com</a>.</p>"
     }
   ],
-  "metaTitle": "Privacy Policy | Barcelona Flamenco Show Booking Guide",
-  "metaDescription": "Read our privacy policy to understand how we protect your information when researching Barcelona flamenco shows and booking tickets.",
+  "metaTitle": "Privacy Policy | Disneyland Paris Tickets Guide",
+  "metaDescription": "Read our privacy policy and independent affiliate disclaimer for Disneyland Paris ticket information and booking.",
   "canonicalUrl": "",
   "noIndex": false,
   "noFollow": false,

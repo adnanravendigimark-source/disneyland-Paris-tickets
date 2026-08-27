@@ -4,16 +4,6 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import type { NavLink } from "@/lib/homepage";
 
-// Hamburger + slide-down panel for the public header's nav links on small
-// screens. Header.tsx's <nav> is `hidden md:flex` with no mobile fallback,
-// so below the md breakpoint visitors had no way to reach Tours/Blog/
-// About/Contact at all — this is what actually lets them switch pages
-// on mobile.
-//
-// Positioned `absolute top-full` rather than a hardcoded `fixed top-16`
-// so it sits right below the header regardless of the header's actual
-// height — the sticky <header> itself is the nearest positioned
-// ancestor, so this anchors correctly either way.
 export default function MobileNav({
   navLinks,
   ctaText,
@@ -47,7 +37,7 @@ export default function MobileNav({
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
         aria-label={open ? "Close menu" : "Open menu"}
-        className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-stone-200 transition hover:bg-white/10"
+        className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-[#102A5C] transition hover:bg-stone-100"
       >
         <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" stroke="currentColor" strokeWidth={1.8}>
           {open ? (
@@ -65,14 +55,14 @@ export default function MobileNav({
             aria-hidden="true"
             onClick={() => setOpen(false)}
           />
-          <div className="absolute inset-x-0 top-full z-40 max-h-[80vh] overflow-y-auto border-b border-white/10 bg-zinc-950 text-white shadow-2xl">
+          <div className="absolute inset-x-0 top-full z-40 max-h-[80vh] overflow-y-auto border-b border-white/10 bg-[#102A5C] text-white shadow-2xl">
             <nav className="flex flex-col px-4 py-3">
               {navLinks.map((link) => (
                 <Link
                   key={link.href + link.label}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="border-b border-white/[0.08] py-3.5 text-base font-semibold text-stone-200 transition hover:text-red-500 last:border-b-0"
+                  className="border-b border-white/10 py-3.5 text-base font-semibold text-[#DCEAF7] transition hover:text-[#E94B83] last:border-b-0"
                 >
                   {link.label}
                 </Link>
@@ -82,7 +72,7 @@ export default function MobileNav({
               <Link
                 href={ctaHref}
                 onClick={() => setOpen(false)}
-                className="block rounded-xl bg-[#c23636] hover:bg-[#ad2828] px-5 py-3 text-center text-sm font-bold text-white shadow-md shadow-red-950/40 uppercase tracking-wider"
+                className="block rounded-xl bg-[#E94B83] hover:bg-[#d93d74] px-5 py-3 text-center text-sm font-bold text-white shadow-md shadow-[#E94B83]/30 uppercase tracking-wider"
               >
                 {ctaText}
               </Link>

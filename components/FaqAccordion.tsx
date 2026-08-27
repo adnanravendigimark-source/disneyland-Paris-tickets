@@ -17,20 +17,20 @@ export default function FaqAccordion({ faqs }: { faqs: FAQ[] }) {
           <div
             key={f.question}
             className={`overflow-hidden rounded-2xl border bg-white shadow-sm transition-all duration-200 ${
-              open ? "border-red-500/40 shadow-md" : "border-stone-200/80"
+              open ? "border-[#E94B83]/40 shadow-md" : "border-stone-200/80"
             }`}
           >
             <button
               type="button"
               onClick={() => setOpenIndex(open ? null : i)}
               aria-expanded={open}
-              className="flex w-full cursor-pointer list-none items-center justify-between gap-3 p-6 text-left font-semibold text-stone-900"
+              className="flex w-full cursor-pointer list-none items-center justify-between gap-3 p-6 text-left font-semibold text-[#102A5C]"
             >
               <span className="text-base">{f.question}</span>
               <span
                 className={`ml-4 flex h-7 w-7 shrink-0 items-center justify-center rounded-full transition ${
                   open
-                    ? "rotate-45 bg-gradient-to-r from-red-600 to-rose-600 text-white"
+                    ? "rotate-45 bg-[#E94B83] text-white"
                     : "bg-stone-100 text-stone-600"
                 }`}
               >

@@ -12,9 +12,9 @@ export interface BlogSeoSettings {
 }
 
 const DEFAULT_SETTINGS: BlogSeoSettings = {
-  metaTitle: "Barcelona Flamenco Show Guides & Tips | Barcelona Flamenco Show",
+  metaTitle: "Disneyland Paris Ticket Guides & Planning Tips | Disneyland Paris Tickets",
   metaDescription:
-    "Practical guides for Barcelona flamenco shows — top tablaos, dinner & tapas packages, best times to book, traditions, and tips.",
+    "Practical guides for Disneyland Paris tickets — 1-Day, Multi-Day passes, Hopper deals, best times to visit, ride guides, and visitor tips.",
   canonicalUrl: "",
   noIndex: false,
   noFollow: false,

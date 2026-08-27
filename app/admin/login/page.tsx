@@ -2,18 +2,18 @@ import { Suspense } from "react";
 import LoginForm from "@/components/admin/LoginForm";
 
 export const metadata = {
-  title: "Admin Login | Barcelona Flamenco Show",
+  title: "Admin Login | Disneyland Paris Tickets",
   robots: { index: false, follow: false, nocache: true },
 };
 
 export default function AdminLoginPage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-950 px-4">
+    <div className="flex min-h-screen items-center justify-center bg-[#102A5C] px-4">
       <div className="w-full max-w-sm rounded-2xl bg-white p-8 shadow-xl">
-        <p className="text-center font-display text-lg font-bold text-zinc-900">
-          Barcelona Flamenco Show
+        <p className="text-center font-display text-lg font-bold text-[#102A5C]">
+          Disneyland Paris Tickets
         </p>
-        <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-red-600">
+        <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-[#E94B83]">
           Content Admin
         </p>
         <div className="mt-6">

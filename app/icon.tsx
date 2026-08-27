@@ -13,15 +13,15 @@ export default function Icon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "linear-gradient(135deg, #dc2626 0%, #991b1b 100%)",
+          background: "linear-gradient(135deg, #102A5C 0%, #172F6B 60%, #E94B83 100%)",
           borderRadius: "10px",
-          color: "#fde047",
-          fontSize: "26px",
+          color: "#D6A84F",
+          fontSize: "24px",
           fontWeight: "bold",
-          boxShadow: "0 4px 12px rgba(220, 38, 38, 0.4)",
+          boxShadow: "0 4px 12px rgba(16, 42, 92, 0.4)",
         }}
       >
-        💃
+        🏰
       </div>
     ),
     { ...size }
