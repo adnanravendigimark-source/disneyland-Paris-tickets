@@ -477,8 +477,8 @@ export const DEFAULT_SECTIONS: HomepageSections = {
 };
 
 const DEFAULT_HOMEPAGE_CONTENT: HomepageContent = {
-  heroBadge: "🏰 Official E-Tickets · Instant Mobile Delivery · Best Price Guarantee",
-  heroHeading: "Disneyland Paris Tickets — Official Passes, Prices & Hopper Deals",
+  heroBadge: "🏰 Official Disneyland Paris E-Tickets",
+  heroHeading: "Disneyland Paris\nTickets",
   heroSubheading:
     "Step into a world of magic. Compare official Disneyland Paris 1-Day tickets, Multi-Day Park Hopper passes, and Paris shuttle combos with instant mobile confirmation.",
   heroImage: "/images/disneyland-paris-hero.jpg",
