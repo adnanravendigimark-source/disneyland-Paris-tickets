@@ -16,7 +16,6 @@ import { getHomepageContent } from "@/lib/homepage";
 import { resolveRobots, resolveCanonical, resolveOg, stripHtml } from "@/lib/seo";
 import { SITE_URL } from "@/lib/site";
 
-export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
   const homepage = await getHomepageContent();
